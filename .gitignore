@@ -1,0 +1,14 @@
+# 抓取缓存与本地工作目录
+_work/
+site/
+.workbuddy/
+pipeline/raw/
+__pycache__/
+*.pyc
+*.png
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
