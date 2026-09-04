@@ -15,10 +15,44 @@ CSS = (ROOT / "gb_style.css").read_text(encoding="utf-8")
 WX_FILE = ROOT / "wx_articles.json"
 WX_ARTICLES = json.loads(WX_FILE.read_text(encoding="utf-8")) if WX_FILE.exists() else []
 
-# 参考站 CSS 里写死的英文串，替换成千问办公
+# 参考站 CSS 里写死的英文串，替换成千问办公（保留 follow-cta 关注卡片样式）
 CSS = CSS.replace("WORKBUDDY GREEN BOOK", "QWENWORK GREEN BOOK")
 CSS = CSS.replace('content: "WorkBuddy 绿皮书"', 'content: "千问办公绿皮书"')
-CSS = CSS.split("/* 公众号关注引导（吸粉转化点） */")[0]
+
+# ---------------------------------------------------------------- 公众号品牌
+GZH_QR_FILE = ROOT / "wx_assets" / "gzh_qr.jpg"
+GZH_QR_B64 = (
+    "data:image/jpeg;base64,"
+    + base64.b64encode(GZH_QR_FILE.read_bytes()).decode("ascii")
+    if GZH_QR_FILE.exists()
+    else ""
+)
+
+def _wm_svg() -> str:
+    """斜排平铺水印 SVG（data URI）"""
+    from urllib.parse import quote
+    svg = (
+        "<svg xmlns='http://www.w3.org/2000/svg' width='460' height='360'>"
+        "<text x='230' y='185' font-size='30' fill='rgb(96,134,110)' fill-opacity='0.05'"
+        " text-anchor='middle' transform='rotate(-22 230 185)'"
+        " font-family='Georgia,serif' font-weight='700' letter-spacing='8'>宁的AI小站</text>"
+        "</svg>"
+    )
+    return "url(\"data:image/svg+xml;charset=utf-8," + quote(svg) + "\")"
+
+FOLLOW_CTA = """
+<div class="follow-cta noprint-follow">
+  <div class="follow-left">
+    <div class="follow-title">关注公众号「宁的 AI 小站」</div>
+    <div class="follow-desc">全栈 · AI 讲师 · 社区主理人。每日 AI 实战、AI 办公技巧与工具复盘，在这里持续更新。</div>
+    <div class="follow-actions">
+      <span class="follow-pill">扫描公众号回复「千问」获取本书电子版 PDF</span>
+      <span class="follow-pill">扫描公众号回复「加群」加入 AI 小站交流群</span>
+    </div>
+  </div>
+  <img class="gzh-qr" src="{qr}" alt="宁的AI小站公众号二维码">
+</div>
+""".format(qr=GZH_QR_B64)
 
 EXTRA_CSS = """
   /* ========== 千问办公文档组件适配 ========== */
@@ -140,11 +174,34 @@ EXTRA_CSS = """
 
   figure.gb-fig img.wx-img { width: 100%; }
 
+  /* ========== 公众号品牌：水印 + 关注卡片 ========== */
+  #main { position: relative; z-index: 1; }
+  .gzh-watermark { position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: __WM__; background-size: 460px 360px; }
+  .follow-cta { display: flex; gap: 24px; align-items: center; justify-content: space-between;
+    max-width: 780px; margin: 40px auto 8px; padding: 22px 26px;
+    background: linear-gradient(135deg, #1E40AF, #0f2a6b); border-radius: 14px;
+    color: #f6f4ec; box-shadow: 0 10px 30px rgba(30,64,175,.22); }
+  .follow-cta .follow-title { font-family: var(--font-serif); font-size: 1.22rem; font-weight: 900; margin-bottom: 8px; }
+  .follow-cta .follow-desc { font-family: var(--font-sans); font-size: .86rem; line-height: 1.7; opacity: .92; }
+  .follow-cta .follow-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .follow-cta .follow-pill { font-family: var(--font-sans); font-size: .72rem; padding: 6px 12px;
+    border: 1px solid rgba(246,244,236,.5); border-radius: 999px; }
+  .follow-cta .gzh-qr { width: 120px; height: 120px; flex: 0 0 auto; border-radius: 10px;
+    border: 2px solid rgba(246,244,236,.55); display: block; }
+  .sidebar-gzh { font-family: var(--font-sans); font-size: .68rem; letter-spacing: .1em;
+    color: rgba(246,244,236,.72); margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid rgba(246,244,236,.18); }
+  .sidebar-gzh strong { color: #f6f4ec; }
+
   @media print {
     .gb-tabs, .gb-acc, .gb-card, .card-grid, .chapter-toc { break-inside: auto; }
     details.gb-acc { break-inside: avoid; }
+    .gzh-watermark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .follow-cta { break-inside: avoid; }
   }
 """
+EXTRA_CSS = EXTRA_CSS.replace("__WM__", _wm_svg())
 
 # ---------------------------------------------------------------- 目录结构
 BOOK = [
@@ -513,7 +570,7 @@ def main():
       <p class="cb-h">致谢</p>
       <p>感谢千问办公文档团队把产品写得足够清楚——这是一本能被整理出来的前提；
       也感谢每一位愿意把重复劳动交给 AI、认真摸索新工作方式的职场同行。</p>
-      <p class="copyright-sign">—— 千问办公绿皮书编写组</p>
+  <p class="copyright-sign">—— GoodTime · 公众号「宁的 AI 小站」 · 千问办公绿皮书编写组</p>
     </div>
   </div>
 </section>
@@ -559,8 +616,10 @@ def main():
   <p>本书沿用官方文档的中文术语：<strong>任务</strong>指一次完整的 AI 执行过程；<strong>技能</strong>是可复用的专业化工作流；
   <strong>连接器</strong>负责接入外部平台与数据；<strong>专家套件</strong>是面向特定岗位的能力组合；
   <strong>工作台</strong>是按产出类型（设计 / 幻灯片 / 写作）划分的工作模式。若同一功能在网页端与桌面端表现不同，本书分章说明并标注端别。</p>
+
+  %s
 </section>
-""" % "\n".join(structure_rows)
+""" % ("\n".join(structure_rows), FOLLOW_CTA)
 
     footer = f"""
 <div class="book-footer">
@@ -584,6 +643,7 @@ def main():
 </head>
 <body>
 
+<div class="gzh-watermark"></div>
 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 <button id="sidebar-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">目录</button>
 <div id="page-footer"></div>
@@ -594,6 +654,7 @@ def main():
     <h1>千问办公绿皮书</h1>
     <div class="subtitle">官方文档完全整理版</div>
     <div class="version">v1.0 · 2026.09 · {meta_chapters} 章 · {n_parts} 大部分 · 约 {meta_pages} 页</div>
+    <div class="sidebar-gzh">公众号 · <strong>宁的AI小站</strong></div>
   </div>
   <div class="toc">
     <div class="toc-item"><a href="#cover"><span class="toc-num">00</span>封面</a></div>
@@ -609,6 +670,7 @@ def main():
 {preface}
 {"".join(chapters_html)}
 {footer}
+{FOLLOW_CTA}
 </div>
 </main>
 
