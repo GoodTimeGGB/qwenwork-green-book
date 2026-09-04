@@ -33,7 +33,7 @@ def _wm_svg() -> str:
     from urllib.parse import quote
     svg = (
         "<svg xmlns='http://www.w3.org/2000/svg' width='460' height='360'>"
-        "<text x='230' y='185' font-size='30' fill='rgb(96,134,110)' fill-opacity='0.05'"
+        "<text x='230' y='185' font-size='30' fill='rgb(110,102,200)' fill-opacity='0.055'"
         " text-anchor='middle' transform='rotate(-22 230 185)'"
         " font-family='Georgia,serif' font-weight='700' letter-spacing='8'>宁的AI小站</text>"
         "</svg>"
@@ -180,8 +180,8 @@ EXTRA_CSS = """
     background-image: __WM__; background-size: 460px 360px; }
   .follow-cta { display: flex; gap: 24px; align-items: center; justify-content: space-between;
     max-width: 780px; margin: 40px auto 8px; padding: 22px 26px;
-    background: linear-gradient(135deg, #1E40AF, #0f2a6b); border-radius: 14px;
-    color: #f6f4ec; box-shadow: 0 10px 30px rgba(30,64,175,.22); }
+    background: linear-gradient(135deg, #615ced, #3b2e86); border-radius: 14px;
+    color: #f6f4ec; box-shadow: 0 10px 30px rgba(97,92,237,.28); }
   .follow-cta .follow-title { font-family: var(--font-serif); font-size: 1.22rem; font-weight: 900; margin-bottom: 8px; }
   .follow-cta .follow-desc { font-family: var(--font-sans); font-size: .86rem; line-height: 1.7; opacity: .92; }
   .follow-cta .follow-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -193,6 +193,47 @@ EXTRA_CSS = """
     color: rgba(246,244,236,.72); margin-top: 14px; padding-top: 12px;
     border-top: 1px solid rgba(246,244,236,.18); }
   .sidebar-gzh strong { color: #f6f4ec; }
+
+  /* ========== 图片全局适配 ========== */
+  .chapter img, .content-wrap img { max-width: 100%; height: auto; }
+  figure.gb-fig img, figure.fig img { width: auto; max-width: 100%; height: auto; }
+  .gallery-grid figure.fig img { width: 100%; }
+  .gb-table-wrap { max-width: 100%; }
+  .gb-table-wrap table { width: 100%; }
+
+  /* ========== 移动端适配增强 ========== */
+  @media (max-width: 900px) {
+    #main { margin-left: 0; width: 100%; }
+    #sidebar.open { box-shadow: 12px 0 40px rgba(20,16,50,.45); }
+    .content-wrap { padding: 26px 18px 90px; }
+    .chapter-title { font-size: 1.45rem; letter-spacing: 0; }
+    .chapter-subtitle { font-size: 0.92rem; }
+    .cover { padding: 56px 22px; }
+    .cover h1 { font-size: 2.6rem; }
+    figure.gb-fig img, figure.fig img { width: 100%; }
+    figure.gb-fig, figure.fig { margin: 20px 0; }
+    pre.gb-code { font-size: 0.78rem; }
+    table { font-size: 0.82rem; }
+    .gb-table-wrap { margin: 16px -6px; }
+    .follow-cta { flex-direction: column; text-align: center; gap: 14px; padding: 20px 18px; }
+    .follow-cta .follow-actions { justify-content: center; }
+    .follow-cta .gzh-qr { margin: 2px auto 0; }
+    .gzh-watermark { background-size: 330px 258px; }
+    .chapter-toc { padding: 12px 14px; }
+  }
+  @media (max-width: 640px) {
+    .content-wrap { padding: 20px 13px 80px; }
+    .cover h1 { font-size: 2.1rem; }
+    .cover .desc { font-size: 0.86rem; }
+    .chapter-title { font-size: 1.28rem; }
+    .chapter h3 { font-size: 1.12rem; }
+    .chapter h4 { font-size: 1rem; }
+    .wx-meta { gap: 6px 10px; font-size: 0.7rem; }
+    .wx-meta__link { margin-left: 0; }
+    .follow-title { font-size: 1.05rem; }
+    .follow-pill { font-size: 0.66rem; }
+    #sidebar { width: min(84vw, 300px); }
+  }
 
   @media print {
     .gb-tabs, .gb-acc, .gb-card, .card-grid, .chapter-toc { break-inside: auto; }

@@ -8,19 +8,19 @@
 
   :root {
     /* 纸墨色系（避免纯黑纯白） */
-    --paper: #f6f4ec;
-    --paper-raised: #fcfbf5;
-    --ink: #272b25;
-    --ink-soft: #4d554c;
-    --ink-mute: #7c857b;
-    --hairline: #ddd8c8;
+    --paper: #f7f5f0;
+    --paper-raised: #fbfaf7;
+    --ink: #26242e;
+    --ink-soft: #4b4858;
+    --ink-mute: #7d7a8c;
+    --hairline: #dcd8e6;
     /* 品牌绿：仅用于章节号、规则线、链接等点睛处 */
-    --green-900: #0d3b2e;
-    --green-800: #145a43;
-    --green-700: #1a7050;
-    --green-600: #2d8c5e;
-    --green-200: #c9e4d2;
-    --green-100: #eaf3ec;
+    --green-900: #2b2260;
+    --green-800: #5246c8;
+    --green-700: #615ced;
+    --green-600: #7a6bf0;
+    --green-200: #dcd7f8;
+    --green-100: #f1effc;
     --rust: #9c4a2f;
     --gold: #8a6d1f;
     --sidebar-w: 300px;
@@ -44,7 +44,7 @@
   /* ========== 侧边栏（界面件，用无衬线） ========== */
   #sidebar {
     position: fixed; left: 0; top: 0; width: var(--sidebar-w); height: 100vh;
-    background: var(--green-900); color: #cfe3d6; overflow-y: auto;
+    background: var(--green-900); color: #d6d3f0; overflow-y: auto;
     z-index: 100; transition: transform 0.3s ease;
     font-family: var(--font-sans);
     scrollbar-width: thin; scrollbar-color: var(--green-700) var(--green-900);
@@ -63,7 +63,7 @@
     transition: background 0.15s, color 0.15s; line-height: 1.5;
   }
   .toc-item a:hover { background: rgba(246,244,236,0.07); color: #fff; }
-  .toc-item a.active { background: rgba(246,244,236,0.1); color: #fff; border-left-color: #8fd4a8; }
+  .toc-item a.active { background: rgba(246,244,236,0.1); color: #fff; border-left-color: #b9acf8; }
   .toc-item .toc-num { display: inline-block; width: 32px; color: rgba(246,244,236,0.38); font-size: 0.72rem; font-variant-numeric: tabular-nums; }
   .toc-part { padding: 18px 24px 6px; font-size: 0.64rem; letter-spacing: 0.2em; color: rgba(246,244,236,0.42); font-weight: 600; }
 
@@ -85,7 +85,7 @@
     border-bottom: 1px solid rgba(246,244,236,0.4); padding: 9px 6px; margin-bottom: 44px;
   }
   .cover h1 { font-family: var(--font-serif); font-size: clamp(2.6rem, 6vw, 3.9rem); font-weight: 900; letter-spacing: 0.05em; line-height: 1.2; }
-  .cover h1 .green { color: #a5d8b9; white-space: nowrap; }
+  .cover h1 .green { color: #b9acf8; white-space: nowrap; }
   .cover .tagline { font-size: 1.02rem; color: rgba(246,244,236,0.88); margin-top: 20px; letter-spacing: 0.14em; }
   .cover .desc { font-size: 0.86rem; color: rgba(246,244,236,0.6); max-width: 560px; line-height: 2.05; margin: 34px auto 0; text-align: center; }
   .cover .meta { margin-top: 52px; display: flex; justify-content: center; font-size: 0.74rem; color: rgba(246,244,236,0.55); border-top: 1px solid rgba(246,244,236,0.28); padding-top: 24px; font-family: var(--font-sans); }
@@ -268,7 +268,7 @@
     #page-footer::after { content: "第 " counter(page) " 页"; display: block; float: right; }
   }
   /* 公众号关注引导（吸粉转化点） */
-  .follow-cta{display:flex;gap:24px;align-items:center;justify-content:space-between;max-width:780px;margin:36px auto 0;padding:22px 26px;background:linear-gradient(135deg,#1E40AF,#0f2a6b);border-radius:14px;color:#f6f4ec;box-shadow:0 10px 30px rgba(30,64,175,.22)}
+  .follow-cta{display:flex;gap:24px;align-items:center;justify-content:space-between;max-width:780px;margin:36px auto 0;padding:22px 26px;background:linear-gradient(135deg,#615ced,#3b2e86);border-radius:14px;color:#f6f4ec;box-shadow:0 10px 30px rgba(97,92,237,.28)}
   .follow-cta .follow-title{font-family:var(--font-serif);font-size:1.22rem;font-weight:900;margin-bottom:8px}
   .follow-cta .follow-desc{font-family:var(--font-sans);font-size:.86rem;line-height:1.7;opacity:.92}
   .follow-cta .follow-actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
