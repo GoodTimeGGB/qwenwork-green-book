@@ -33,7 +33,7 @@ def _wm_svg() -> str:
     from urllib.parse import quote
     svg = (
         "<svg xmlns='http://www.w3.org/2000/svg' width='460' height='360'>"
-        "<text x='230' y='185' font-size='30' fill='rgb(110,102,200)' fill-opacity='0.055'"
+        "<text x='230' y='185' font-size='30' fill='rgb(0,144,57)' fill-opacity='0.055'"
         " text-anchor='middle' transform='rotate(-22 230 185)'"
         " font-family='Georgia,serif' font-weight='700' letter-spacing='8'>宁的AI小站</text>"
         "</svg>"
@@ -180,8 +180,8 @@ EXTRA_CSS = """
     background-image: __WM__; background-size: 460px 360px; }
   .follow-cta { display: flex; gap: 24px; align-items: center; justify-content: space-between;
     max-width: 780px; margin: 40px auto 8px; padding: 22px 26px;
-    background: linear-gradient(135deg, #615ced, #3b2e86); border-radius: 14px;
-    color: #f6f4ec; box-shadow: 0 10px 30px rgba(97,92,237,.28); }
+    background: linear-gradient(135deg, #009039, #007c30); border-radius: 14px;
+    color: #f5f8f4; box-shadow: 0 10px 30px rgba(0,144,57,.25); }
   .follow-cta .follow-title { font-family: var(--font-serif); font-size: 1.22rem; font-weight: 900; margin-bottom: 8px; }
   .follow-cta .follow-desc { font-family: var(--font-sans); font-size: .86rem; line-height: 1.7; opacity: .92; }
   .follow-cta .follow-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
