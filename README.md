@@ -45,6 +45,8 @@
     ├── crawl.py          # ① 读 llms.txt 索引 → 缓存 HTML → pages.json
     ├── transform.py      # ② bs4 语义化组件转换 → clean.json
     ├── build.py          # ③ 套用书页版式 → ../index.html
+    ├── crawl_wx.py       # ④ 抓微信公众号文章 → wx_articles.json（补充章节）
+    ├── wx_sources.txt    #    待抓取的公众号文章链接（一行一个）
     ├── shot.py           # ④ playwright 截图抽查
     ├── gb_style.css      # 参考站版式骨架备份
     ├── pages.json        # 抓取中间产物
@@ -60,9 +62,14 @@ playwright install chromium
 cd pipeline
 python crawl.py        # 抓取最新文档到 pipeline/raw/ 并生成 pages.json
 python transform.py    # 清洗为 clean.json
-python build.py        # 输出 ../index.html 与 ../千问办公绿皮书.html
+python crawl_wx.py     # （可选）抓取 wx_sources.txt 里的公众号文章
+python build.py        # 输出 ../index.html（公众号文章自动并成一章，图片 base64 内联）
 python shot.py         # 可选：截图抽查渲染效果
 ```
+
+**补充公众号文章**：把文章链接写进 `pipeline/wx_sources.txt`（或直接作为参数传入），运行 `python crawl_wx.py`。
+脚本会自动处理微信图片防盗链（带 Referer 下载）、把大 GIF 抽帧拼成静态网格图，产出 `wx_articles.json`；
+`build.py` 会把这些文章编成「官方实践案例」部分，图片转 base64 内联，保持单文件特性。
 
 `build.py` 里的 `BOOK` 常量控制章节编排顺序；`transform.py` 负责把官方渲染器的 callout / step / card / accordion / tab 组件转成书页版式对应的 `gb-*` 类。
 

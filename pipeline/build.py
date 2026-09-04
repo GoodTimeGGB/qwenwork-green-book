@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """把 clean.json 组装成单文件 HTML《千问办公绿皮书》"""
+import base64
 import html as html_mod
 import json
 import re
@@ -9,6 +10,10 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent
 CSS = (ROOT / "gb_style.css").read_text(encoding="utf-8")
+
+# 官方公众号补充文章（由 crawl_wx.py 产出）
+WX_FILE = ROOT / "wx_articles.json"
+WX_ARTICLES = json.loads(WX_FILE.read_text(encoding="utf-8")) if WX_FILE.exists() else []
 
 # 参考站 CSS 里写死的英文串，替换成千问办公
 CSS = CSS.replace("WORKBUDDY GREEN BOOK", "QWENWORK GREEN BOOK")
@@ -103,6 +108,37 @@ EXTRA_CSS = """
   /* 更新日志：按 new/opt/fix 归类 */
   .cl-group { margin: 14px 0 4px; font-family: var(--font-sans); font-size: 0.72rem;
     font-weight: 600; letter-spacing: 0.16em; color: var(--ink-mute); }
+
+  /* ========== 官方公众号补充文章 ========== */
+  .wx-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+    margin: 0 0 26px; padding-bottom: 12px; border-bottom: 1px solid var(--hairline);
+    font-family: var(--font-sans); font-size: 0.74rem; color: var(--ink-mute); }
+  .wx-meta__src { font-weight: 600; letter-spacing: 0.06em; color: var(--green-800); }
+  .wx-meta__src::before { content: "公众号 "; font-weight: 400; color: var(--ink-mute); }
+  .wx-meta__date::before { content: "发布 "; color: var(--ink-mute); }
+  .wx-meta__link { margin-left: auto; text-decoration: none; color: var(--ink-mute);
+    border-bottom: 1px solid var(--hairline); padding-bottom: 1px; }
+  .wx-meta__link:hover { color: var(--green-700); border-bottom-color: var(--green-700); }
+
+  .wx-eyebrow { display: inline-block; font-family: var(--font-sans); font-size: 0.66rem;
+    font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--green-800); color: #f6f4ec; padding: 4px 10px; margin: 0 0 18px; }
+
+  .wx-cover { margin: 0 0 24px; }
+  .wx-cover img { width: 100%; }
+
+  .chapter h3.wx-sec { display: flex; align-items: baseline; gap: 12px;
+    margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--hairline); }
+  .wx-sec__num { font-family: var(--font-sans); font-size: 1.5rem; font-weight: 700;
+    color: var(--green-800); line-height: 1; letter-spacing: -0.02em; }
+  .chapter h4.wx-sub { margin: 28px 0 10px; font-size: 1rem; color: var(--ink); }
+  .chapter h4.wx-sub::before { content: "▸ "; color: var(--green-700); }
+
+  .wx-hint { font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-mute);
+    letter-spacing: 0.08em; text-align: center; margin: 10px 0 20px; }
+  .wx-divider { width: 56px; height: 1px; background: var(--hairline); margin: 34px auto; }
+
+  figure.gb-fig img.wx-img { width: 100%; }
 
   @media print {
     .gb-tabs, .gb-acc, .gb-card, .card-grid, .chapter-toc { break-inside: auto; }
@@ -291,13 +327,57 @@ def render_release_notes(page: dict) -> str:
     return '<div class="changelog">' + "".join(out) + "</div>"
 
 
+def render_wx_article(a: dict) -> str:
+    """渲染一篇公众号文章：头图 + 来源信息条 + 正文。"""
+    head = ""
+    if a.get("cover_local"):
+        head = (f'<figure class="gb-fig wx-cover">'
+                f'<img class="wx-img" src="{esc(a["cover_local"])}" alt=""></figure>')
+    meta = (
+        f'<div class="wx-meta">'
+        f'<span class="wx-meta__src">{esc(a.get("author") or "千问办公")}</span>'
+        f'<span class="wx-meta__date">{esc(a.get("published", ""))}</span>'
+        f'<a class="wx-meta__link" href="{esc(a["url"])}" target="_blank" '
+        f'rel="noopener">在微信中查看原文 ↗</a>'
+        f'</div>')
+    return head + meta + a["content"]
+
+
+def inline_local_images(doc: str) -> str:
+    """把 wx_assets/ 下的图片内联成 base64，保住「单文件网页书」的特性。"""
+    def repl(m):
+        p = ROOT / m.group(1)
+        if not p.exists():
+            return m.group(0)
+        b64 = base64.b64encode(p.read_bytes()).decode("ascii")
+        return 'src="data:image/jpeg;base64,%s"' % b64
+
+    return re.sub(r'src="(wx_assets/[^"]+)"', repl, doc)
+
+
 # ---------------------------------------------------------------- 组装
 def main():
     pages = json.loads((ROOT / "clean.json").read_text(encoding="utf-8"))
     by_slug = {p["slug"]: p for p in pages}
 
+    # 公众号文章并入索引，标记为 kind="wx"
+    wx_chaps = []
+    for a in WX_ARTICLES:
+        by_slug[a["slug"]] = dict(a, kind="wx")
+        sub = a.get("desc") or ""
+        wx_chaps.append((a["slug"], a["title"],
+                         f'{a["published"]} · {sub[:26]}'.strip(" ·")))
+
     parts = list(BOOK) + [APPENDIX]
     n_parts = len(BOOK)
+    if wx_chaps:
+        # 插在「帮助与支持」之前，原本的支持部分顺延为第十二部分
+        parts.insert(len(BOOK) - 1,
+                     ("第十一部分", "OFFICIAL CASES",
+                      "官方公众号发布的实践案例与产品动态", wx_chaps))
+        sup = parts[len(BOOK)]
+        parts[len(BOOK)] = ("第十二部分", sup[1], sup[2], sup[3])
+        n_parts = len(BOOK) + 1
     used = set()
     chapters_html, toc_html = [], []
     idx = 0
@@ -326,6 +406,9 @@ def main():
             if page["kind"] == "release-notes":
                 content = render_release_notes(page)
                 toc = ""
+            elif page["kind"] == "wx":
+                content = render_wx_article(page)
+                toc = ""
             else:
                 soup = BeautifulSoup(page["content"], "lxml")
                 node = soup.select_one(".adoc-mdx-content")
@@ -337,8 +420,11 @@ def main():
 
             total_chars += len(re.sub(r"<[^>]+>", "", content))
             src = page["url"]
-            origin = (f'<p class="origin">原文出处：<a href="{esc(src)}" target="_blank" '
-                      f'rel="noopener">{esc(src)}</a></p>')
+            if page["kind"] == "wx":
+                origin = ""  # 出处已经显示在文章顶部的信息条里
+            else:
+                origin = (f'<p class="origin">原文出处：<a href="{esc(src)}" target="_blank" '
+                          f'rel="noopener">{esc(src)}</a></p>')
 
             chapters_html.append(f"""
 <section class="chapter" id="{anchor}">
@@ -363,6 +449,8 @@ def main():
         (p["content"] if isinstance(p["content"], str)
          else "".join(v["html"] for v in p["content"])).count("gb-fig")
         for p in pages)
+    meta_imgs += sum(a["content"].count("<img") + (1 if a.get("cover_local") else 0)
+                     for a in WX_ARTICLES)
 
     structure_rows = []
     for part_cn, part_en, part_desc, chaps in parts:
@@ -378,8 +466,9 @@ def main():
     <h1>千问办公 <span class="green">绿皮书</span></h1>
     <div class="tagline">不止于对话，更注重交付 · 一站式 AI 办公平台完全指南</div>
     <p class="desc">
-      一本覆盖产品简介、快速上手、安装部署、权益订阅、网页端与桌面端核心能力、企业管理与官方公告的千问办公完全手册。<br>
-      内容完整整理自千问办公官方知识库（qwenwork.cn/docs 与 docs.qwenwork.cn），
+      一本覆盖产品简介、快速上手、安装部署、权益订阅、网页端与桌面端核心能力、企业管理、官方公告与实战案例的千问办公完全手册。<br>
+      内容完整整理自千问办公官方知识库（qwenwork.cn/docs）、官方更新日志站（docs.qwenwork.cn）
+      与官方公众号「千问办公」的公开文章，
       含 {meta_chapters} 章正文、{meta_imgs} 张官方界面插图、全部客户端更新日志，结构与原文一致、可逐章对照查阅。<br>
       无论你是刚注册的新用户，还是想把 Agent 用进日常流程的老用户，都能在这里找到答案。
     </p>
@@ -399,18 +488,18 @@ def main():
     <h2 class="copyright-title">千问办公绿皮书</h2>
     <p class="copyright-sub">不止于对话，更注重交付 · 官方文档完全整理版</p>
     <div class="copyright-block">
-      <p><strong>内容来源</strong>　千问办公官方知识库（qwenwork.cn/docs）、官方更新日志站（docs.qwenwork.cn）</p>
+      <p><strong>内容来源</strong>　千问办公官方知识库（qwenwork.cn/docs）、官方更新日志站（docs.qwenwork.cn）、官方公众号「千问办公」</p>
       <p><strong>版本</strong>　v1.0 · 2026 年 9 月</p>
       <p><strong>篇幅</strong>　%d 大部分 · 1 附录 · %d 章 · 约 %d 页（网页版）</p>
       <p><strong>整理方式</strong>　官方文档结构化重排，保留原文表述、截图与操作步骤，未作主观增删</p>
     </div>
     <div class="copyright-block">
       <p class="cb-h">关于本书</p>
-      <p>千问办公的功能迭代很快，官方文档也在持续更新。本书把分散在两个官方站点上的 %d 篇文档，
-      按「认识产品 → 上手使用 → 安装获取 → 权益订阅 → 网页端 → 桌面端 → 通用扩展 → 工作台 → 企业管理 → 官方公告 → 帮助支持」的顺序重新编排，
+      <p>千问办公的功能迭代很快，官方文档也在持续更新。本书把分散在官方知识库、更新日志站与官方公众号上的 %d 篇内容，
+      按「认识产品 → 上手使用 → 安装获取 → 权益订阅 → 网页端 → 桌面端 → 通用扩展 → 工作台 → 企业管理 → 官方公告 → 实践案例 → 帮助支持」的顺序重新编排，
       让你可以像读一本书那样，从头到尾系统掌握这款产品。</p>
-      <p>每一章末尾都标注了<strong>原文出处链接</strong>，如需核对官方最新表述，点击即可跳转。
-      界面截图直接引用官方图床，与官网保持一致。</p>
+      <p>官方文档章节末尾标注了<strong>原文出处链接</strong>，公众号文章在开头标注了发布日期与原文地址，
+      如需核对官方最新表述，点击即可跳转。界面截图直接取自官方图床与官方推文，与官方发布保持一致。</p>
     </div>
     <div class="copyright-block">
       <p class="cb-h">版权与免责声明</p>
@@ -551,10 +640,13 @@ def main():
 </body>
 </html>
 """
-    out = ROOT.parent / "千问办公绿皮书.html"
+    doc = inline_local_images(doc)
+
+    out = ROOT.parent / "index.html"
     out.write_text(doc, encoding="utf-8")
     print("WROTE", out, "size(KB) =", round(out.stat().st_size / 1024))
-    print("chapters:", meta_chapters, "| chars:", total_chars, "| imgs:", meta_imgs)
+    print("chapters:", meta_chapters, "| chars:", total_chars, "| imgs:", meta_imgs,
+          "| wx:", len(WX_ARTICLES))
 
 
 if __name__ == "__main__":
