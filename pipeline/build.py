@@ -716,34 +716,46 @@ def main():
 </main>
 
 <script>
+  // ---- 性能优化：滚动事件合并到 rAF，目录高亮改用 IntersectionObserver ----
   const progressFill = document.getElementById('progressFill');
-  window.addEventListener('scroll', () => {{
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    progressFill.style.width = (scrollTop / Math.max(docHeight,1)) * 100 + '%';
-  }});
-  const tocLinks = document.querySelectorAll('.toc-item a');
-  const chapters = document.querySelectorAll('.chapter, .cover');
-  function updateActiveTOC() {{
-    let current = '';
-    chapters.forEach(ch => {{
-      if (window.pageYOffset >= ch.offsetTop - 100) current = ch.id;
-    }});
-    tocLinks.forEach(link => {{
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-    }});
+  let ticking = false;
+  function onScroll() {{
+    if (!ticking) {{
+      ticking = true;
+      requestAnimationFrame(() => {{
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        progressFill.style.width = (window.pageYOffset / Math.max(docHeight, 1)) * 100 + '%';
+        ticking = false;
+      }});
+    }}
   }}
-  window.addEventListener('scroll', updateActiveTOC);
+  window.addEventListener('scroll', onScroll, {{ passive: true }});
+
+  const tocLinks = document.querySelectorAll('.toc-item a');
+  const linkById = {{}};
+  tocLinks.forEach(link => linkById[link.getAttribute('href').slice(1)] = link);
+  const tocObserver = new IntersectionObserver(entries => {{
+    entries.forEach(e => {{
+      if (e.isIntersecting) {{
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const link = linkById[e.target.id];
+        if (link) link.classList.add('active');
+      }}
+    }});
+  }}, {{ rootMargin: '-10% 0px -80% 0px' }});
+  document.querySelectorAll('.chapter, .cover').forEach(ch => tocObserver.observe(ch));
+
   tocLinks.forEach(link => link.addEventListener('click', () => {{
     if (window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open');
   }}));
-  updateActiveTOC();
 </script>
 </body>
 </html>
 """
     doc = inline_local_images(doc)
+
+    # ---- 性能优化：图片懒加载 + 异步解码（base64 图解码延迟到接近视口时） ----
+    doc = doc.replace("<img ", '<img loading="lazy" decoding="async" ')
 
     out = ROOT.parent / "index.html"
     out.write_text(doc, encoding="utf-8")

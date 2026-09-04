@@ -95,7 +95,9 @@
   .cover .scroll-hint { position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.24em; color: rgba(246,244,236,0.42); }
 
   /* ========== 章节 ========== */
-  .chapter { margin-bottom: 76px; scroll-margin-top: 24px; }
+  .chapter { margin-bottom: 76px; scroll-margin-top: 24px;
+    /* 性能：视口外的章节跳过布局与绘制 */
+    content-visibility: auto; contain-intrinsic-size: auto 1400px; }
   .chapter-header { position: relative; margin-bottom: 32px; padding-bottom: 22px; border-bottom: 1px solid var(--hairline); }
   .chapter-header::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 68px; height: 3px; background: var(--green-800); }
   .chapter-num { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; color: var(--green-700); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 10px; }
@@ -249,7 +251,7 @@
     #main { margin-left: 0 !important; width: 100% !important; }
     .content-wrap { max-width: 100% !important; padding: 0 !important; }
     .cover { page-break-after: always; }
-    .chapter { page-break-before: always; page-break-after: always; }
+    .chapter { page-break-before: always; page-break-after: always; content-visibility: visible; }
     .part-break { page-break-before: always; page-break-after: always; padding: 38vh 0; }
     pre, table, .card, .card-grid, .compare-box, blockquote,
     .callout, img, figure, .timeline, .meta, .chapter-header,
