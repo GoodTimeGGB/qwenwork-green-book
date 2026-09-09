@@ -1,159 +1,190 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>千问办公绿皮书 · GoodTime</title>
-<meta content="通义千问办公自动化指南，用国产大模型重塑日常办公流。" name="description"/>
-<link href="../assets/CodeBuddyAssets/1_3/24.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../style.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<style>
-    /* 绿皮书落地页补充样式 */
-    .section-lead{margin:-8px 0 22px;color:var(--text-secondary,rgba(0,0,0,.6));font-size:15px;line-height:1.7}
-    .stat-row{display:flex;flex-wrap:wrap;gap:14px 34px;justify-content:center;margin-top:34px}
-    .stat{display:flex;flex-direction:column;align-items:center;gap:2px}
-    .stat-num{font-size:26px;font-weight:700;line-height:1.1;color:var(--text-primary,rgba(0,0,0,.9))}
-    .stat-label{font-size:13px;color:var(--text-secondary,rgba(0,0,0,.55))}
-    .toc-groups{display:flex;flex-direction:column;gap:18px}
-    .toc-group{border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.6)}
-    .toc-group-title{font-size:15px;font-weight:600;margin-bottom:12px;color:var(--text-primary,rgba(0,0,0,.88))}
-    .toc-group-items{display:flex;flex-wrap:wrap;gap:8px}
-    .toc-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
-      border:1px solid rgba(0,0,0,.1);background:#fff;font-size:13px;line-height:1.5;
-      color:var(--text-primary,rgba(0,0,0,.82));text-decoration:none;transition:.18s}
-    .toc-chip:hover{border-color:#1d7eff;color:#1d7eff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(29,126,255,.14)}
-    .toc-chip .toc-num{font-variant-numeric:tabular-nums;font-size:11px;font-weight:700;
-      color:#1d7eff;background:rgba(29,126,255,.1);border-radius:4px;padding:1px 5px}
-    .toc-chip .toc-text{white-space:nowrap}
-    @media (max-width:640px){.toc-chip .toc-text{white-space:normal}}
-  </style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>千问办公绿皮书 · GoodTime</title>
+  <meta name="description" content="通义千问办公自动化指南，用国产大模型重塑日常办公流。">
+  <link rel="icon" type="image/png" href="../assets/CodeBuddyAssets/1_3/24.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- 千问办公 logo 主题色覆盖（仅本页生效）：主绿 #009039 / 亮绿 #42D87E / 深绿 #007C30 -->
+  <style id="qwen-theme">
+    :root {
+      --green:      #009039;
+      --green-soft: #E9F7EE;
+      --green-glow: rgba(0, 144, 57, 0.10);
+      --accent:     #007C30;
+      --accent-soft:#E8F5EE;
+    }
+    .bg-glow--1 { background: rgba(0, 144, 57, 0.08); }
+    .bg-glow--2 { background: rgba(66, 216, 126, 0.07); }
+    .bg-glow--3 { background: rgba(0, 144, 57, 0.06); }
+    .btn-primary { background: #009039; }
+    .btn-primary:hover { background: #007C30; box-shadow: 0 12px 28px -6px rgba(0, 144, 57, 0.35); }
+    .subpage-nav .nav-back { border-color: rgba(0, 144, 57, 0.18); }
+    .subpage-nav .nav-back:hover { background: rgba(0, 144, 57, 0.15); border-color: rgba(0, 144, 57, 0.3); }
+    .tool-hero-badge { border-color: rgba(0, 144, 57, 0.18); }
+    .tool-hero-badge:hover { background: rgba(0, 144, 57, 0.15); border-color: rgba(0, 144, 57, 0.3); }
+    .toc-num { border-color: rgba(0, 144, 57, 0.15); }
+    .tool-cta { border-color: rgba(0, 144, 57, 0.15); }
+  </style>
+</head>
 <body>
-<!-- 站点防护：限制查看源码 / 开发者工具 / 复制 / 保存 -->
-<script src="../guard.js"></script>
-<div aria-hidden="true" class="bg-decor">
-<div class="bg-dots"></div>
-<div class="bg-glow bg-glow--1"></div>
-<div class="bg-glow bg-glow--2"></div>
-</div>
-<nav class="subpage-nav">
-<a class="nav-brand" href="../index.html">
-<img alt="GoodTime" src="../assets/CodeBuddyAssets/1_3/24.png"/>
-<span>GoodTime</span>
-</a>
-<a class="nav-back" href="../index.html#tools">
-<span>←</span>
-<span>返回主页</span>
-</a>
-</nav>
-<main class="subpage">
-<section class="tool-hero"><span class="tool-hero-badge">
-<img alt="" src="../assets/CodeBuddyAssets/1_3/1.svg" style="width:15px;height:15px;"/>
-<span>官方文档完全整理版 · v1.0</span>
-</span>
-<h1>千问办公绿皮书</h1>
-<p class="tool-tagline">
-        把千问办公官方知识库、更新日志站与官方公众号的 48 篇内容重新编排成一本书：从认识产品到企业管理，
-        从网页端到桌面端再到实战案例，章节顺序即学习路径。保留 126 张官方截图、96 张对照表、75 段配置代码。
-      </p>
-<div class="tool-hero-actions">
-<a class="btn-primary" data-book-link="" href="https://goodtimeggb.github.io/qwenwork-green-book/" rel="noopener" target="_blank">
-<span>开始在线阅读</span>
-</a>
-<a class="btn-ghost" href="#toc">
-<span>查看完整目录</span>
-</a>
-</div>
-<div class="stat-row">
-<div class="stat"><span class="stat-num">48</span><span class="stat-label">篇官方内容</span></div><div class="stat"><span class="stat-num">12</span><span class="stat-label">大部分</span></div><div class="stat"><span class="stat-num">126</span><span class="stat-label">张界面截图</span></div><div class="stat"><span class="stat-num">96</span><span class="stat-label">张对照表</span></div>
-</div></section>
-<section class="tool-section" id="toc"><h2>全书目录</h2><p class="section-lead">12 大部分 + 1 附录，共 48 章（含官方公众号实践案例）。点击任意章节直接跳转到该章。</p><div class="toc-groups"><div class="toc-group"><div class="toc-group-title">第一部分 · 认识千问办公</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-product-introduction" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-product-introduction" rel="noopener" target="_blank"><span class="toc-num">01</span><span class="toc-text">认识千问办公</span></a></div></div><div class="toc-group"><div class="toc-group-title">第二部分 · 从零开始</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-getting-started-usage-entry" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-usage-entry" rel="noopener" target="_blank"><span class="toc-num">02</span><span class="toc-text">快速开始</span></a><a class="toc-chip" data-book-link="#doc-getting-started-basic-workflow" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-basic-workflow" rel="noopener" target="_blank"><span class="toc-num">03</span><span class="toc-text">网页端使用链路</span></a><a class="toc-chip" data-book-link="#doc-getting-started-desktop-workflow" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-desktop-workflow" rel="noopener" target="_blank"><span class="toc-num">04</span><span class="toc-text">桌面端使用链路</span></a><a class="toc-chip" data-book-link="#doc-getting-started-general-settings" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-general-settings" rel="noopener" target="_blank"><span class="toc-num">05</span><span class="toc-text">通用设置</span></a></div></div><div class="toc-group"><div class="toc-group-title">第三部分 · 安装部署与订阅获取</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-install-macos" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-install-macos" rel="noopener" target="_blank"><span class="toc-num">06</span><span class="toc-text">macOS 安装指南</span></a><a class="toc-chip" data-book-link="#doc-install-windows" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-install-windows" rel="noopener" target="_blank"><span class="toc-num">07</span><span class="toc-text">Windows 安装指南</span></a><a class="toc-chip" data-book-link="#doc-install-harmonyos" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-install-harmonyos" rel="noopener" target="_blank"><span class="toc-num">08</span><span class="toc-text">HarmonyOS 安装指南</span></a><a class="toc-chip" data-book-link="#doc-getting-started-source-intro" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-source-intro" rel="noopener" target="_blank"><span class="toc-num">09</span><span class="toc-text">阿里云官网购买</span></a><a class="toc-chip" data-book-link="#doc-getting-started-privacy-security" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-getting-started-privacy-security" rel="noopener" target="_blank"><span class="toc-num">10</span><span class="toc-text">隐私与安全</span></a></div></div><div class="toc-group"><div class="toc-group-title">第四部分 · 个人版与企业版权益、套餐升降级规则</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-benefits" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-benefits" rel="noopener" target="_blank"><span class="toc-num">11</span><span class="toc-text">产品权益总览</span></a><a class="toc-chip" data-book-link="#doc-benefits-personal" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-benefits-personal" rel="noopener" target="_blank"><span class="toc-num">12</span><span class="toc-text">个人版权益</span></a><a class="toc-chip" data-book-link="#doc-benefits-plan-upgrade-downgrade" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-benefits-plan-upgrade-downgrade" rel="noopener" target="_blank"><span class="toc-num">13</span><span class="toc-text">套餐升降级策略</span></a></div></div><div class="toc-group"><div class="toc-group-title">第五部分 · 网页端</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-web" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-web" rel="noopener" target="_blank"><span class="toc-num">14</span><span class="toc-text">网页端核心功能概览</span></a><a class="toc-chip" data-book-link="#doc-web-platform" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-web-platform" rel="noopener" target="_blank"><span class="toc-num">15</span><span class="toc-text">平台功能</span></a><a class="toc-chip" data-book-link="#doc-web-pages" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-web-pages" rel="noopener" target="_blank"><span class="toc-num">16</span><span class="toc-text">我的网页</span></a><a class="toc-chip" data-book-link="#doc-web-personal-drive" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-web-personal-drive" rel="noopener" target="_blank"><span class="toc-num">17</span><span class="toc-text">个人网盘</span></a><a class="toc-chip" data-book-link="#doc-web-scheduled-tasks" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-web-scheduled-tasks" rel="noopener" target="_blank"><span class="toc-num">18</span><span class="toc-text">网页端定时任务</span></a><a class="toc-chip" data-book-link="#doc-features-extensions" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-features-extensions" rel="noopener" target="_blank"><span class="toc-num">19</span><span class="toc-text">扩展：专家套件、技能与连接器</span></a></div></div><div class="toc-group"><div class="toc-group-title">第六部分 · 桌面端</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-desktop" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop" rel="noopener" target="_blank"><span class="toc-num">20</span><span class="toc-text">桌面端核心功能概览</span></a><a class="toc-chip" data-book-link="#doc-desktop-settings" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-settings" rel="noopener" target="_blank"><span class="toc-num">21</span><span class="toc-text">系统设置</span></a><a class="toc-chip" data-book-link="#doc-desktop-memory" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-memory" rel="noopener" target="_blank"><span class="toc-num">22</span><span class="toc-text">意识</span></a><a class="toc-chip" data-book-link="#doc-desktop-app-snapshots" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-app-snapshots" rel="noopener" target="_blank"><span class="toc-num">23</span><span class="toc-text">应用快照</span></a><a class="toc-chip" data-book-link="#doc-desktop-computer-use" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-computer-use" rel="noopener" target="_blank"><span class="toc-num">24</span><span class="toc-text">电脑操控</span></a><a class="toc-chip" data-book-link="#doc-desktop-im-channels" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-im-channels" rel="noopener" target="_blank"><span class="toc-num">25</span><span class="toc-text">IM 频道</span></a><a class="toc-chip" data-book-link="#doc-desktop-scheduled-tasks" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-scheduled-tasks" rel="noopener" target="_blank"><span class="toc-num">26</span><span class="toc-text">桌面端定时任务</span></a><a class="toc-chip" data-book-link="#doc-desktop-hooks" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-hooks" rel="noopener" target="_blank"><span class="toc-num">27</span><span class="toc-text">Hooks</span></a><a class="toc-chip" data-book-link="#doc-desktop-expert-kits" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-expert-kits" rel="noopener" target="_blank"><span class="toc-num">28</span><span class="toc-text">专家套件</span></a></div></div><div class="toc-group"><div class="toc-group-title">第七部分 · 模型选择、语音输入、技能与连接器</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-features-model-selection" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-features-model-selection" rel="noopener" target="_blank"><span class="toc-num">29</span><span class="toc-text">网页端模型选择</span></a><a class="toc-chip" data-book-link="#doc-desktop-model-selection" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-desktop-model-selection" rel="noopener" target="_blank"><span class="toc-num">30</span><span class="toc-text">桌面端模型选择</span></a><a class="toc-chip" data-book-link="#doc-features-voice-input" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-features-voice-input" rel="noopener" target="_blank"><span class="toc-num">31</span><span class="toc-text">语音输入</span></a><a class="toc-chip" data-book-link="#doc-features-skills" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-features-skills" rel="noopener" target="_blank"><span class="toc-num">32</span><span class="toc-text">技能</span></a><a class="toc-chip" data-book-link="#doc-features-connectors" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-features-connectors" rel="noopener" target="_blank"><span class="toc-num">33</span><span class="toc-text">连接器</span></a></div></div><div class="toc-group"><div class="toc-group-title">第八部分 · 三大工作台</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-workspaces-design" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-workspaces-design" rel="noopener" target="_blank"><span class="toc-num">34</span><span class="toc-text">工作台 · 设计</span></a><a class="toc-chip" data-book-link="#doc-workspaces-slides" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-workspaces-slides" rel="noopener" target="_blank"><span class="toc-num">35</span><span class="toc-text">工作台 · 幻灯片</span></a><a class="toc-chip" data-book-link="#doc-workspaces-writing" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-workspaces-writing" rel="noopener" target="_blank"><span class="toc-num">36</span><span class="toc-text">工作台 · 写作</span></a></div></div><div class="toc-group"><div class="toc-group-title">第九部分 · 企业管理后台、单点登录与成员治理</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-enterprise-admin" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-enterprise-admin" rel="noopener" target="_blank"><span class="toc-num">37</span><span class="toc-text">企业管理后台</span></a><a class="toc-chip" data-book-link="#doc-enterprise-sso" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-enterprise-sso" rel="noopener" target="_blank"><span class="toc-num">38</span><span class="toc-text">SSO 单点登录</span></a><a class="toc-chip" data-book-link="#doc-enterprise-credits" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-enterprise-credits" rel="noopener" target="_blank"><span class="toc-num">39</span><span class="toc-text">积分管理</span></a><a class="toc-chip" data-book-link="#doc-enterprise-members" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-enterprise-members" rel="noopener" target="_blank"><span class="toc-num">40</span><span class="toc-text">成员管理</span></a></div></div><div class="toc-group"><div class="toc-group-title">第十部分 · 官方上线公告与模型活动</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-activity-qwen3.8-max-update" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-activity-qwen3.8-max-update" rel="noopener" target="_blank"><span class="toc-num">41</span><span class="toc-text">千问办公正式上线</span></a><a class="toc-chip" data-book-link="#doc-docs-activity-glm-5.3-launch" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-docs-activity-glm-5.3-launch" rel="noopener" target="_blank"><span class="toc-num">42</span><span class="toc-text">GLM-5.3 上线</span></a><a class="toc-chip" data-book-link="#doc-docs-activity-deepseek-v4-pro-member-unlimited" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-docs-activity-deepseek-v4-pro-member-unlimited" rel="noopener" target="_blank"><span class="toc-num">43</span><span class="toc-text">DeepSeek V4 Pro 会员不限量</span></a></div></div><div class="toc-group"><div class="toc-group-title">第十一部分 · 官方公众号发布的实践案例与产品动态</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-wx-a8c99c3617" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-wx-a8c99c3617" rel="noopener" target="_blank"><span class="toc-num">44</span><span class="toc-text">千问办公，能搭企业级应用了</span></a></div></div><div class="toc-group"><div class="toc-group-title">第十二部分 · 遇到问题时，怎么反馈、怎么提问、去哪查</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-feedback" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-feedback" rel="noopener" target="_blank"><span class="toc-num">45</span><span class="toc-text">问题反馈</span></a><a class="toc-chip" data-book-link="#doc-feedback-how-to-ask" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-feedback-how-to-ask" rel="noopener" target="_blank"><span class="toc-num">46</span><span class="toc-text">提问指南</span></a><a class="toc-chip" data-book-link="#doc-faq" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-faq" rel="noopener" target="_blank"><span class="toc-num">47</span><span class="toc-text">常见问题</span></a></div></div><div class="toc-group"><div class="toc-group-title">附录 A · 客户端更新日志</div><div class="toc-group-items"><a class="toc-chip" data-book-link="#doc-release-notes-desktop" href="https://goodtimeggb.github.io/qwenwork-green-book/#doc-release-notes-desktop" rel="noopener" target="_blank"><span class="toc-num">48</span><span class="toc-text">客户端更新日志</span></a></div></div></div></section>
-<section class="tool-section"><h2>这本书做了什么</h2>
-<div class="feature-grid">
-<div class="feature-card">
-<div class="feature-icon">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
-</div>
-<h3>全量收录，不做删减</h3>
-<p>48 篇官方文档与公众号文章逐篇抓取，正文、表格、代码块、界面截图完整保留，附原文出处链接可回溯核对。</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="8" x2="21" y1="6" y2="6"></line><line x1="8" x2="21" y1="12" y2="12"></line><line x1="8" x2="21" y1="18" y2="18"></line><line x1="3" x2="3.01" y1="6" y2="6"></line><line x1="3" x2="3.01" y1="12" y2="12"></line><line x1="3" x2="3.01" y1="18" y2="18"></line></svg>
-</div>
-<h3>按学习路径重排</h3>
-<p>打破官网的平铺结构，改成「认识产品 → 上手 → 安装 → 权益 → 网页端 → 桌面端 → 扩展 → 工作台 → 企业管理 → 实战案例」的递进顺序。</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg>
-</div>
-<h3>96 张对照表直接查</h3>
-<p>权益对比、套餐升降级规则、参数说明、快捷键清单——原本散落在各页的表格全部保留，按章节归位。</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><path d="M6 14h12v8H6z"></path></svg>
-</div>
-<h3>可打印成册</h3>
-<p>内置 A4 出书排版，Ctrl/Cmd + P 直接导出带页码和页眉的 PDF，也支持整站离线保存为单个 HTML 文件。</p>
-</div>
-</div></section>
-<section class="tool-section"><h2>适合谁阅读</h2>
-<div class="spec-list">
-<div class="spec-item">
-<span class="spec-icon">1</span>
-<div>
-<h4>刚上手的个人用户</h4>
-<p>按第二部分「从零开始」走一遍，选入口、装客户端、跑通第一个任务，半小时能独立使用。</p>
-</div>
-</div>
-<div class="spec-item">
-<span class="spec-icon">2</span>
-<div>
-<h4>要选套餐、管成本的人</h4>
-<p>第四部分把个人版/企业版权益和升降级规则讲透，附官方对照表，避免买错档位。</p>
-</div>
-</div>
-<div class="spec-item">
-<span class="spec-icon">3</span>
-<div>
-<h4>企业管理员与 IT 负责人</h4>
-<p>第九部分覆盖管理后台、单点登录与成员治理；附录提供 1.0.0 → 1.0.2 全量更新日志，便于评估升级影响。</p>
-</div>
-</div>
-</div></section>
-<section class="tool-cta" id="cta"><h2>直接打开，无需注册</h2>
-<p>48 章 · 12 大部分 · 保留官方原文与全部截图 · 支持打印导出 PDF</p>
-<a class="btn-primary" data-book-link="" href="https://goodtimeggb.github.io/qwenwork-green-book/" rel="noopener" target="_blank">
-<span>打开《千问办公绿皮书》</span>
-</a></section>
-</main>
-<!-- 底部：备案 + 版权 -->
-<footer class="site-footer">
-<div class="site-footer-inner">
-<div class="footer-copy">
+
+  <!-- 站点防护：限制查看源码 / 开发者工具 / 复制 / 保存 -->
+  <script src="../guard.js"></script>
+
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-dots"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+  </div>
+
+  <nav class="subpage-nav">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/CodeBuddyAssets/1_3/24.png" alt="GoodTime">
+      <span>GoodTime</span>
+    </a>
+    <a href="../index.html#tools" class="nav-back">
+      <span>←</span>
+      <span>返回主页</span>
+    </a>
+  </nav>
+
+  <main class="subpage">
+
+    <section class="tool-hero">
+      <span class="tool-hero-badge">
+        <img src="../assets/CodeBuddyAssets/1_3/1.svg" alt="" style="width:15px;height:15px;">
+        <span>电子书 · 国产大模型实践</span>
+      </span>
+      <h1>千问办公绿皮书</h1>
+      <p class="tool-tagline">通义千问办公自动化指南 —— 用国产大模型重塑日常办公流。从文档撰写到数据分析，从会议纪要到项目复盘，全面提效。</p>
+      <div class="tool-hero-actions">
+        <a href="#cta" class="btn-primary">
+          <span>在线阅读</span>
+        </a>
+        <a href="#toc" class="btn-ghost">
+          <span>查看目录</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="tool-section" id="toc">
+      <h2>本书目录</h2>
+      <div class="toc">
+        <div class="toc-item"><span class="toc-num">01</span><span>认识通义千问：国产大模型能力全景</span></div>
+        <div class="toc-item"><span class="toc-num">02</span><span>账号与工作台：3 分钟开始使用</span></div>
+        <div class="toc-item"><span class="toc-num">03</span><span>文档撰写：周报、邮件、通知一键生成</span></div>
+        <div class="toc-item"><span class="toc-num">04</span><span>数据分析：用自然语言驱动 Excel 处理</span></div>
+        <div class="toc-item"><span class="toc-num">05</span><span>会议纪要：录音转写 + AI 总结</span></div>
+        <div class="toc-item"><span class="toc-num">06</span><span>PPT 大纲：5 分钟生成汇报框架</span></div>
+        <div class="toc-item"><span class="toc-num">07</span><span>翻译润色：公文级的中英互译</span></div>
+        <div class="toc-item"><span class="toc-num">08</span><span>知识管理：搭建个人 AI 知识库</span></div>
+        <div class="toc-item"><span class="toc-num">09</span><span>API 集成：把千问接入你的工作流</span></div>
+        <div class="toc-item"><span class="toc-num">10</span><span>附录：常用 Prompt 模板集</span></div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <h2>本书亮点</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>本地化优势</h3>
+          <p>聚焦国产大模型，针对中文办公场景深度优化。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3>场景化模板</h3>
+          <p>50+ 即用即取的工作场景 Prompt 模板。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>团队推广</h3>
+          <p>附团队落地方法论，让 AI 工具在组织内真正运转。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>API 实战</h3>
+          <p>从浏览器到 API 集成，全链路打通你的工作流。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <h2>适合谁阅读</h2>
+      <div class="spec-list">
+        <div class="spec-item">
+          <span class="spec-icon">1</span>
+          <div>
+            <h4>日常办公族</h4>
+            <p>需要处理大量文档、邮件、表格，希望提升效率。</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">2</span>
+          <div>
+            <h4>管理者与项目负责人</h4>
+            <p>需要快速产出周报、会议纪要、复盘文档。</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">3</span>
+          <div>
+            <h4>数字化转型负责人</h4>
+            <p>希望把 AI 工具系统化引入团队，提升组织效能。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-cta" id="cta">
+      <h2>用国产大模型重塑你的办公流</h2>
+      <p>50+ 工作场景 Prompt 模板 + 10 章系统讲解，覆盖千问办公全场景</p>
+      <a href="https://qwenwork-green-book.wangjn.site/" target="_blank" rel="noopener" class="btn-primary">
+        <span>查看绿皮书完整版</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- 底部：备案 + 版权 -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-copy">
         © <span class="footer-year">2026</span> Ning's AI Hub · 宁的AI小站 · All Rights Reserved
       </div>
-<div class="footer-beian">
-<a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2025186274号</a>
-</div>
-</div>
-</footer>
-<!-- 百度统计（流量来源、停留、转化等专业分析，免费，前台不展示数字） -->
-<!-- 访客/浏览量数据请登录 https://tongji.baidu.com 查看后台报表 -->
-<!-- footer 版权年份自动计算 -->
-<script>
+      <div class="footer-beian">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">浙ICP备2025186274号</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 百度统计（流量来源、停留、转化等专业分析，免费，前台不展示数字） -->
+  <!-- 访客/浏览量数据请登录 https://tongji.baidu.com 查看后台报表 -->
+
+  <!-- footer 版权年份自动计算 -->
+  <script>
     document.querySelectorAll('.footer-year').forEach(function (el) {
       el.textContent = new Date().getFullYear();
     });
   </script>
-<!-- 百度统计（流量来源、停留、转化等专业分析，免费） -->
-<script>
+
+  <!-- 百度统计（流量来源、停留、转化等专业分析，免费） -->
+  <script>
   var _hmt = _hmt || [];
   (function() {
     var hm = document.createElement("script");
@@ -162,13 +193,6 @@
     s.parentNode.insertBefore(hm, s);
   })();
   </script>
-<!-- 绿皮书线上地址：绑定自定义域名后只需修改下面的 BOOK_URL -->
-<script>
-    var BOOK_URL = "https://goodtimeggb.github.io/qwenwork-green-book/";
-    (function () {
-      document.querySelectorAll('[data-book-link]').forEach(function (a) {
-        a.href = BOOK_URL + (a.getAttribute('data-book-link') || '');
-      });
-    })();
-  </script></body>
+
+</body>
 </html>
