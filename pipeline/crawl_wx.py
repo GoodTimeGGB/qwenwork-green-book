@@ -20,6 +20,7 @@ import datetime
 import hashlib
 import io
 import json
+import os
 import re
 import sys
 import time
@@ -40,7 +41,11 @@ UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.
 REFERER = "https://mp.weixin.qq.com/"
 
 # 内联体积预算：超过就抽帧/压缩
-MAX_INLINE_BYTES = 260 * 1024
+# 多篇文章合入书本时体积会线性叠加，可用环境变量调紧：
+#   WX_MAX_KB   单图字节上限（KB，默认 260）
+#   WX_MAX_W    图片最大宽度（像素，默认 820）
+MAX_INLINE_BYTES = int(float(os.environ.get("WX_MAX_KB", "260")) * 1024)
+MAX_WIDTH = int(os.environ.get("WX_MAX_W", "820"))
 GIF_MAX_FRAMES = 6
 
 
@@ -82,6 +87,10 @@ def extract_meta(html: str, url: str) -> dict:
     desc = var("msg_desc") or meta_prop("og:description")
     cover = var("msg_cdn_url") or meta_prop("og:image")
     author = meta_prop("og:article:author") or var("author") or "千问办公"
+    # 搜狗等中转链接带时效签名，优先用页面里的规范链接（__biz+mid+idx+sn）
+    canon = (var("msg_link") or "").replace("&amp;", "&").strip()
+    if canon.startswith("http"):
+        url = canon
     return {
         "title": title or "（无标题）",
         "desc": desc,
@@ -94,8 +103,17 @@ def extract_meta(html: str, url: str) -> dict:
 
 
 def extract_content_div(html: str) -> str:
-    """截取 #js_content 的正文片段（从该标签的 '>' 之后开始，避免残留裸属性文本）。"""
+    """截取 #js_content 的正文片段（从该标签的 '>' 之后开始，避免残留裸属性文本）。
+
+    贴图类消息（图片消息）没有 #js_content，退回 js_image_content 等容器。
+    """
     i = html.find('id="js_content"')
+    if i < 0:
+        for alt in ('id="js_image_content"', 'id="js_article"', 'class="rich_media_content'):
+            j = html.find(alt)
+            if j >= 0:
+                i = j
+                break
     if i < 0:
         return ""
     gt = html.find(">", i)
@@ -104,11 +122,10 @@ def extract_content_div(html: str) -> str:
     seg = html[gt + 1:]
     end = -1
     for mark in ('id="js_pc_qr_code"', 'id="content_bottom_area"', 'id="js_related"',
-                 'id="js_profile_qrcode"'):
+                 'id="js_profile_qrcode"', 'id="js_image_content_end"'):
         j = seg.find(mark)
-        if j > 0:
+        if j > 0 and (end < 0 or j < end):
             end = j
-            break
     return seg[:end] if end > 0 else seg[:400_000]
 
 
@@ -141,10 +158,10 @@ def compress_image(data: bytes, src_url: str, max_bytes: int = MAX_INLINE_BYTES)
     if im.mode not in ("RGB", "L"):
         im = im.convert("RGB")
 
-    # 限制最大宽度，公众号图普遍 1080 宽，缩到 820 足够印刷阅读
-    if im.width > 820:
-        h = int(im.height * 820 / im.width)
-        im = im.resize((820, h), Image.LANCZOS)
+    # 限制最大宽度，公众号图普遍 1080 宽，缩到 MAX_WIDTH 足够阅读
+    if im.width > MAX_WIDTH:
+        h = int(im.height * MAX_WIDTH / im.width)
+        im = im.resize((MAX_WIDTH, h), Image.LANCZOS)
 
     quality = 86
     while quality >= 55:
@@ -360,6 +377,20 @@ def process(url: str, idx: int, cache: dict) -> dict:
 
     blocks = clean_content(extract_content_div(html), cache, log)
 
+    # 贴图类消息兜底：正文容器拿不到内容时，把整页的 mmbiz 图片按顺序收进来
+    if not blocks:
+        log.append("  正文为空，按图片消息处理")
+        soup = BeautifulSoup(html, "lxml")
+        imgs = []
+        for im in soup.find_all("img"):
+            src = im.get("data-src") or im.get("src") or ""
+            if "mmbiz" in src:
+                imgs.append(("img", src))
+        if imgs:
+            fake = BeautifulSoup('<div id="js_content">' + "".join(
+                '<p><img data-src="%s"></p>' % s for _, s in imgs) + "</div>", "lxml")
+            blocks = clean_content(str(fake), cache, log)
+
     # 首段之前插入导语卡
     body = blocks_to_html(blocks)
 
@@ -369,7 +400,7 @@ def process(url: str, idx: int, cache: dict) -> dict:
         try:
             if key not in cache:
                 raw = fetch_bytes(meta["cover"])
-                small = compress_image(raw, meta["cover"], 120 * 1024)
+                small = compress_image(raw, meta["cover"], max(45 * 1024, min(120 * 1024, MAX_INLINE_BYTES)))
                 name = hashlib.md5(key.encode()).hexdigest()[:12] + ".jpg"
                 (ASSET_DIR / name).write_bytes(small)
                 cache[key] = "wx_assets/" + name

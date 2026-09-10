@@ -374,6 +374,26 @@ def build_chapter_toc(soup: BeautifulSoup, prefix: str):
             f'<ol>{"".join(lis)}</ol></div>')
 
 
+def add_wx_toc(content: str, prefix: str):
+    """给公众号文章的小节标题加锚点并生成章内导航（小节≥3 才生成）"""
+    heads = re.findall(r'<(h3|h4) class="(wx-sec|wx-sub)">(.*?)</\1>', content, re.S)
+    if len(heads) < 3:
+        return content, ""
+    items = []
+    for i, (tag, cls, inner) in enumerate(heads, 1):
+        hid = f"{prefix}-s{i}"
+        old = f'<{tag} class="{cls}">{inner}</{tag}>'
+        if old in content:
+            content = content.replace(
+                old, f'<{tag} class="{cls}" id="{hid}">{inner}</{tag}>', 1)
+        items.append((tag, re.sub(r"<[^>]+>", "", inner).strip(), hid))
+    lis = "".join(
+        f'<li class="{"sub" if t == "h4" else ""}"><a href="#{h}">{esc(x)}</a></li>'
+        for t, x, h in items)
+    return content, ('<div class="chapter-toc"><div class="ct-h">本篇导航</div>'
+                     f'<ol>{lis}</ol></div>')
+
+
 CLS_MAP = [
     (("产品功能更新", "新功能", "功能更新", "新增"), "new"),
     (("体验优化", "优化", "改进"), "opt"),
@@ -506,7 +526,7 @@ def main():
                 toc = ""
             elif page["kind"] == "wx":
                 content = render_wx_article(page)
-                toc = ""
+                content, toc = add_wx_toc(content, sid)
             else:
                 soup = BeautifulSoup(page["content"], "lxml")
                 node = soup.select_one(".adoc-mdx-content")
