@@ -374,11 +374,25 @@ def build_chapter_toc(soup: BeautifulSoup, prefix: str):
             f'<ol>{"".join(lis)}</ol></div>')
 
 
+DECOR_CHARS = "·•∙‧・↓↑↕⬇⬆➡⬅→←—–-_~,、|｜/\\ \u00a0\u200b"
+
+
 def add_wx_toc(content: str, prefix: str):
-    """给公众号文章的小节标题加锚点并生成章内导航（小节≥3 才生成）"""
+    """给公众号文章的小节标题加锚点并生成章内导航。
+
+    公众号原文里的 h3/h4 常混入装饰元素：孤立的箭头（↓ / ↕）、点线分隔
+    （· · · · · ·）、UI 提示语（"提示词较长，可上下滑动查看全文"）。
+    这些直接进导航会很丑，因此：所有标题都加锚点（保证正文跳转不断），
+    但只有「有实际语义」的小节才收录进导航，并对前导装饰符做清理。
+    """
     heads = re.findall(r'<(h3|h4) class="(wx-sec|wx-sub)">(.*?)</\1>', content, re.S)
     if len(heads) < 3:
         return content, ""
+
+    def plain(inner: str) -> str:
+        txt = html_mod.unescape(re.sub(r"<[^>]+>", "", inner))
+        return re.sub(r"\s+", " ", txt).strip()
+
     items = []
     for i, (tag, cls, inner) in enumerate(heads, 1):
         hid = f"{prefix}-s{i}"
@@ -386,9 +400,23 @@ def add_wx_toc(content: str, prefix: str):
         if old in content:
             content = content.replace(
                 old, f'<{tag} class="{cls}" id="{hid}">{inner}</{tag}>', 1)
-        items.append((tag, re.sub(r"<[^>]+>", "", inner).strip(), hid))
+        txt = plain(inner)
+        core = txt.strip(DECOR_CHARS).strip()
+        if not core:                                  # 纯装饰：箭头、点线
+            continue
+        if "滑动查看全文" in txt or "点击展开" in txt:   # 纯 UI 提示语
+            continue
+        if len(core) > 24:
+            core = core[:23] + "…"
+        items.append((tag, core, hid))
+
+    if len(items) < 3:
+        return content, ""
+    # 该篇若没有 h3 主标题，则 h4 不再降级缩进，避免整列都缩进
+    has_h3 = any(t == "h3" for t, _, _ in items)
     lis = "".join(
-        f'<li class="{"sub" if t == "h4" else ""}"><a href="#{h}">{esc(x)}</a></li>'
+        f'<li class="{"sub" if (has_h3 and t == "h4") else ""}">'
+        f'<a href="#{h}">{esc(x)}</a></li>'
         for t, x, h in items)
     return content, ('<div class="chapter-toc"><div class="ct-h">本篇导航</div>'
                      f'<ol>{lis}</ol></div>')
