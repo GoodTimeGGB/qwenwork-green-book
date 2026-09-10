@@ -491,12 +491,16 @@ def render_wx_article(a: dict) -> str:
 
 def inline_local_images(doc: str) -> str:
     """把 wx_assets/ 下的图片内联成 base64，保住「单文件网页书」的特性。"""
+    mime_map = {".webp": "image/webp", ".png": "image/png", ".gif": "image/gif",
+                ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}
+
     def repl(m):
         p = ROOT / m.group(1)
         if not p.exists():
             return m.group(0)
+        mime = mime_map.get(p.suffix.lower(), "image/jpeg")
         b64 = base64.b64encode(p.read_bytes()).decode("ascii")
-        return 'src="data:image/jpeg;base64,%s"' % b64
+        return 'src="data:%s;base64,%s"' % (mime, b64)
 
     return re.sub(r'src="(wx_assets/[^"]+)"', repl, doc)
 

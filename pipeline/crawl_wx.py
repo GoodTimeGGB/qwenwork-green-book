@@ -131,7 +131,11 @@ def extract_content_div(html: str) -> str:
 
 # ------------------------------------------------------------------ 图片处理
 def compress_image(data: bytes, src_url: str, max_bytes: int = MAX_INLINE_BYTES) -> bytes:
-    """把图片压到体积预算内，返回 JPEG/PNG 字节。动图先抽帧拼网格。"""
+    """把图片压到体积预算内，返回 WebP 字节。动图先抽帧拼网格。
+
+    用 WebP 而不是 JPEG：公众号正文以界面截图为主，WebP 在同等观感下
+    体积约省 30~50%，直接决定「单文件 base64 内联」的成品大小。
+    """
     im = Image.open(io.BytesIO(data))
     is_gif = getattr(im, "n_frames", 1) > 1 or im.format == "GIF"
 
@@ -166,7 +170,7 @@ def compress_image(data: bytes, src_url: str, max_bytes: int = MAX_INLINE_BYTES)
     quality = 86
     while quality >= 55:
         buf = io.BytesIO()
-        im.save(buf, "JPEG", quality=quality, optimize=True)
+        im.save(buf, "WEBP", quality=quality, method=6)
         if buf.tell() <= max_bytes or quality == 55:
             return buf.getvalue()
         quality -= 8
@@ -187,7 +191,7 @@ def localize_images(soup: BeautifulSoup, cache: dict, log: list):
             try:
                 raw = fetch_bytes(src)
                 small = compress_image(raw, src)
-                name = hashlib.md5(key.encode()).hexdigest()[:12] + ".jpg"
+                name = hashlib.md5(key.encode()).hexdigest()[:12] + ".webp"
                 (ASSET_DIR / name).write_bytes(small)
                 cache[key] = "wx_assets/" + name
                 img["src"] = cache[key]
@@ -401,7 +405,7 @@ def process(url: str, idx: int, cache: dict) -> dict:
             if key not in cache:
                 raw = fetch_bytes(meta["cover"])
                 small = compress_image(raw, meta["cover"], max(45 * 1024, min(120 * 1024, MAX_INLINE_BYTES)))
-                name = hashlib.md5(key.encode()).hexdigest()[:12] + ".jpg"
+                name = hashlib.md5(key.encode()).hexdigest()[:12] + ".webp"
                 (ASSET_DIR / name).write_bytes(small)
                 cache[key] = "wx_assets/" + name
                 log.append("  cover ok %6.1fKB -> %6.1fKB" % (len(raw) / 1024, len(small) / 1024))
@@ -417,6 +421,40 @@ def process(url: str, idx: int, cache: dict) -> dict:
     log.append("  正文块 %d 个，图片 %d 张" % (meta["n_block"], meta["n_img"]))
     print("\n".join(log))
     return meta
+
+
+def article_id(url: str) -> str:
+    """从 https://mp.weixin.qq.com/s/<22位ID> 里取出文章 ID"""
+    m = re.search(r"/s/([A-Za-z0-9_\-]{16,})", url or "")
+    return m.group(1) if m else ""
+
+
+def dedupe(articles: list) -> list:
+    """同一篇文章可能以两种 URL 入库：干净的 /s/<id>，或搜狗的 src=11 签名链接。
+    按「文章ID → 标题」两级去重，保留信息更全且链接更稳定的那一条。"""
+    def score(a):
+        s = 0
+        if article_id(a.get("url", "")):
+            s += 100                                     # 规范链接优先
+        s += min(len(a.get("content") or "") // 500, 40)  # 正文更全
+        s += min(int(a.get("n_img") or 0), 30)            # 图更多
+        return s
+
+    def pick(pool):
+        out = {}
+        for a in pool:
+            key = article_id(a.get("url", "")) or (a.get("title") or "").strip()
+            if key not in out or score(a) > score(out[key]):
+                out[key] = a
+        return list(out.values())
+
+    stage1 = pick(articles)                              # 按文章 ID
+    stage2 = {}
+    for a in stage1:                                     # 再按标题兜底
+        t = (a.get("title") or "").strip()
+        if t not in stage2 or score(a) > score(stage2[t]):
+            stage2[t] = a
+    return list(stage2.values())
 
 
 def main():
@@ -445,7 +483,11 @@ def main():
         except Exception as e:
             print("  FAIL:", e)
 
-    articles = sorted(have.values(), key=lambda a: a.get("published_ts", 0), reverse=True)
+    before = len(have)
+    articles = dedupe(list(have.values()))
+    if len(articles) < before:
+        print("去重：%d -> %d 篇（同文多链接合并）" % (before, len(articles)))
+    articles = sorted(articles, key=lambda a: a.get("published_ts", 0), reverse=True)
     OUT_JSON.write_text(json.dumps(articles, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n写入 %s（共 %d 篇）" % (OUT_JSON.name, len(articles)))
 
