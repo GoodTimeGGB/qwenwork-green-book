@@ -12,3 +12,7 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+
+# EdgeOne CLI 部署产物
+.edgeone/
+.env

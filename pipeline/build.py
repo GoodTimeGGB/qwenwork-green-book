@@ -201,6 +201,26 @@ EXTRA_CSS = """
   .gb-table-wrap { max-width: 100%; }
   .gb-table-wrap table { width: 100%; }
 
+  /* ========== 全书结构表：章节过多的部分折叠为摘要 ========== */
+  .struct-sum { font-family: var(--font-sans); font-size: .8rem; line-height: 1.7; color: var(--ink-soft); }
+  .struct-sum strong { color: var(--ink); font-size: .85rem; }
+  .struct-sum__span, .struct-sum__months, .struct-sum__eg { display: block; }
+  .struct-sum__months { color: var(--ink-soft); }
+  .struct-sum__eg { color: var(--ink-mute); font-size: .74rem; }
+
+  /* ========== 公众号文章一览：按月分组、双栏排布 ========== */
+  .wx-index { margin: 14px 0 4px; }
+  .wx-index__group { margin-bottom: 18px; break-inside: avoid; }
+  .wx-index__month { font-family: var(--font-sans); font-size: .72rem; font-weight: 700;
+    letter-spacing: .14em; color: var(--green-700); padding-bottom: 5px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--green-200); }
+  .wx-index__list { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 26px; }
+  .wx-index__list li { display: flex; gap: 8px; align-items: baseline; break-inside: avoid;
+    font-family: var(--font-sans); font-size: .78rem; line-height: 1.65; margin: 0 0 5px; }
+  .wx-index__date { flex: 0 0 auto; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+  .wx-index__title { color: var(--ink); text-decoration: none; }
+  .wx-index__title:hover { color: var(--green-700); text-decoration: underline; }
+
   /* ========== 移动端适配增强 ========== */
   @media (max-width: 900px) {
     #main { margin-left: 0; width: 100%; }
@@ -220,6 +240,7 @@ EXTRA_CSS = """
     .follow-cta .gzh-qr { margin: 2px auto 0; }
     .gzh-watermark { background-size: 330px 258px; }
     .chapter-toc { padding: 12px 14px; }
+    .wx-index__list { columns: 1; }
   }
   @media (max-width: 640px) {
     .content-wrap { padding: 20px 13px 80px; }
@@ -602,12 +623,69 @@ def main():
     meta_imgs += sum(a["content"].count("<img") + (1 if a.get("cover_local") else 0)
                      for a in WX_ARTICLES)
 
+    # 章节过多的部分（典型是公众号文章，24 个长标题）在概览表里只给摘要：
+    # 一堆标题用顿号连成一片反而看不出结构。完整清单另给「公众号文章一览」。
+    wx_date = {a["slug"]: (a.get("published") or "") for a in WX_ARTICLES}
+
+    def month_label(m: str) -> str:
+        y, mm = m.split("-")
+        return "%s 年 %d 月" % (y, int(mm))
+
     structure_rows = []
     for part_cn, part_en, part_desc, chaps in parts:
-        names = "、".join(c[1] for c in chaps)
+        names = [c[1] for c in chaps]
+        joined = "、".join(names)
+        if len(joined) > 80:
+            dates = sorted(d for d in (wx_date.get(c[0], "") for c in chaps) if d)
+            months = []                                   # 日期已升序，按月归并
+            for d in dates:
+                m = d[:7]
+                if months and months[-1][0] == m:
+                    months[-1][1] += 1
+                else:
+                    months.append([m, 1])
+            cell = ['<div class="struct-sum"><strong>共 %d 篇</strong>' % len(chaps)]
+            if dates:
+                cell.append('<span class="struct-sum__span">%s ~ %s</span>'
+                            % (esc(dates[0]), esc(dates[-1])))
+            if months:
+                cell.append('<span class="struct-sum__months">%s</span>' % esc(
+                    " ｜ ".join("%s %d 篇" % (month_label(m), n) for m, n in months)))
+            cell.append('<span class="struct-sum__eg">如：%s…</span>'
+                        % esc("、".join(names[:3])))
+            cell.append("</div>")
+            cell = "".join(cell)
+        else:
+            cell = esc(joined)
         structure_rows.append(
             f"<tr><td><strong>{esc(part_cn)}</strong>　{esc(part_en)}</td>"
-            f"<td>{esc(names)}</td></tr>")
+            f"<td>{cell}</td></tr>")
+
+    # 公众号文章一览：按月分组、双栏排布，作为概览表摘要的完整展开
+    wx_index_html = ""
+    if WX_ARTICLES:
+        groups = {}
+        for a in WX_ARTICLES:
+            groups.setdefault((a.get("published") or "")[:7], []).append(a)
+        blocks = []
+        for m in sorted(groups, reverse=True):
+            items = sorted(groups[m], key=lambda a: a.get("published_ts", 0), reverse=True)
+            lis = "".join(
+                '<li><span class="wx-index__date">%s</span>'
+                '<a class="wx-index__title" href="#%s">%s</a></li>'
+                % (esc((a.get("published") or "")[5:] or "—"), slug_id(a["slug"]),
+                   esc(a["title"]))
+                for a in items)
+            blocks.append(
+                '<div class="wx-index__group">'
+                '<div class="wx-index__month">%s · 共 %d 篇</div>'
+                '<ol class="wx-index__list">%s</ol></div>'
+                % (esc(month_label(m)), len(items), lis))
+        wx_index_html = (
+            '<h3>公众号文章一览</h3>\n'
+            '<p class="tip-sm">第十一部分收录官方公众号「千问办公」的公开推文，'
+            '按发布时间倒序，含纯图片的贴图消息；点击标题可直达对应章节。</p>\n'
+            '<div class="wx-index">' + "".join(blocks) + "</div>")
 
     cover = f"""
 <section class="cover" id="cover">
@@ -698,11 +776,13 @@ def main():
     </tbody>
   </table>
 
+  %s
+
   <div class="callout info">
     <div class="callout-title">阅读建议</div>
     <p><strong>新用户</strong>：从第一部分读起，先把「快速开始」里的三种入口搞明白，再按自己用的端（网页端 / 桌面端）挑对应章节精读。</p>
-    <p><strong>管理员</strong>：重点看第三部分（权益订阅）与第八部分（企业管理），SSO、积分、成员治理都在这里。</p>
-    <p><strong>想追新的人</strong>：第九部分官方公告与附录更新日志放在一起看，能看出产品迭代的节奏。</p>
+    <p><strong>管理员</strong>：重点看第四部分（权益订阅）与第九部分（企业管理），SSO、积分、成员治理都在这里。</p>
+    <p><strong>想追新的人</strong>：第十部分官方公告与附录更新日志放在一起看，能看出产品迭代的节奏；第十一部分是官方公众号的实践案例与教程合集。</p>
   </div>
 
   <h3>术语约定</h3>
@@ -712,7 +792,7 @@ def main():
 
   %s
 </section>
-""" % ("\n".join(structure_rows), FOLLOW_CTA)
+""" % ("\n".join(structure_rows), wx_index_html, FOLLOW_CTA)
 
     footer = f"""
 <div class="book-footer">
