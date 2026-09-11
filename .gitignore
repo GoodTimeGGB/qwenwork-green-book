@@ -16,3 +16,6 @@ Thumbs.db
 # EdgeOne CLI 部署产物
 .edgeone/
 .env
+
+# EdgeOne 部署临时压缩包
+*.zip
