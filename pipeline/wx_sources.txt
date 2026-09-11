@@ -22,6 +22,7 @@ https://mp.weixin.qq.com/s/heK8AbgGMcvCqwvdOK48iA
 https://mp.weixin.qq.com/s/-MHTnHQ6NSUkA7Xv1setqQ
 https://mp.weixin.qq.com/s/fJ5uWEwZsCYoUbaxP4hYpQ
 https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
-# 以下两条为旧库中独有、不在上方清单里的文章（搜狗签名链接，失效则自动保留已有版本）
-https://mp.weixin.qq.com/s?src=11&timestamp=1789017794&ver=6957&signature=DQen0m8VzrWisVoZGZMZ7fb3VLaPsxwBKVpXp8TY-Q9wQVbPHEObaOy9zm-7ybYxDND2Vlpjp*7wxmf-*TqelkYb0U4jElW0jndjmxSNIjTxbElH4ZTOvk5C2aCdDYdS&new=1
-https://mp.weixin.qq.com/s?src=11&timestamp=1789017794&ver=6957&signature=DQen0m8VzrWisVoZGZMZ7fb3VLaPsxwBKVpXp8TY-Q*rHe8H9sJrRhmnkqf3fpuau9c9cQgsli8Or3*BxkuW2ajOybGliFzV5Nji9nHFlwk9y2B4IL3G0hLxxBVjMfkG&new=1
+# 注意：另有 2 篇（「上线一个月，千问办公用户数突破3000万」「欢迎7位新朋友接入千问办公」）
+# 原本靠搜狗 src=11 签名链接抓取，签名已过期；重跑时同一 key 会被空结果覆盖，
+# 故已从本清单移除，它们的记录保留在 wx_articles.json 中。
+# 若后续拿到这两篇的规范链接（mp.weixin.qq.com/s/<id>），可加回本清单重新抓取。
