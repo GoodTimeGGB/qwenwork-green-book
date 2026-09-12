@@ -22,7 +22,12 @@ https://mp.weixin.qq.com/s/heK8AbgGMcvCqwvdOK48iA
 https://mp.weixin.qq.com/s/-MHTnHQ6NSUkA7Xv1setqQ
 https://mp.weixin.qq.com/s/fJ5uWEwZsCYoUbaxP4hYpQ
 https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
-# 注意：另有 2 篇（「上线一个月，千问办公用户数突破3000万」「欢迎7位新朋友接入千问办公」）
-# 原本靠搜狗 src=11 签名链接抓取，签名已过期；重跑时同一 key 会被空结果覆盖，
-# 故已从本清单移除，它们的记录保留在 wx_articles.json 中。
-# 若后续拿到这两篇的规范链接（mp.weixin.qq.com/s/<id>），可加回本清单重新抓取。
+# 注意：另有 3 篇只有「src=11 签名链接」、没有规范链接，故**不列入**本清单
+# （签名过期后重跑会用空结果覆盖同名 key，篇数会静默下降）：
+#  1) 「上线一个月，千问办公用户数突破3000万」（2026-09-04）
+#  2) 「欢迎7位新朋友接入千问办公」（2026-08-28）
+#  3) 「千问办公上架麒麟软件商店」（2026-09-11）—— 2026-09-12 经搜狗微信 type=2 发现并抓取，
+#     biz 已校验为 MzcwMzM3NjM1NQ==（mid=2247484616、idx=1），但该页面 msg_link/sn 均为空，
+#     无法还原 mp.weixin.qq.com/s/<id>，只能用落地的签名链接入库。
+# 这 3 篇的记录都保留在 wx_articles.json 中（图片资产也在 wx_assets/）； 
+# 若后续从微信客户端拿到规范链接（mp.weixin.qq.com/s/<id>），可加回本清单重新抓取。
