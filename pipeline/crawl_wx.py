@@ -58,13 +58,26 @@ def fetch(url: str, timeout: int = 30) -> str:
         return r.read().decode("utf-8", errors="ignore")
 
 
-def fetch_bytes(url: str, timeout: int = 40) -> bytes:
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA,
-        "Referer": REFERER,
-    })
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+def fetch_bytes(url: str, timeout: int = 40, retries: int = 4) -> bytes:
+    """下载图片字节。
+
+    微信图床对 GIF（mmbiz_gif/sz_mmbiz_gif）会偶发
+    `SSL: UNEXPECTED_EOF_WHILE_READING`，**单次失败曾导致图片被静默丢弃**
+    （正文里少图、书的图数偏低）。这里做带退避的重试。
+    """
+    last = None
+    for attempt in range(retries):
+        req = urllib.request.Request(url, headers={
+            "User-Agent": UA,
+            "Referer": REFERER,
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except Exception as e:  # 网络抖动 / 图床限流：退避后重试
+            last = e
+            time.sleep(0.6 * (attempt + 1))
+    raise last
 
 
 # ------------------------------------------------------------------ 元信息
