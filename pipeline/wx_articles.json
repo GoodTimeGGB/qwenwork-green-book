@@ -1,5 +1,37 @@
 [
  {
+  "title": "千问办公协助国家天文台科研团队打造科研级望远镜仿真系统",
+  "desc": "",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzGMlQ9A6XsQQsc2t1ovH36vcRKbaUGYM1bd9BtBj3Bvvv3fHvofYpJicyjha18kA4O024Xmq90yxmDJuTGtibZpQEsOtULUpbnw/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-18",
+  "published_ts": 1789712404,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484869&idx=1",
+  "cover_local": "wx_assets/942f7bf05d8c.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>近日， 千问办公 协助国家天文台科研团队，打造大口径科研级望远镜数字化仿真系统—— 耗时 仅3天 ， 成本不足 千元 。</p>\n<p>而在过去，同类系统需委托软件供应商开发，周期约三个月，成本高达数万元。 千问办公 将这一搭建门槛 降低了两个数量级 。</p>\n<h4 class=\"wx-sub\">01</h4>\n<p>为什么要搭建一套观测仿真系统宇宙无垠，望远镜捕捉的星光，都来自遥不可及的深空。</p>\n<p>超新星爆发、伽马射线暴等 瞬变事件 ，是宇宙在漫长岁月里偶然的绽放，也是研究宇宙演化与极端物理过程的重要窗口。</p>\n<p>它们不期而至，转瞬即逝——要接住这样的瞬间，仅有一双锐利的眼睛还不够，还需要一个 能感知、会思考、可行动 的“大脑”。</p>\n<p>科研级望远镜资源有限，真实设备难以承担反复试错的代价。 在仿真系统中提前排演 ，是减少真实设备试错代价的可行路径之一。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/151e91419933.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>所以科研团队必须在正式观测之前，先搭建一台 “仿真望远镜” ，完整模拟观测流程，验证方案可行性，再将真正的目光投向深空。</p>\n<p>千问办公 ，很幸运地成为了观测模拟展开的底座。</p>\n<h4 class=\"wx-sub\">02</h4>\n<p>仿真系统如何工作？</p>\n<p>千问办公 协助国家天文台相关科研团队搭建大口径科研级望远镜数字化仿真系统，并将望远镜各组件、传感器状态及观测环境信息整合为标准 MCP 接口，供 Agent 监测与调用。</p>\n<p>这相当于把望远镜组件等变成了一排 “通用插座” ，Agent 即插即用，既看得见状态，也调得动设备。</p>\n<p>两类专用模型在其调度下协同工作——跨巡天对齐时序模型 ：于多巡天的公开数据中，为 Agent 识别出极早期超新星候选，回答“看什么”；</p>\n<p>短时局部气象预测模型 ：为 Agent 评估观测条件，回答“怎么看”。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c114ea39b99a.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/07103564dce2.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>最终，Agent 可以进一步综合科学目标优先级、望远镜实时状态以及目标可观测窗口，自主完成“ 状态感知 → 任务规划 → 方案生成 → 流程验证 ”的闭环。</p>\n<h4 class=\"wx-sub\">03</h4>\n<h4 class=\"wx-sub\">相关 Agent 预警 8 颗极早期超新星候选</h4>\n<p>不止于仿真系统中的模拟，该 Agent 框架已接入 “司天”探路者 和 “司天”原型机 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/3cf1e7135094.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>科研人员提出科学观测需求后，智能体结合目标优先级、天气和设备状态生成观测方案，通过不同 MCP 接口调用相应控制模块，并将观测结果反馈给科研人员；任务结束后，还可以根据执行结果和专家反馈重新规划后续任务，并将有效经验沉淀为可复用的 Skill。</p>\n<p>截至目前，相关智能体已经预警 8 颗极早期超新星候选 —— 八次，赶在星光消逝之前，接住了宇宙的眨眼 ，其中 2 颗在 天气条件允许的情况下触发了后续观测。</p>\n<p>此次不仅是针对单一望远镜提供的仿真系统，也是对新的天文科研组织和执行方式的探索。</p>\n<h4 class=\"wx-sub\">04</h4>\n<h4 class=\"wx-sub\">AI 真正参与科研执行， 科研范式正在发生改变</h4>\n<p>天文观测走过了一条从人眼观测到 AI 参与执行的漫长道路：从 人工操控 ，到按预设步骤执行的 工作流 ——天气一变、设备一动，仍需人来干预；再到今天，随着大模型、Agent、科学模型和望远镜控制系统逐步连接，AI 开始具备根据实时环境和科学目标进行 动态规划、调用工具、验证方案并调整观测策略 的能力。</p>\n<p>同时，仿真系统还可以在虚拟环境中反复执行观测任务，持续记录设备状态、环境变化、决策过程和执行结果，形成面向望远镜智能控制的高质量训练数据，为进一步训练望远镜控制模型（VLA），以及未来在真实科学装置上实现更高水平的智能观测奠定基础。</p>\n<p>“AI 正在更深地参与科研流程。科研工作者负责提出问题、设定目标，智能体则可以承担部分观测执行、方案验证和任务迭代工作。这意味着，AI 在科研中的作用正从辅助分析延伸至科研执行环节。”—— 国家天文台人工智能推进委员会专家李瑀旸博士</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/5add9fccd55e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>四百多年前，伽利略用一支自制的镜筒，第一次看清了木星身边的四颗卫星，证明并非所有天体都绕地球运转，为哥白尼的日心说提供了关键证据。</p>\n<p>四百年后的今天，AI 帮助天文台的研究人员捕捉宇宙眨眼的瞬间。</p>\n<p>AI 没有取代仰望星空的人，而是把科研人员从重复劳作中解放出来，让他们回到 “提出科学问题” 本身。</p>\n<p>把观测、验证与迭代交给 Agent， 把时间留给最重要的发现 。</p>\n<p>当下一束来自深空的星光抵达时 ， 地球上早有 AI 为它守候 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f12138c18cdb.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/b3d2b7e44bcd.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/cef0a98f0e",
+  "n_img": 7,
+  "n_block": 40,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484869&idx=1",
+  "source_note": "2026-09-19 经「搜狗通用搜索 site:mp.weixin.qq.com + WebFetch 发现签名直链」→ 本地 urllib 抓取，var biz 校验 == MzcwMzM3NjM1NQ==（mid=2247484869）。"
+ },
+ {
+  "title": "蚂蚁集团全员接入千问办公，打造大型企业办公标杆",
+  "desc": "",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wxDMgbBDPpz4j8lVYwJrlWwtSUOqof14X6lAgzicDgcSiblkXtL87z68ssldMcma3pPUEEWaj5LRaSTDTnb2ImHOk816oTRSfksc/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-17",
+  "published_ts": 1789628828,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484744&idx=1",
+  "cover_local": "wx_assets/c3489aec486f.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>9月17日， 蚂蚁集团 正式接入 千问办公 ，作为全公司的智能办公Agent底座，供全员使用，打造大型企业办公的标杆。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ee7d692e1555.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">蚂蚁集团和千问办公达成合作</h4>\n<p>蚂蚁集团 是全球领先的数字支付与科技服务平台，业务涵盖数字支付、数字金融科技、医疗健康及数字科技等多个领域，员工规模达数万人。随着AI技术在长程任务等多方面能力的全面提升，AI已经逐步融入到蚂蚁内部各个办公场景，亟需全新的办公产品支持和推动智能化转型。</p>\n<p>考虑到严格的数据安全与合规要求，在本次合作中， 千问办公 采用K8S（Kubernetes）私有化部署方案，全面运行于蚂蚁集团内网，支持企业自有模型接入，确保 数据不出域、日志可审计、结论可验证 。此举跑通了兼顾AI能力全量可用与数据完全不出域的实施路径，验证了一套可复制的企业自主可控方案。</p>\n<p>千问办公 将为蚂蚁集团全体员工提供智能办公解决方案，该方案将融合蚂蚁自有的Agent能力，打通数字员工、蚂蚁钉、项目管理等内部服务，并无缝衔接蚂蚁内部AI安全管控底座，形成覆盖个人办公助理与企业数字员工的完整办公Agent基建。</p>\n<p>蚂蚁集团平台技术事业群总裁骆骥表示，蚂蚁正推进组织与办公模式的深度AI转型，智能办公产品是重塑组织生产与协作关系的关键载体，此次与千问办公的联合共创将沉淀出一套适合大企业复杂办公场景的集成模式，为行业提供可借鉴的范本。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/25fb7fbe8821.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/39a37dc355",
+  "n_img": 2,
+  "n_block": 9,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484744&idx=1",
+  "source_note": "2026-09-19 经「搜狗通用搜索 site:mp.weixin.qq.com + WebFetch 发现签名直链」→ 本地 urllib 抓取，var biz 校验 == MzcwMzM3NjM1NQ==（mid=2247484744）。"
+ },
+ {
   "title": "老师、店主、剪辑师...他们把千问办公玩出新花样｜千问办公案例精选",
   "desc": "「千问办公主题案例征集」进行中。",
   "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wwDpwIO8Sk5U5Uj0jwbBiavZrj9EYZYw9Dch4OXwo9iah3rexqTI7F36hlXn84RpXprHbzl2Y9lyicicOSRLEU23QRBefr45WNDIKg/0?wx_fmt=jpeg",

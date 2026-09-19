@@ -130,3 +130,59 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 #      威卡/智北辰/立升教育）
 #   4) 「欢迎7位新朋友接入千问办公」08-28 期（汇付天下/传化/科伦/志邦/汇正/凯乐士/宏力达）
 #   5) 疑似存在：商家经营套件官方文（外卖经营助手 / 零售经营助手，约 09-15）
+
+# ============================================================================
+# 2026-09-19 增量轮（第 10 轮）—— 新增 2 篇官方推文（已入库并重建成书 32 篇）
+# ----------------------------------------------------------------------------
+# ✅ 本轮新增（均已校验 var biz == MzcwMzM3NjM1NQ==）：
+#   1) 「蚂蚁集团全员接入千问办公，打造大型企业办公标杆」（2026-09-17 15:07）
+#        mid=2247484744 idx=1  普通图文 2 图 / 9 块
+#   2) 「千问办公协助国家天文台科研团队打造科研级望远镜仿真系统」（2026-09-18 14:20）
+#        mid=2247484869 idx=1  普通图文 7 图 / 40 块
+#   两篇的 url 均已归一为 ?__biz=..&mid=..&idx=1 形式（含 source_note）。
+#
+# 【本轮唯一有效的发现链路（新，已验证可复现）】
+#   WebFetch 读「搜狗通用搜索」https://www.sogou.com/web?query=site:mp.weixin.qq.com+<关键词>
+#     → 从返回的 Markdown 里正则抠出 mp.weixin.qq.com/s?src=11...&signature=... 直链
+#     → 本地 urllib 抓（UA=微信客户端 + Referer=https://mp.weixin.qq.com/）读 var biz 校验。
+#   要点：
+#   - 本机 /web 与 weixin.sogou.com 的 type=2+/link 本轮**都不可用**（/web 只撑了 1 个 query，
+#     weixin 的 /link 经 urllib 与 Chromium 两条路都失败），**WebFetch 的服务端出口是可用的那一条**。
+#   - **同一标题在搜狗会给出多个 signature，必须逐条抓下来读 var biz**：本轮「乱搓小赛」
+#     与「欢迎7位新朋友」的直链都落在**媒体号/兄弟号**上，只有蚂蚁集团、国家天文台两条命中官方号。
+#   - 标题去重会把「已入库」的同题媒体转载误当旧文（本轮 教师节特别篇 就因标点差异误报过一次），
+#     比对前务必先归一化标点（含 | ｜）。
+#
+# 【新增：兄弟号「QwenWorkEvent」】
+#   biz=MzY5ODQxOTQ4NQ==（gh_25ce12ecede4），专发云栖大会/活动类内容，会**授权转载**官方文。
+#   其「千问办公乱搓小赛，主理人已集结！」（2026-09-18 13:35）的
+#   copyright_info.reprint_url 指向官方 __biz=MzcwMzM3NjM1NQ==&mid=2247484866&idx=1。
+#   ❌ 该篇官方正文仍抓不到（转载页不可顶替入库，其 biz 不符判据）。
+#
+# 【本轮据此新恢复出的官方 mid（用于向用户讨规范链接）】
+#   - 「千问办公乱搓小赛，主理人已集结！」 官方 mid=2247484866（约 2026-09-18）
+#     reprint_url: http://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247484866&idx=1
+#                  &sn=46b3d8fe54241ad0b73bb85d42bb027b
+#   - 「欢迎7位新朋友接入千问办公」09-14 期 官方 mid=2247484652 ★（追了 4 轮的缺口，本轮终于拿到 mid）
+#     reprint_url: http://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247484652&idx=1
+#                  &sn=fabb44a49f85fd37a0642755b6c486bc
+#       （媒体号「纵横云技术」biz=MzIyNTQ5NDAzNw== mid=2247488814，2026-09-14 09:12）
+#       → 这两条 reprint_url 可在微信客户端直接打开，是向用户讨规范链接的最佳抓手。
+#
+# 【已知但本轮未能入库 / 需用户给规范链接】
+#   A) 「上新啦！千问办公产品新鲜事 Vol.02」（2026-09-16 18:07）
+#      官方 mid=2247484731。**该篇用的是新式 JS 渲染模板**：urllib 抓到的 HTML 里没有
+#      #js_content / data-src，只有 meta description；改用 Playwright 渲染后能取到
+#      #js_image_content，但正文实为**单张海报图**（img=0/blk=2），且页面无 var ct（拿不到发布时间）
+#      → 判为空壳，**已回滚未入库**（避免污染成书）。等用户给规范链接，或后续单独做「海报图」特例处理。
+#   B) 「千问办公乱搓小赛，主理人已集结！」（官方 mid=2247484866）—— 同上，只有兄弟号转载。
+#   C) 沿袭未解：「欢迎7位新朋友」09-14 期 / 08-28 期、「上线一个月用户数突破3000万」09-04。
+#
+# 【通道可达性（第 10 轮实测，累积矩阵见技能 §13.3）】
+#   weixin.sogou.com urllib：❌ antispider(5567B)
+#   weixin.sogou.com Chromium 搜索页：✅ 恢复可用（32KB / 10 条 / 无验证码；09-16~09-18 曾全封）
+#       → 235 行候选 / 62 条进 /link；官方号名命中 12 条（去重 8 条）
+#   weixin.sogou.com /link：❌ urllib antispider；Chromium 返回非文章页（30~58KB、无 window.biz）
+#   www.sogou.com/web 本机：⚠️ 仅 1 个 query 后 antispider
+#   www.sogou.com/web via WebFetch：✅ **本轮主力通道**（≥6 个 query 可用）
+#   离线内链挖掘：连续第 9 轮 0 命中（唯一候选恒为平台级 _2kC-fXw7UjneZSrsC9CVQ）
