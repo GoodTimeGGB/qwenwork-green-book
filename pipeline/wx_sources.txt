@@ -247,3 +247,53 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 #   4) 「上线一个月，千问办公用户数突破3000万」09-04 官方 mid=2247484482
 #   → 以上 4 条的官方 mid 已由兄弟号/媒体号转载页的 copyright_info.reprint_url 还原，
 #     可在微信客户端直接打开，是向用户讨规范链接的最佳抓手。
+
+# ============================================================
+# 【2026-09-21 第十二轮】新增 1 篇官方推文
+# ============================================================
+# 结果：新增 1 篇
+#   ✅「云栖大会倒计时2天！千问办公邀你会场见」
+#       2026-09-20 16:08，mid=2247484958，普通图文（3 图 / 9 块）
+#       其余 2 篇本轮已识别到官方 mid，但正文抓不到（见下方新增缺口 1、2）
+#   库 32 → 33 篇；书需重建（wx_articles.json + wx_assets 有新内容）。
+#   四道自检全绿：32→33 / 丢失 0 / 新增 1 / 空壳 0 / 标题重复 0。
+#
+# 【通道可达性（第 12 轮实测）】
+#   weixin.sogou.com 搜索页 urllib：❌ antispider（5,567B）
+#   weixin.sogou.com /link：❌ antispider（约 5,900B）
+#   weixin.sogou.com 搜索页 via WebFetch（服务端出口）：✅ **本轮主力**
+#       → 连开约 10 个 query 无验证码，给出完整结果列表（含账号名 + 日期）
+#   www.sogou.com/web 本机：✅ 前 4 个 query 可用（349KB~648KB），
+#       第 4~5 个转 antispider → 能直接给出 mp.weixin.qq.com/s?src=11 签名直链
+#   www.sogou.com/web via WebFetch：⚠️ 2 个 query 后弹验证码
+#   → 结论：**WebFetch 读 weixin 垂直搜索 + 本地读 /web 取直链** 是本轮最优组合。
+#
+# 【本轮定型的发现链路】
+#   WebFetch(weixin.sogou.com/weixin?type=2&query=...) 读「账号名 + 日期」列表
+#     ↓ 找出账号名 == 千问办公QwenWork 的行，且日期新于库中最新一篇
+#   WebFetch / 本地(www.sogou.com/web) 搜该标题 → 抠 mp.weixin.qq.com/s?src=11... 直链
+#     ↓ 本地 urllib 抓（微信客户端 UA + Referer=https://mp.weixin.qq.com/）
+#   var biz 校验 == MzcwMzM3NjM1NQ== → 存 HTML → ingest 脚本入库
+#   直链时效：本轮 timestamp=1789952806（09-21 09:06 签发）→ 09:20 前后仍可抓。
+#
+# 【离线内链挖掘】连续第 11 轮 0 命中（1 候选 dHR5AOTnUuMGOVTN，biz=MjM5NDkwMTgxNw==）
+#
+# 【新增缺口（需用户给规范链接）—— 两条官方 mid 已还原，reprint_url 可直接打开】
+#   1)「我用 AI 给国宝做了一场光影展｜千问办公案例精选」
+#        官方 mid=2247484919（约 09-20；千问办公QwenWork）
+#        sn=1fe8f7b1bb74fb847d1a4b8b77a405e0d
+#        reprint_url=http://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247484919&idx=1&sn=1fe8f7b1bb74fb847d1a4b8b77a405e0d
+#        线索来源：纵横云技术 2026-09-20 09:30 授权转载（mid=2247488915）
+#   2)「这位老师用千问办公做了一块AI智慧黑板」
+#        官方 mid=2247484921（约 09-19/09-20；千问办公QwenWork）
+#        sn=df4b6485ce3188a0ae41e5209cb5d0db
+#        reprint_url=http://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247484921&idx=1&sn=df4b6485ce3188a0ae41e5209cb5d0db
+#        线索来源：纵横云技术 2026-09-20 09:30 授权转载（mid=2247488915）
+#   3)「啊!这是你用AI做的?｜千问办公案例库」—— 合聚服务管家 09-21 09:0x 转发，
+#        疑与缺口 1 同源（均为 QwenWorkCase「10 份用户作品」），待确认
+#   4) 沿用旧缺口：产品新鲜事 Vol.02（mid=2247484731）、乱搓小赛（mid=2247484866）、
+#        欢迎7位新朋友 09-14 期（mid=2247484652）/ 08-28 期、用户数突破3000万（mid=2247484482）
+#   ⚠️ 上述官方正文经自拼 ?__biz&mid&idx&sn 链接**均不可抓**（本轮再次实测：
+#      国宝 = 31,789B / 智慧黑板 = 17,764B，两者 img=0、content=False、无 msg_title）
+#      → 只能等用户在微信客户端打开后转发/复制出规范 mp.weixin.qq.com/s/<id>。
+

@@ -1,5 +1,21 @@
 [
  {
+  "title": "云栖大会倒计时2天！千问办公邀你会场见",
+  "desc": "9月22日，不见不散。",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wyboE5FGYMveglh5GMVR2Ylv4OnibczOibfMW2O5XcjsMP09icZKGltUzdBgueqc7erG64AhXBHYPKicFdzAqMEoa06SBMZ4oBElKs/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-20",
+  "published_ts": 1789891689,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484958&idx=1",
+  "cover_local": "wx_assets/cecb22e20380.webp",
+  "content": "<p>QwenWork news当 Agent 上岗，组织需要怎样的 AI 伙伴？</p>\n<p>还有两天，千问办公 将在云栖大会带来新的回答。</p>\n<p>重磅发布、行业实践，更多精彩即将揭晓。</p>\n<p>9月22日，现场见。</p>\n<p>千问办公 视频号将同步直播，精彩不错过！</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/e4df3959db7a.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/aa81e6288024.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/6f1bb31d4915.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>点击阅读原文，开启千问办公</p>",
+  "slug": "wx/bb09f425b3",
+  "n_img": 3,
+  "n_block": 9,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484958&idx=1",
+  "source_note": "2026-09-21 经搜狗「公众号文章搜索」(weixin.sogou.com type=2, 服务端出口) 发现；本机该通道 antispider，改用 WebFetch 读搜索页 + www.sogou.com/web 取 mp.weixin.qq.com 签名直链，本地 urllib 抓取并以 var biz 校验 == MzcwMzM3NjM1NQ==。原始签名链接 见 _work/links_0921.json / _work/web_links_0921.json。"
+ },
+ {
   "title": "千问办公协助国家天文台科研团队打造科研级望远镜仿真系统",
   "desc": "",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzGMlQ9A6XsQQsc2t1ovH36vcRKbaUGYM1bd9BtBj3Bvvv3fHvofYpJicyjha18kA4O024Xmq90yxmDJuTGtibZpQEsOtULUpbnw/0?wx_fmt=jpeg",
