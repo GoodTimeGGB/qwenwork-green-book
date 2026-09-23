@@ -361,3 +361,72 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 #   6) 千问办公乱搓小赛，主理人已集结！—— 官方 mid=2247484866
 #   7) 欢迎7位新朋友接入千问办公 09-14 期 —— 官方 mid=2247484652；08-28 期
 #   8) 上线一个月，千问办公用户数突破3000万 —— 官方 mid=2247484482
+#
+# ---------------------------------------------------------------------------
+# 2026-09-23（第 14 轮）—— 新增 1 篇官方推文（云栖大会发布全貌）
+# 结果：库 33 → 34 篇；书 81 → 82 章 · 13 大部分 · 470 图（内联 base64 348）· 13,751,825 字节。
+#   三副本 MD5 一致：81b0764afaabbb489cbb9ccd940c66eb
+#   四道自检全绿：33→33（crawl 阶段）/ 丢失 0 / 空壳 0 / 标题重复 0。
+#
+# 【新增】「千问办公：让企业级Agent懂业务、能协同、信得过」
+#   发布于 2026-09-22 15:26（ct=1790062002）· 官方 mid=2247485018 · idx=1
+#   · 普通图文 appmsg_type=9，16 图 / 29 块
+#   · 内容：云栖大会一次发布六件事 —— 企业上下文（Enterprise Context）、数字员工、
+#     协作（协作空间）、应用（业务系统接入）、AI Agent 硬件 QwenNote 及首款产品 A2（1199 元）、
+#     千问办公安全中心（沙箱/审批/审计/最小权限）。
+#   · snapshot: 纵横云技术（biz=MzIyNTQ5NDAzNw==，mid=2247488952）09-22 20:19 的授权转载页
+#     reprint_url 还原 → http://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247485018&idx=1&sn=2472768e5bde4cb0b0f069325477c557
+#     （该 reprint_url 可直接在微信客户端打开，也是本轮的溯源凭据）
+#   · 入库 HTML 抓自 src=11 直链（timestamp=1790125498，09-23 09:04 签发），本地 urllib 抓取后
+#     var biz 校验 == MzcwMzM3NjM1NQ== 且 nickname == "千问办公QwenWork"。
+#
+# 【⭐ 本轮定型链路（最快的一次：从起手到命中约 3 分钟）】
+#   1) 本机 weixin.sogou.com 两条通道**全封**：urllib 搜索页 5,358B antispider/captcha、
+#      /link 未试；本机 www.sogou.com/web 首个 query 可用、第 3 个转 antispider(5,464B)。
+#   2) **WebFetch 读 weixin.sogou.com/weixin?type=2 拿到「标题 + 账号名 + 日期」**（本轮唯一能
+#      直接判定"官方号有没有新文"的通道，连开 3 个 query 无验证码）—— 命中
+#      「千问办公：让企业级Agent懂业务、能协同、信得过 / 千问办公QwenWork / 17小时前」。
+#   3) **WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com 限定）拿 src=11 真实直链**，
+#      本地 urllib 抓。⚠️ 同一标题在 /web 结果里可能**多条不同 signature**，逐条抓读 var biz：
+#      · signature=KHGQ… → biz=MzIyNTQ5NDAzNw==（纵横云技术）❌
+#      · signature=A4v9… → biz=MzcwMzM3NjM1NQ==（官方）✅
+#      这就是 skill §14.2 的纪律再次生效。
+#   4) 落库姿势沿用 monkeypatch crawl_wx.fetch（脚本 _work/ingest_0923.py，idx 从 100 起），
+#      落库后 url 换成 `?__biz&mid&idx` 形式 + canonical_hint + source_note。
+#
+# 【⚠️ 官方正文自拼链接第 8 次确认不可抓】本轮首次加上 reprint_ticket 一起试：
+#   `?__biz&mid&idx&sn=2472768e…` 三种组合（plain / +reprint_ticket / +scene=27）
+#   全部返回 17,696 / 17,787 / 17,712 字节验证页（无 var biz、无 js_content）。
+#   → 「转载页 reprint_url + reprint_ticket」可以**还原官方 mid/sn**，但**打不开官方正文**。
+#     能入库的永远只有"搜狗索引里那张官方自己的 src=11 直链"。
+#
+# 【通道可达性（第 14 轮）】
+#   weixin.sogou.com 搜索页 urllib：❌ antispider+captcha（5,358B）
+#   weixin.sogou.com 搜索页 via WebFetch：✅ **本轮主力**（≥3 query 无验证码，给账号名+日期）
+#   weixin.sogou.com /link：未试（省配额）
+#   www.sogou.com/web 本机：⚠️ 第 1 个 query 可用，第 3 个转 antispider（5,464B）
+#   www.sogou.com/web via WebFetch：✅ **主力**，连开 5+ 个 query，稳定吐出 src=11 直链
+#   ⇒ 结论仍是「每轮通道反转」：09-22 是 搜索页 urllib 可用 / WebFetch 给直链；
+#     09-23 变成 本机全封 / WebFetch 双料可用。
+#
+# 【离线内链挖掘】连续第 13 轮 0 命中（33 raw 页 → 2 候选，恒为
+#   `dHR5AOTnUuMGOVTNLXYLsg`（biz=MjM5NDkwMTgxNw==，国家天文台那篇的媒体版）与
+#   `_2kC-fXw7UjneZSrsC9CVQ`（biz=MjM5NDAwMTA2MA==，名誉保护投诉指引），biz 均非目标号）。
+#
+# 【搜狗索引交叉核对（weixin.sogou.com type=2，2 页）】
+#   官方号行去重后共 9 条：09-08 作品集教程 / 09-10 教师节特别篇 / 09-11 麒麟软件商店 /
+#   09-16 产品新鲜事 Vol.02 / 09-17 蚂蚁集团 / 09-20 云栖倒计时2天 / 09-22 本篇（新）。
+#   → 除 Vol.02（JS 模板/单海报，已知缺口）外全部在库；**索引内无 09-23 的新条目**。
+#   ⚠️ 但按 skill §17.1，索引**只能证"有"，不能证"没有"**，汇报口径照旧保守。
+#
+# 【兄弟号动态（本轮新观察）】
+#   · QwenWorkEvent（biz=MzY5ODQxOTQ4NQ==）09-17 发「千问办公QwenWork 活动回顾｜千问办公工作坊
+#     走进上海交通大学附属实验小学」（mid=2247483717，9 图，非转载页无 reprint_url）——
+#     该"活动回顾"栏目属兄弟号自产，biz 非目标号，**不可入库**。
+#   · QwenNote（新出现的兄弟号，2026-09-10 发「新品牌官宣｜QwenNote，终于和你见面」）——
+#     QwenNote 硬件品牌的独立号，后续值得关注。
+#
+# 【待跟进（需用户给规范链接）—— 沿用 8 条，本轮无新增缺口】
+#   同上 8 条（TapNow 2247484954 / 高德门店套件 / 国宝光影展 2247484919 /
+#   AI 智慧黑板 2247484921 / 产品新鲜事 Vol.02 2247484731 / 乱搓小赛 2247484866 /
+#   欢迎7位 09-14 期 2247484652 + 08-28 期 / 满月 2247484482）。

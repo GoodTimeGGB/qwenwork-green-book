@@ -1,5 +1,21 @@
 [
  {
+  "title": "千问办公：让企业级Agent懂业务、能协同、信得过",
+  "desc": "千问办公面向企业的全新产品来了",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wxEkMfV6dBjiaic4Jps76hlUVYEo3NOGiaP5TD7vReAy5SHAYyOUukL0dNKWJ2y1sC7ibdhSpRTL4U0shnXITNQ1Fo9vnyVnBVfGP8/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-22",
+  "published_ts": 1790062002,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485018&idx=1",
+  "cover_local": "wx_assets/5fbcca98fd90.webp",
+  "content": "<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/6cc356c0c5a3.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/dd25d2662cb0.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公发布面向企业的全新产品： 企业上下文 。数据是 Agent 进入企业业务流程的最重要前提，对数据进行压缩和结构化是其中的重要环节。一家企业可能积累了多年的数据，但员工开始一项具体任务时，需要的不是全部信息，而是与当前任务最相关的那部分。</p>\n<p>同时，企业上下文还会随业务的变化及时更新信息，让Agent每次都能基于企业最新真实情况作判断。企业上下文内置了专属模型，可以用极低的Token成本完成数据的压缩和处理。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/0e5a3e2d0798.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/8509f2028fd3.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>面向不同的场景，企业可以基于千问办公和钉钉打造 数字员工 。</p>\n<p>它有名称、所属部门、负责人、岗位职责，也有授权范围和生命周期，可以被员工识别、被系统授权，也可以被管理员停用，所有执行记录都能追溯到这个身份。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/25464ca88979.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/911b6b66179c.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公推出 “协作”功能 。企业可以创建协作空间，关联散落在群聊、文档和知识库中的信息，再按需加入团队成员和数字员工。</p>\n<p>工作时，员工可直接与同事或Agent讨论，Agent之间也能相互沟通分工，完成任务。产出和进度统一沉淀在空间中，不必在多个群里反复查找转述。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2092f4de33c7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/44c645a0df77.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公推出 “应用”功能 。企业和SaaS厂商可将业务系统以应用的形式接入千问办公，在保留原有界面、数据的同时，加入Agent能力。</p>\n<p>完成任务后，用户可以修改和保存结果到业务系统中，无需在AI工具和业务系统之间反复切换。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/fd55896792a3.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ab4dce1ef837.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公发布 Agent硬件QwenNote ，并推出首个QwenNote产品A2。借助A2，用户可通过语音转写随时随地记录各类场景中的信息，也可通过语音调用千问办公执行任务。为保护用户隐私，QwenNote的转写内容仅保留文字和纪要，不保留原始音频。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f482da78a65c.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/4a16496f9741.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>此次发布的 千问办公安全中心 ，可以统一管理Agent的数据访问、工具调用和任务执行。企业可以在执行前通过沙箱划定运行边界，在执行过程中审批和拦截高风险操作，并在发生异常后通过操作记录和恢复机制进行处理。</p>\n<p>结合钉钉企业安全体系，千问办公还支持最小权限授予、敏感信息识别和全程审计，让企业可追溯任务由谁发起、Agent使用哪些数据、执行哪些操作。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/efce5a91f267.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/d31a1e9ec8c4.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">欢迎携手千问办公</h4>\n<p>打造AI Native组织</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/a88ee3bb6c23.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ed334fc8cd4f.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/48e7929086",
+  "n_img": 16,
+  "n_block": 29,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485018&idx=1",
+  "source_note": "2026-09-23 经 www.sogou.com/web（site:mp.weixin.qq.com 限定查询，服务端出口 WebFetch 读结果页）取 mp.weixin.qq.com src=11 签名直链，本地 urllib 抓取并以 var biz 校验 == MzcwMzM3NjM1NQ==。原始签名链接见 _work/_off_0923.html。"
+ },
+ {
   "title": "云栖大会倒计时2天！千问办公邀你会场见",
   "desc": "9月22日，不见不散。",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wyboE5FGYMveglh5GMVR2Ylv4OnibczOibfMW2O5XcjsMP09icZKGltUzdBgueqc7erG64AhXBHYPKicFdzAqMEoa06SBMZ4oBElKs/0?wx_fmt=jpeg",
