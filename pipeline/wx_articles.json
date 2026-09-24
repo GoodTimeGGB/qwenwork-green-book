@@ -1,5 +1,21 @@
 [
  {
+  "title": "千问办公发布首款Agent硬件QwenNote A2",
+  "desc": "一句话调用千问办公干活",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wxyVN5ia8Wl4TOgZicar1uMCa7pNJxqmt5uNkgeupQU9W8Tln2QUric9wFaUdRccl8zg2JZEibImZGOjEZQpCnGawWsDPGnrDDmJBM/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-23",
+  "published_ts": 1790135706,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485052&idx=1",
+  "cover_local": "wx_assets/f1e2c1c41c40.webp",
+  "content": "<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f4201c58990a.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/0a6a8391019d.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/7047546d5d76.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/504b2b5f3447.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/584ce383e0f1.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/01f5cbbc65e7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2a1d824709e1.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/959d5d472802.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ae44e7aec5e8.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/25bde05cb183.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/5a9aefbb3600.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9a0341c3edcc.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ab60afb4a303.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9737a96dc03e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/7aab0da9ee5a.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/13e2f050beb7.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/4758df602d",
+  "n_img": 16,
+  "n_block": 16,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485052&idx=1",
+  "source_note": "2026-09-24 经 weixin.sogou.com 搜索页定位官方号行 → headless Chromium 跟随 /link 落地 → window.biz 校验 == 目标号后取全文 HTML 入库。原始签名直链见 _work/sogou_0924_report.json。"
+ },
+ {
   "title": "千问办公：让企业级Agent懂业务、能协同、信得过",
   "desc": "千问办公面向企业的全新产品来了",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wxEkMfV6dBjiaic4Jps76hlUVYEo3NOGiaP5TD7vReAy5SHAYyOUukL0dNKWJ2y1sC7ibdhSpRTL4U0shnXITNQ1Fo9vnyVnBVfGP8/0?wx_fmt=jpeg",
