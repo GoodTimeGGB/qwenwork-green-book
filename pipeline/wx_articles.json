@@ -1,5 +1,37 @@
 [
  {
+  "title": "上新啦！千问办公产品新鲜事Vol.03",
+  "desc": "🟢千问办公 APP 上线，iOS 国区、鸿蒙都能下载，agent 随身带。\\x0a🟢听记录音硬件 QwenNote A2 发布，磁吸手机背后，一句话给 Agent 派活。\\x0a🟢skills 开放分享，好用的 skill 复制链接发朋友，装上就是同款。\\x0a\\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdajz-t5ef6t\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#千问办公\\x26lt;/a\\x26gt; \\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdak0-zo6mho\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#Agent\\x26lt;/a\\x26gt; \\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdak0-j23gai\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#skill\\x26lt;/a\\x26gt;",
+  "cover": "http://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wyBVMeAmhyf03d77OfKRiaJ18e3e5FpEbQFSvrEQaXaApf8P26LlgM9uYqVMAwdgK4fEAuWNZrwGtMDQLtv0t8DAmRhEfxfOp0M/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-30",
+  "published_ts": 1790751841,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485182&idx=1",
+  "cover_local": "wx_assets/1df7efddf025.webp",
+  "content": "<p>🟢千问办公 APP 上线，iOS 国区、鸿蒙都能下载，agent 随身带。\\x0a🟢听记录音硬件 QwenNote A2 发布，磁吸手机背后，一句话给 Agent 派活。\\x0a🟢skills 开放分享，好用的 skill 复制链接发朋友，装上就是同款。\\x0a\\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdajz-t5ef6t\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#千问办公\\x26lt;/a\\x26gt; \\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdak0-zo6mho\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#Agent\\x26lt;/a\\x26gt; \\x26lt;a class=\\x26quot;wx_topic_link\\x26quot; topic-id=\\x26quot;munrdak0-j23gai\\x26quot; style=\\x26quot;color: var(--weui-LINK) !important;\\x26quot; data-topic=\\x26quot;1\\x26quot; data-recommend=\\x26quot;\\x26quot;\\x26gt;#skill\\x26lt;/a\\x26gt;</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/39cd62bded7f.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/73eb1a444ed2.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/601c8ec9b127.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/3cdc3caa69",
+  "n_img": 3,
+  "n_block": 4,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485182&idx=1",
+  "source_note": "2026-10-01 经 weixin.sogou.com 搜索页(Chromium)定位官方号行 → 搜狗通用搜索拿到 src=11 签名直链 → 本地 urllib 抓全文 + var biz 校验 == 目标号后入库。该篇为**贴图消息**：正文载荷在 `picture_page_info_list`，已按其 cdn_url 重建 #js_content 后入库。"
+ },
+ {
+  "title": "千问办公向上海交大全校师生免费开放！领取指南来了",
+  "desc": "首批名额2000个，先到先得",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wyUKt3AN64ZgMq5YQMYqiawzRH0ibkwyeuplJLrb57ZbuksBkyLTFTSpDhc8DuQqiaGAhmMIEaMGt92d0f9kwd3RLGleOyMDYMK2Y/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-30",
+  "published_ts": 1790750640,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485175&idx=1",
+  "cover_local": "wx_assets/fe3535bf9b69.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>上海交通大学联合阿里巴巴推出AI公益支持计划， 千问办公 即日起面向全校在册师生开放申请，首批名额2000个，先到先得。每月2000 Credits额度，福利有效期一年。</p>\n<p>此前，阿里巴巴AI公益支持计划合作签约仪式在上海交通大学闵行校区举行。</p>\n<p>上海交大校务委员会专职副主任张安胜、阿里巴巴集团公益副总裁王威出席并见证双方签约。阿里云高校合作总监李贝、上海交大网络信息中心主任薛广涛代表签约，签约仪式由上海交大网络信息中心党委书记沈宏兴主持。双方表示，将以此次签约为新起点，深化AI公益合作，共同推动AI赋能教育科研。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/6c879b5afd23.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公 是阿里旗下面向组织场景设计的企业级Agent产品，支持资料整理、文案创作、数据分析、网页搭建等任务。此次开放将为交大师生在教学、科研和校园管理中使用 AI 提供工具支持。</p>\n<h4 class=\"wx-sub\">01</h4>\n<h4 class=\"wx-sub\">文件整理 从散落文档到项目全景</h4>\n<p>千问办公 能列出文件夹目录，读取并合并文件信息，整理项目状态和待办清单，让散落在各类文档中的信息快速归位。</p>\n<h4 class=\"wx-sub\">02</h4>\n<h4 class=\"wx-sub\">数据分析 从表格数据到汇报大纲</h4>\n<p>千问办公 能读取Excel文件，自动生成图表和分析结论，整理汇总成html文件，从数据到汇报材料一步衔接。</p>\n<h4 class=\"wx-sub\">03</h4>\n<h4 class=\"wx-sub\">宣传制作 从照片素材到招新网页</h4>\n<p>千问办公 能读取你上传的照片素材，生成带社团介绍、照片墙、作品展示和报名表单的招新网页，预览确认后一键发布成在线链接，报名信息自动保存。从一句话需求到上线传播，轻松完成。</p>\n<h4 class=\"wx-sub\">04</h4>\n<h4 class=\"wx-sub\">课程剪辑 从完整视频到精华视频</h4>\n<p>千问办公 能转写长视频内容，自动挑选精华片段、制作章节标题卡并拼接成片，交付精华短视频和完整字幕文本。从一小时录课到五分钟成片，高效出片。</p>\n<p>上海交大师生如何领取？</p>\n<p>通过官网下载 千问办公 （https://qwenwork.cn/），完成SSO认证、使用jAccount登录，即可开始使用产品。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/57ebfe5e233e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>未来， 千问办公 还将持续走进更多高校，与更多师生一起探索AI在教学、科研和校园管理中的更多可能。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c626780aefdf.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/247141e961",
+  "n_img": 3,
+  "n_block": 23,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485175&idx=1",
+  "source_note": "2026-10-01 经 weixin.sogou.com 搜索页(Chromium)定位官方号行 → 搜狗通用搜索拿到 src=11 签名直链 → 本地 urllib 抓全文 + var biz 校验 == 目标号后入库。"
+ },
+ {
   "title": "千问办公“乱搓小赛”，现场把想法做成作品！",
   "desc": "人人都能当三分钟的AI神搓手",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzeSq8NHLbdEj2qmDfzSAuZx4PgjFZNQ1wq4CWNDAjqGs1eLqIHppk63YQMn1tVfpicUVRnAh38icbV0ibmaUdhiaq86ib84TldD1rM/0?wx_fmt=jpeg",

@@ -933,3 +933,57 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 #   _work/scan_0930.py（Chromium 12 关键词 × 7 页 = 753 行全量索引扫描，含日期）、
 #   _work/seek_lighthouse_0930.py（灯塔计划标题级定点搜索 + §5c 内链挖掘）。
 # ============================================================================
+#
+# 【第 22 轮 · 2026-10-01】★ 新增 2 篇（均为官方号，均 2026-09-30 发布）
+#   ① 「千问办公向上海交大全校师生免费开放！领取指南来了」
+#      官方 mid=**2247485175**，idx=1，ct=**1790750640**（2026-09-30 14:44），appmsg_type=9
+#      （普通图文，3 图 / 23 块）· 内容：上海交通大学 × 阿里巴巴 AI 公益支持计划，千问办公
+#      面向全校在册师生开放申请，首批名额 2000 个，含领取/使用指南。
+#   ② 「上新啦！千问办公产品新鲜事Vol.03」
+#      官方 mid=**2247485182**，idx=1，ct=**1790751841**（2026-09-30 15:04）
+#      ★★ **贴图消息**（3 图 / 4 块）—— 直接可入库成功，见下方「贴图消息打通」段。
+#   ⇒ 库 38 → **40 篇**（08-12 ~ 09-30）。四道自检全绿：38→40 / 丢失 0 / 新增 2 / 空壳 0 / 标题重复 0。
+#
+# ★★【重大进展：贴图消息（picture message）首次打通入库】
+#   此前 Vol.02（mid=2247484731）被判「JS 模板 / 单海报 / 不可入库」而登记为缺口。
+#   本轮摸清了这类消息的**真实载荷位置**：
+#     · raw HTML 里 **没有** `#js_content`、也**没有** `#js_image_content` 容器
+#       （`extract_content_div()` 会退化成「取 400k 裸文本」→ 产出垃圾块）；
+#     · 正文图文实际在 **`window.picture_page_info_list`** 这个 JS 数组里，
+#       每项形如 `{ cdn_url: 'https://mmbiz.qpic.cn/...', width: '3000', height: '4000',
+#                  is_qr_code: '0', ... }`（可含小程序/下载类 `318.wxapp.tc.qq.com` 项，要按
+#       `mmbiz.qpic.cn` 过滤）；
+#     · 文案在 **`window.desc`**（与 `meta og:description` 同值，`\x0a` 分行、`\x26lt;a…\x26gt;` 是话题标签）；
+#     · `window.mid` / `window.idx` / `window.ct` / `window.biz`（形如
+#       `window.biz = '' || 'MzcwMzM3NjM1NQ=='`，**不是** `var biz = "…"`）都在。
+#   ⇒ **入库姿势**：按上述字段**合成一个带 `#js_content` 的页面**（文案 → <p>，图片 → <p><img data-src>），
+#      再 monkeypatch `crawl_wx.fetch` 注入、调 `crawl_wx.process()`（见 `_work/ingest_1001.py` 的
+#      `build_picture_html()`）。Vol.03 一次成功（3 图 / 4 块）。
+#      ⚠️ 走 Chromium 渲染版是**没用的**——渲染后 `#js_image_content` 里只有文案、图片是空的
+#      （懒加载后仍拿不到），仍会被后置判据判成空壳。**必须用 raw HTML 里的 picture_page_info_list。**
+#   ⇒ **待办：Vol.02（mid=2247484731）现在可以用同一方法补录**，不再是缺口。
+#
+# 【通道可达性（第 22 轮）】
+#   · 本机 weixin.sogou.com 搜索页 urllib      ❌ 5,575B antispider（p1 与 p4 同值）
+#   · 本机 weixin.sogou.com/link urllib        ❌ 5,553B antispider
+#   · 本机 www.sogou.com/web urllib            ✅ **本轮主力之一**：起手 2 个 query 可用
+#        （697KB / 648KB 真结果页），中途转 antispider，**冷却约 4 分钟后自行恢复**，又取到 2 条
+#        新鲜 `src=11` 直链（timestamp=1790816869，签发后 ~1 分钟内即用，全部有效）。
+#   · 本机 weixin.sogou.com 搜索页 **Chromium** ✅ **主力**：12 关键词 × 7 页 = **693 行**，
+#        全程无 antispider（与 09-30 的 753 行同量级）。
+#   · 本机 **Chromium 跑 /link** ✅ **2/2 全中**（轮询 `window.biz` 最多 14 次 × 0.6s），
+#        **未出现 §14.5 的批量挂死**——因为本轮只有 2 条候选。→ 条目少时 Chromium /link 很可靠。
+#   · WebFetch 读 `weixin.sogou.com/weixin?type=2` ✅（2 页，给「标题 + 账号名 + 日期」）
+#        —— 本轮**唯一**能拿到官方号账号名的通道，用它发现了 2 条「18小时前」的官方新行。
+#   · WebFetch 读 `www.sogou.com/web` ❌ 第 1 个 query 即弹验证码（「请依次点击【肠,物,蜡,寿】」）。
+#
+# 【索引硬证据】Chromium 693 行去重后，账号名 == 千问办公QwenWork 的官方行共 **10 条**
+#   （09-17 15:08 / 09-18 / 09-20 / 09-22 / 09-23 / 09-24 / 09-25 / 09-28 / **09-30 14:45** / **09-30 15:04**），
+#   除 Vol.02（已知缺口 → 现已可补录）外**全部在库**；索引中**不存在 10-01 的任何官方行**。
+#
+# 【本轮脚本】_work/probe_1001.py（多通道探活）、_work/web_links_1001.py（本机 /web 抠直链 + biz 校验）、
+#   _work/peek_1001.py（单链体检，含 JS 模板 window.biz 兜底）、_work/scan_1001.py（Chromium 693 行全量索引扫描）、
+#   _work/chromium_link_1001.py（Chromium 扫官方行 → 对新标题跟随 /link → 校验 biz → 存 HTML）、
+#   _work/inspect_1001.py（落盘 HTML 体检）、_work/ingest_1001.py（入库，含贴图消息合成）、
+#   _work/selfcheck_1001.py（四道自检）。
+# ============================================================================
