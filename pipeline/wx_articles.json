@@ -1,5 +1,37 @@
 [
  {
+  "title": "1024送10000千问办公积分！",
+  "desc": "// 1024，请程序员给自己提一个 P0 需求\n\n// 在评论区补全：\n// 「如果给自己提一个 P0 级需求，我希望______。」\n\nif (已关注千问办公 &amp;&amp; 已点赞 &amp;&amp; 已收藏 &amp;&amp; 已在评论区留下P0愿望)\n{\n　　进入抽奖名单();\n\n　　// 从名单中随机抽取 10 人\n　　if (中奖) {\n　　　　获得Token卡(10000); // 单位：千问办公积分\n　　}\n}\n\n/",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzRibSQUvOMEX9X5TkJU2KSV39UuTxfOl4JPrj2a2iculUqIzjPgSu4JL4zOWbtEic25ceR9feH2nVgYA5ODJqwdUiaN50ria0H6WcI/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-10-23",
+  "published_ts": 1792746205,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485512&idx=1",
+  "cover_local": "wx_assets/590f6b7bdaca.webp",
+  "content": "<p>// 1024，请程序员给自己提一个 P0 需求// 在评论区补全：// 「如果给自己提一个 P0 级需求，我希望______。」</p>\n<p>if (已关注千问办公 &amp;&amp; 已点赞 &amp;&amp; 已收藏 &amp;&amp; 已在评论区留下P0愿望){进入抽奖名单();// 从名单中随机抽取 10 人if (中奖) {获得Token卡(10000); // 单位：千问办公积分}}// 祝大家1024程序员节快乐// 0 Error, 0 Warning</p>\n<p>#千问办公 #千问办公Token卡 #1024程序员节 #程序员 #代码\".replace(//g, '').replace(//g, '').replace(/\\s/g, ' ');</p>\n<p>window.current_image = \"\" * 1 || 0;</p>\n<p>window.cgiData.product_activity_ext = \"</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/95cfefa105b8.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/d5176de26022.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c041ba7414da.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/129ed2cf28",
+  "n_img": 3,
+  "n_block": 8,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485512&idx=1",
+  "source_note": "2026-10-24 经本机 weixin 搜索页(urllib) 全量索引扫描发现官方行「1024送10000千问办公积分！」2026-10-23 17:03，不在库（当日 17:03 为最后一条官方行）。WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + 千问办公 + 程序员节 + Token卡）取得官方 src=11 直链 → 本地 curl -sL，2,596,795B，var biz 校验 == 目标号（window.biz 占位符形态）。**JS 模板 + 贴图消息**：无 #js_content，正文在 window.desc（1680 字，1024 程序员节「给自己提一个 P0 需求」互动文案 + 代码体排版），配图 3 张取自 picture_page_info_list。活动：评论区补全 P0 需求 + 关注/点赞/收藏，随机抽 10 人送 10000 千问办公积分（Token 卡）。"
+ },
+ {
+  "title": "如何用千问办公做出工作可用的视频？｜AI办公必修课 09",
+  "desc": "从一句话需求到成片：五步流水线与三个案例",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wzALlAlib3r5nsWJNJ04fXcUzcZngbmibzvQvnvoTFicG8Vwliau5Yw15hk7iaIE34YiaclbX2prPmxT3k7NZKGibyqzjpg5xKAaxQX4M/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-10-23",
+  "published_ts": 1792738092,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485489&idx=1",
+  "cover_local": "wx_assets/90c86cc1e6de.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork how-to</p>\n<p>想给产品做一支介绍视频，常见的 两条路都不轻松 ：找外部团队，报价高、排期长；自己动手，软件不熟，素材东拼西凑，色彩不统一，镜头衔接生硬，做出来的成品像一锅大杂烩。</p>\n<p>千问办公 基础课第九期给出的答案，是 把视频制作拆成一条五步流水线 ：脚本分镜、生成画面、让画面动起来、生成配音、剪辑整合。每一步都由一段指令推进，新手也能把片子做得有模有样。</p>\n<p>与 AI 协作做视频，第一步不是打开软件，而是把片子说清楚：时长、画幅、主题、结构、收尾，以及最重要的，先出分镜表，确认之后再生成画面。 把主动权留在自己手里 ，后面的返工就会少很多。</p>\n<h4 class=\"wx-sub\">五步流水线总览</h4>\n<p>脚本分镜 ：先出分镜表，写清镜号、时长、场景、画面描述和配音词；</p>\n<p>生成画面 ：统一色板与构图，逐帧生成关键帧，并做自查；</p>\n<p>让画面动起来 ：把每帧变成动画镜头，规定运镜、回弹和转场；</p>\n<p>生成配音 ：按口播词选定声线，产出旁白；</p>\n<p>剪辑整合 ：按时间线把画面、配音、字幕合成成片。</p>\n<p>五个步骤拆开看都不复杂，串起来就是 一条可以重复使用的生产线 。</p>\n<h4 class=\"wx-sub\">01</h4>\n<p>案例一： 一句话，跑通一支 15 秒 MG 动画先看输入。这段话把片子的全部要素一并交代清楚：提示词 · 可直接复制</p>\n<p>\"我要做一支 15 秒横版（1920×1080）MG 动画，主题「从一个人的桌面，到一群人的流水线」。结构：上半场单人工作台（日历、收藏、浏览器，关掉浏览器全部清空），中线分屏，下半场多人工作台（项目时间线：需求确认 → 设计评审 → 开发 → 测试 → 发布上线，节点逐个点亮），底部黑底大字收尾「从一个人的桌面 → 一群人的流水线」。请先出分镜表：镜号 / 时长 / 场景 / 画面描述 / 配音词，画面描述写到构图、元素、色值。分镜表给我确认之前，不要生成任何图。\"↕ 提示词较长，可上下滑动查看全文</p>\n<p>收到需求后，它会先把几个关键选择问清楚：视觉风格走哪个方向、配音用什么声线、中段过渡用哪种分屏处理。确认之后，再输出分镜表。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/65f5c1867f4e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>分镜表锁定后进入画面环节。关键帧生成有一条硬性要求：色板与构图必须统一，每帧自查有无乱码、偏色与构图偏差， 不合格的单帧重做，不整批返工 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/093955a5efd7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>接着让画面动起来。指令里把运动方式写得非常具体：分屏线自上而下划出、图标弹入带过冲回弹、时间线节点逐个点亮、底部大字砸入后定格；单帧静止不超过 2 秒，禁止整页硬切， 每一处转场都要有可见的运动过程 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9c2eea04e1b9.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>画面就位后，按口播词生成配音。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/1e7aa1e1bda5.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>再把画面、配音、字幕按时间线整合。到这里，一支 15 秒的 MG 动画就走完了全流程。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2b72e6acb447.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">02</h4>\n<h4 class=\"wx-sub\">案例二：给 IP 形象做一段动画</h4>\n<p>如果手里已经有 IP 形象（品牌自有形象），可以直接把图交给它，再用一段描述规定动作与场景，例如角色坐在办公桌前、头顶漂浮符号、镜头缓缓前推，以及背景与光感的处理方式。它会 把静态形象变成一段竖版动画 ，并按要求调整手机界面居中、压低背景音量等细节。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/83526605489b.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">03</h4>\n<h4 class=\"wx-sub\">案例三：先装一位「动画专家」</h4>\n<p>第三个案例不一样：不是从零生成，而是 先给 千问办公 装上一项专业技能 。在「扩展」中找到并安装「 TapNow 创意工作室 」，它带来一整套视觉创意能力，覆盖从创意到出片的各个环节。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/17ec9551947c.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>装好之后，把品牌需求文档交给它，就能一次生成多款不同造型的方案；不满意的局部，还可以继续快速调整。每个案例都附带全套「作业」， 可以一键挂载复用 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/3a46d22bcc12.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>三个小技巧： 让下一次出片更省事视频最后给了三个很实用的建议。</p>\n<p>第一，风格资产沉淀。 把反复用到的规范整理成一份可复用的说明：适用场景、四段式流程、已定决策、易错点、提示词模板与合成参数。下一次做同类片子， 直接调用，不必从头解释 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/e8c1662bc291.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>第二，一篇多版。 同一支片子的素材，可以一次输出多种比例，横版、竖版各取所需，不必为每个平台重做一遍。</p>\n<p>第三，拉片学习。 把值得参考的片子拆开看，记录它的结构与节奏；再把核心结论沉淀成清单，下一次直接照着准备。</p>\n<div class=\"wx-divider\" aria-hidden=\"true\"></div>\n<p>从一个人的桌面，到一群人的流水线。过去做视频是一个人的硬仗，现在它可以是 一条分工明确、随时可复用的流水线 。把重复的环节交给工具， 把创意留在自己手里 ，这大概就是第九期最想传达的事。</p>\n<p>以上就是第 9 期 AI 办公必修课 的全部内容。下一期，我们继续解锁 千问办公 的下一个效率场景。</p>\n<p>关注「 千问办公 」公众号，更新第一时间推送。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9367da7ec823.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/968ec47eac",
+  "n_img": 10,
+  "n_block": 44,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485489&idx=1",
+  "source_note": "2026-10-24 经本机 weixin 搜索页(urllib) 全量索引扫描（主 16 词×7 页 + 补充词×5 页，实际扫得 490 行后在「千问办公 千仔」p3 起 antispider）发现官方行「如何用千问办公做出工作可用的视频？｜AI办公必修课 09」2026-10-23 14:49，不在库。WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + 千问办公 + 素材东拼西凑 + 镜头衔接）取得官方 src=11 直链 → 本地 curl -sL（桌面 Chrome UA + Referer mp.weixin.qq.com，3,526,615B）+ var biz 校验 == 目标号。普通图文（#js_content 存在）。「AI 办公必修课」系列第 9 期（05=10-08 / 06=10-15 / 08=10-21 / 09=本篇）：把视频制作拆成脚本分镜→生成画面→让画面动起来→生成配音→剪辑整合五步流水线，无需外部团队。"
+ },
+ {
   "title": "千问办公+AI表格，无货源电商选品指南",
   "desc": "选品日历、价格带、比价、筛选、生图，全交给千问办公和 AI 表格",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzgAcEDezJtoXibiaye52LazicpsjB9KzRuubXL726vjC3tUCXXrrCOfxhg3H8yzzogtRrYCZmdT7AxOKggvcBIhHCmvDhjTzOR8s/0?wx_fmt=jpeg",
