@@ -1,5 +1,37 @@
 [
  {
+  "title": "「千问办公官方学院」正式上线！",
+  "desc": "汇集了千问办公的官方使用指南、视频课程、直播实战与真实案例5类内容，从入门、进阶到实战，AI 提效所需的内容这里一站备齐。\n\n无论你是 AI 办公零基础、正在上手千问办公，还是想提升岗位效率、寻找灵感与成功案例，都能在这儿找到适合自己的学习",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_png/RTs2B6JK9wyTAxvmQg7giax9yUuXR4Qo14OByE3iclbMKvVCsI40hIZRBibAO4xjDFXJx1EMz14vWZhjEdEbMYN1V3qPl4dUz8MyxVaEZEB5v4/0?wx_fmt=png&from=appmsg",
+  "author": "千问办公",
+  "published": "2026-10-28",
+  "published_ts": 1793186971,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485552&idx=1",
+  "cover_local": "wx_assets/8ea474421d97.webp",
+  "content": "<p>汇集了千问办公的官方使用指南、视频课程、直播实战与真实案例5类内容，从入门、进阶到实战，AI 提效所需的内容这里一站备齐。</p>\n<p>无论你是 AI 办公零基础、正在上手千问办公，还是想提升岗位效率、寻找灵感与成功案例，都能在这儿找到适合自己的学习内容。</p>\n<p>更多新功能与课程内容持续更新，欢迎关注千问办公官方学院。</p>\n<p>#千问办公官方学院 #ai学习 #AI教程 #AI办公\".replace(/\\r/g, '').replace(//g, '').replace(/\\s/g, ' ');</p>\n<p>window.current_image = \"\" * 1 || 0;</p>\n<p>window.cgiData.product_activity_ext = \"</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/8ea474421d97.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/90ba50eb3e0f.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c9f621e7841b.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/56766dad05d7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f59fb0c82096.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/ba7bbe5b8fe3.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/58abcf4e3ace.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/1a46d90b0339.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/1730b9ee4b87.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/af7f898302",
+  "n_img": 9,
+  "n_block": 15,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485552&idx=1",
+  "source_note": "2026-10-29 经 WebFetch 读 weixin 垂直搜索（type=2，query=千问办公QwenWork，page=2）发现官方行「「千问办公官方学院」正式上线！」显示为「13小时前」，不在库。官方直链由 WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + \"千问办公QwenWork\" + 官方学院）取得（timestamp=1793236295）→ 本地 curl -sL（桌面 Chrome UA + Referer）2,603,805B，`window.biz = '' || 'MzcwMzM3NjM1NQ=='` 校验命中。**JS 模板/贴图消息**（无 #js_content，载荷在 window.desc + picture_page_info_list）：官方对外发布「千问办公官方学院」，汇集官方使用指南、视频课程、直播实战与真实案例 5 类内容，覆盖入门/进阶/实战三段，面向零基础用户、上手用户与提效找案例的用户。"
+ },
+ {
+  "title": "如何用千问办公快速做出真正可用的PPT？｜AI办公必修课10",
+  "desc": "四个动作生成可交付的高质量PPT",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wzCPXvUDsMMUl22SGfbLYa3fCvDljekibMLSSUshHxic7HMZeWxNUiaqZ23FxoePcKkqwx9mladfDGrib0gTT1dRgibicWwjjjdh2XtM/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-10-28",
+  "published_ts": 1793175147,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485528&idx=1",
+  "cover_local": "wx_assets/13d54c1c452e.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork how-to01明确需求</p>\n<p>第一步是把材料交出去，同时把要求说明白。视频里的指令是这样写的：提示词 · 可直接复制</p>\n<p>\"我下周五要做年终述职，评委是部门负责人和 HR。材料我拖给你了：《年终述职报告.docx》（约 8000 字的述职材料）和《年度数据表.xlsx》（全年 KPI 完成情况、季度数据）。先别急着做 PPT，第一步先对齐需求：1. 先复述一遍你对这份述职的理解（述职主线、我的角色、材料里已有的素材）；2. 然后主动向我提问，把框架敲清楚，至少问到：项目背景、业务目标、汇报对象最关注什么、风格偏好、目标页数；3. 中间需要补充的外部资料，联网搜索帮我复核，缺的补齐、错的纠正，并标注来源；4. 最后停在一份大纲草稿，等我确认。\"↕ 提示词较长，可上下滑动查看全文</p>\n<p>它没有直接生成页面，而是先复述理解，再反过来提问：项目背景、业务目标、汇报对象最关注什么、风格偏好、目标页数， 逐条问到位 。确认之后，才交出一份大纲草稿，17 页、约 10 分钟，重点按确认过的方向排布，数据与《年度数据表.xlsx》逐项核对一致。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/6def097f0394.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">02</h4>\n<h4 class=\"wx-sub\">视觉风格定调</h4>\n<p>风格这件事，最难的是说不清。视频里的做法，是先安装一项制作 PPT 的技能，再让它一次给出三种风格方向， 放在一起比较后再选 。</p>\n<p>三版各有侧重：有的用大面积色块压住标题，有的靠数字卡撑起版面，有的以图表结构做主视觉。选定一版后，色板、字体、版式就此固定，后面每一页都照同一套规矩执行，不必再一页一个样。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/5a2d9b70991e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">03</h4>\n<h4 class=\"wx-sub\">内容成稿</h4>\n<p>大纲和风格定了，成稿就顺了。完整初稿一次生成 17 页， 把大段文字换成图表 ：趋势用折线，构成用环形图，对比用柱状图，关键数字单独放大成卡。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/002d852ea975.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>细节上也有交代：每页图表都标注数据来源的原表，个别折算值统一加星号并附计算公式脚注；配图一律放在没有文字和图表的区域，不影响阅读。</p>\n<h4 class=\"wx-sub\">04</h4>\n<h4 class=\"wx-sub\">审核微调与导出</h4>\n<p>PPT 最容易出错的地方是数字。这一步做得很扎实：内置校验脚本对 5 个页面的 83 项关键数值逐项比对，全部对上， 不做任何四舍五入的改写 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9ca2e708fc49.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>核对结果单独生成一份清单页面，逐项列出数据核对、标题层级修复和残留问题，改没改、改在哪里，一目了然。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/0144e63a5939.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>确认无误后导出成品：PPTX 文件保存到本地，也可以存进在线文档，方便后续协作修改。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/3c7ac37a3df4.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">两个小技巧</h4>\n<p>第一个技巧，是顺手把 逐页讲稿和演讲备注 生成出来。指令里连字数都规定好了：每页一段口语化讲稿，80 至 120 字，再附上该页要强调什么、可能被追问什么。上台前不必再单独写讲稿、背台词。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/8a30f943fadb.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>第二个技巧，是把成稿另外导出一份 网页版演示 。 不装软件也能放映，发个链接就能打开 ，临时换一台电脑也不慌。</p>\n<div class=\"wx-divider\" aria-hidden=\"true\"></div>\n<p>这份 PPT 的做法，关键不在\"会不会做 PPT\"，而在 顺序有没有摆对 ：先对齐需求，再定风格，然后成稿，最后核对与导出。把该问的问题问清楚，把该核的数字核到位，通宵返工就可以避免。</p>\n<p>以上就是第 10 期 AI 办公必修课 的全部内容。下一期，我们继续解锁 千问办公 的下一个效率场景。</p>\n<p>关注「 千问办公 」公众号，更新第一时间推送。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f52b11e548d9.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/900ac2ba71",
+  "n_img": 8,
+  "n_block": 32,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485528&idx=1",
+  "source_note": "2026-10-29 经 WebFetch 读 weixin 垂直搜索（type=2，query=千问办公QwenWork，page=2）发现官方行「如何用千问办公快速做出真正可用的PPT？｜AI办公必修课10」显示为「16小时前」，不在库。官方直链由 WebFetch 读 www.sogou.com/web（site: + 千问办公QwenWork + 必修课10 + PPT + 年终述职）取得（timestamp=1793236295）→ 本地 curl -sL 3,518,037B，`var biz` 校验命中；官方 mid 另经转载页（biz=MzcwNDQyNTE0Mw==）的 copyright_info.reprint_url 交叉确认 =2247485528。**AI 办公必修课 第 10 期**：讲怎么让 AI 直接产出可用的 PPT —— 先把材料与要求一次说清（提示词可直接复制），再让模型出结构、核数字，避免标题层级错乱/配色失控/数字对不上导致的通宵返工。"
+ },
+ {
   "title": "千问办公接入乐奇AI眼镜，一句话发起任务",
   "desc": "快把千问办公戴上",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wwGAuDNtJ5RKMdqUorWehAicqehQ8ic4xiaO202L5sps1iaOSDxyVNevJln67tDmseXvbkRBEm3vu333sa1DiaxLucfoARFUparV340/0?wx_fmt=jpeg",
