@@ -1,5 +1,21 @@
 [
  {
+  "title": "千问办公电商经营看板实操教程",
+  "desc": "手把手教你从0到1搭建双11经营看板",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wxF6r209icBNxpMOf9KcqhpqbZmGPjtIQIm6nfCGvUJ0bY9GhBs2WnBFLcgmMxTYjOhE7ZJTwAibkBhgQZkP7a9PvGqER6lxLS3E/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-10-29",
+  "published_ts": 1793262469,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485565&idx=1",
+  "cover_local": "wx_assets/5a7edaa685fc.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork Product</p>\n<p>双11大促开启， 千问办公电商版 为商家带来双11经营看板实操教程。 千问办公电商版 直连生意参谋、万相台无界、达摩盘等店铺后台，一句话即可生成经营看板，并可配置每日定时刷新。</p>\n<p>该版本覆盖日常盯盘、大促作战与投放复盘等场景，可解决商家在多个后台之间手动导数、Excel 比对、切换成本高的问题。 目前，用户可在千问办公个人版的行业一栏切换到\"电商经营\"直接体验。</p>\n<p>01 电商版，有何不同？</p>\n<p>目前，市面上的 AI 经营工具大多需要商家先把后台报表导出为 Excel，再上传给 AI 分析。数据从后台到 AI，中间要过一道人工搬运；上百个 SKU 的计划数据看一遍，往往要一两个小时。</p>\n<h4 class=\"wx-sub\">↓</h4>\n<p>千问办公 电商版可直连店铺后台，无需手动导数。产品由 四层结构 组成：连接器层 ：打通生意参谋、万相台无界、达摩盘等日常必看后台能力层 ：路由到经营全景、单场景或智能定制的分析能力</p>\n<p>产出层 ：生成 HTML 经营看板、诊断报告与表格文件，落入本地目录</p>\n<p>运行层 ：通过定时任务自动刷新看板，并可把异常摘要投递到钉钉等 IM 会话</p>\n<p>针对商家关心的“AI 会不会乱动账户”，电商版设定了明确的操作边界：默认只做只读取数与看板产出；涉及改预算、改出价、暂停或新建计划、商品上下架、改价、改库存、退款、订单变更等实操动作时，会先给出方案与影响范围， 等商家确认后再执行 。</p>\n<p>02 如何跑通第一张看板？</p>\n<p>从 千问办公 个人版切换到电商版后，按六步走：进入电商经营场景 → 在连接器授权淘宝等电商后台，登录生意参谋或万相台无界等数据平台 → 用“昨日支付金额”、“访客数”与后台首页逐项核对，确认绑定的是目标店铺 → 明确时间区间、终端与归因周期等口径 → 一句话生成看板并逐模块检查 → 配置每日刷新时间与时区。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/026762948f30.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h3 class=\"wx-sec\"><span class=\"wx-sec__num\">03</span>四类看板，各有所长</h3>\n<p>全店整体健康吗？哪些数据在掉？ 看板合并生意参谋多源数据，覆盖核心指标、每日趋势、来源与渠道结构、地域分布、商品排行与异常监控，发现异常后可下钻到具体渠道和单品。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/1f6a35784d0d.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>哪个货该加码？哪个该止损？ 七个 Tab 覆盖增长机会、单品周期表现、新品与测款观察、货盘结构、商品明细、单品诊断、退款定位；每个单品落到继续放大、先优化、持续观察、降低资源四类动作之一。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/a1938ea23482.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>钱花得值不值？该加还是该停？ 接入万相台无界报表，覆盖计划、关键词、人群、宝贝维度的花费、归因成交额、ROI、费比与跑飞识别，可按自定义阈值筛选低效计划。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/4cf5336ca147.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>增长靠新客还是老客？ 拆解新访成交、未购客户回访成交、已购客户复购三条通路，覆盖新老访客、复购表现、地域、人群画像与会员粉丝等模块。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/e912b30154e9.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>看板搭好后，可进一步配置定时任务：按日、周、月自动刷新，异常摘要投递到指定钉钉群，无异常时只回一句“今日无异常”。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2c0cc13086eb.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">↓</h4>\n<p>过去 商家做经营复盘，要在生意参谋、万相台无界、达摩盘等多个后台之间来回切换，手动下载 Excel、拼接、比对、写结论。光是“看清昨天发生了什么”，就要花掉大半个工作日。</p>\n<p>现在 一句话生成看板、每天定时刷新、异常自动投递。经营数据从 “月底复盘一次” ，变成 “每天早上打开就看” 。</p>\n<p>附 24小时行动清单 ，马上动手搭建你的第一个商家经营看板。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/49be3f2a2cd7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>点击阅读原文，去「千问办公官方学院」，学习更多电商版教程！</p>",
+  "slug": "wx/2c58e9a4f7",
+  "n_img": 7,
+  "n_block": 30,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485565&idx=1",
+  "source_note": "2026-10-30 本机 weixin 垂直搜索（type=2）全量索引扫描（主 16 词×7 页 + 补充 135 词×5 页，1523 行）捞到官方行「千问办公电商经营看板实操教程」（2026-10-29 16:29），不在库。官方直链由 WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + 千问办公 + 电商经营看板 + 实操教程）取得（timestamp=1793323086）→ 本地 curl -sL（桌面 Chrome UA + Referer）3,551,295B，`var biz` 校验命中，mid=2247485565。普通图文，正文片段内 mmbiz 图 7 张。内容：面向已开启千问办公电商版邀测的商家，手把手搭「电商经营看板」——把生意参谋/千牛/有赞等多平台多店铺的经营数据（营收、流量、转化、库存、退款）汇到一处，用 AI 表格做每日经营动态盯盘与异常提醒，替代人工反复蹲后台截图。"
+ },
+ {
   "title": "「千问办公官方学院」正式上线！",
   "desc": "汇集了千问办公的官方使用指南、视频课程、直播实战与真实案例5类内容，从入门、进阶到实战，AI 提效所需的内容这里一站备齐。\n\n无论你是 AI 办公零基础、正在上手千问办公，还是想提升岗位效率、寻找灵感与成功案例，都能在这儿找到适合自己的学习",
   "cover": "https://mmbiz.qpic.cn/sz_mmbiz_png/RTs2B6JK9wyTAxvmQg7giax9yUuXR4Qo14OByE3iclbMKvVCsI40hIZRBibAO4xjDFXJx1EMz14vWZhjEdEbMYN1V3qPl4dUz8MyxVaEZEB5v4/0?wx_fmt=png&from=appmsg",
