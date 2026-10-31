@@ -2659,7 +2659,7 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 #      **JS 模板/贴图消息**：raw HTML 无 #js_content，载荷在 window.desc(1258字) +
 #      picture_page_info_list（9 张 mmbiz，去重后）→ 走 §26.3 / §38.1 合成路线
 #      （js_unescape 还原 
- → html.unescape → 去 wx_topic_link 标签 → 合成 #js_content）
+# → html.unescape → 去 wx_topic_link 标签 → 合成 #js_content）
 #      入库 9 图 / 15 块。
 # ② 《如何用千问办公快速做出真正可用的PPT？｜AI办公必修课10》
 #      official mid=2247485528 / idx=1 / var ct=1793175147 (=2026-10-28 16:12) / biz 命中
@@ -2784,3 +2784,31 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 # 【待补录缺口（仍为 15 条，需用户给规范链接）】未变。最可靠补录方式仍是用户在微信客户端
 #   打开该号「历史消息」逐篇复制 mp.weixin.qq.com/s/<id> 链接给过来。
 # ============================================================================
+
+# ---------------------------------------------------------------------------
+# 2026-10-31 第 51 轮增量记录
+# 新增 1 篇：《欢迎6位新朋友接入千问办公》
+#   mid=2247485618 / idx=1 / ct=1793356551 = 2026-10-30 18:35 / 普通图文 / 8 图 31 块
+#   QwenWork News 栏目第 4 期（库中另有 08-13「5位」、08-28 与 10-16「7位」两期）
+# 发现链路：
+#   WebFetch 读 weixin 垂直搜索（type=2，query=千问办公QwenWork，page=2，
+#     带 &_ast=1793408956&w=01020600 破隔日缓存）→ 见官方行「14小时前」不在库
+#   → WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + 千问办公QwenWork +
+#     欢迎6位新朋友 + 中控技术 + 锐捷网络）→ 官方 src=11（timestamp=1793408982）
+#   → 本地 curl -sL（桌面 Chrome UA + Referer）3,525,120B，var biz 校验命中
+# 通道：
+#   WebFetch 读 weixin 垂直搜索  ✅ 主力（4 query 全程无验证码，账号名+相对时间俱在）
+#   WebFetch 读 /web             ✅ 唯一 src=11 直链来源（1 次命中；另 1 次取证到非目标号）
+#   本机 weixin 搜索页 urllib    ✅ 全量索引扫描（见下）—— 但新文在 page=1 不可见
+#   本机 /link                   ➖ 未试（省配额）
+#   本机 /web                    ➖ 未试
+#   crawl_wx.py                  ✅ 22/22 成功、JSON 深度全等，但 55 张 webp 回涨
+#                                 (§41.1 老问题：cache 只覆盖 cover) → git checkout 还原二压版
+# 证伪记录（不入库）：
+#   《AgentOne AI运营，进千问办公了》→ biz=Mzg5MDk3NDEyNg==（瓴羊自家号，10-23 15:41），
+#     非目标号；《迅易解读：瓴羊Agent One 上新…》→ biz=MzAxNTY4NDU3Mw==。均属合作方自宣。
+# 系列探针：
+#   `千问办公产品新鲜事 Vol.07` 精确查询 → 仅 1 条且为无关媒体旧文 ⇒ Vol.06/Vol.07 均未发布
+#   `AI办公必修课11` → 274,717 条纯噪声（"11" 弱约束，§36.5 再现）⇒ 该系列无法编号精查
+# 待跟进缺口：累计 15 条（未变），含「敏捷版」（索引内仍 0 官方行，仅「阿里云政企」转载）
+# ---------------------------------------------------------------------------
