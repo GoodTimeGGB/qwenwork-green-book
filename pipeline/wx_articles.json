@@ -96,6 +96,22 @@
   "source_note": "2026-10-28 经 WebFetch 读 weixin 垂直搜索（type=2，query=千问办公QwenWork，page=2）发现官方行「千问办公接入乐奇AI眼镜，一句话发起任务」显示为「16小时前」，不在库。WebFetch 读 www.sogou.com/web（site:mp.weixin.qq.com + 千问办公 + 乐奇 + 眼镜 + 一句话发起任务）取得官方 src=11 直链（timestamp=1793149643，签发后 1 分钟内用掉）→ 本地 curl -sL（桌面 Chrome UA + Referer https://mp.weixin.qq.com/，3,482,257B）+ var biz 校验 == MzcwMzM3NjM1NQ==。**QwenWorknews 栏目**：官方与乐奇 Rokid 在 AI 眼镜新品发布会上宣布合作，在 Rokid AI APP 智能体商店添加「千问办公」并绑定账号后，可在 AI 眼镜上语音唤起、下发任务、在眼镜端查看结果（任务状态主动推送；可结合眼前画面分析，用于会议、巡检等场景）。"
  },
  {
+  "title": "千问办公接入瓴羊AgentOne AI运营能力",
+  "desc": "一句话可分析多渠道经营数据",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wymHSW6UBJJTlxkagzvgWr2KfBBmib0PiaBiaufz1Ebmls6SMUyiaekbyCrfPphJbqv6dZEhevXDicQuGmibnKLS32MCTVxrwY8hNPjA/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-10-27",
+  "published_ts": 1793069010,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485521&idx=1",
+  "cover_local": "wx_assets/33ddbe716d93.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>近日， 千问办公 接入瓴羊AgentOne AI运营能力，以后电商用户在 千问办公 里面可以 一句话分析多渠道经营数据 了。</p>\n<p>瓴羊AgentOne AI运营，是由瓴羊AgentOne打造的专注电商增长的系列电商Agent。此次， 千问办公 接入了瓴羊AgentOne AI运营的 多电商平台数据连接能力 。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/1a633bd25096.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9e23fe56d583.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>过去，商家的经营数据散在各个平台后台。电商运营每天要登录、筛选、导出，再复制、粘贴、汇总。 一张表拼好，半天可能就过去了 ；数据虽然拿到了，留给分析和判断的时间却不多。换个平台、换个店铺，这套流程还得再来一遍。</p>\n<p>现在，在 千问办公 电商版中使用瓴羊电商数据连接器，商家可以直接询问多个渠道的经营情况：哪个渠道在涨，哪个单品在掉，哪笔投放该停，哪个链接该加预算—— 问题直接问，答案直接给 。商家做分析不再只靠某个老运营的经验，也不用等一份排期很长的报表。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/941a462efb00.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>千问办公 电商版是 千问办公 发布的针对电商行业的 AI 生产力工具，基于电商行业商家的日常工作场景，重新设计并增强了 AI 能力。尤其针对跨多平台的经营场景， 千问办公 电商版可以用 一个 AI 入口驱动不同的电商平台 ，帮助商家完成 AI 时代的运营升级。</p>\n<p>目前， 千问办公 个人版用户切换至“ 电商经营 ”模式即可体验。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/03ef8441780d.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/6cb7536d8d",
+  "n_img": 4,
+  "n_block": 11,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485521&idx=1",
+  "source_note": "2026-11-02 补录（第 53 轮）。本篇是搜狗索引漏收的官方新文（索引内只有「科小艺助守」10-30 11:48 与「纵横云技术」的转载，官方行长期不在索引）。发现路径：本机补充扫描（活动/栏目词）拿到媒体侧标题 → 内置 WebSearch 精确标题查询 → 经典分享链接 `?__biz=MzcwMzM3NjM1NQ==&mid=2247485521&idx=1&sn=9fe46cfd..&chksm=f5228591..` → 本机 curl -sL 3,486,545B，var biz 命中。ct=1793069010 = 2026-10-27 10:43:30（mid 2247485521 落在 2247485512(10-23) 与 2247485527(10-27 乐奇眼镜) 之间）。appmsg_type=10002、#js_content 真实存在（10 个 <p>，以文字+截图为主）。内容：QwenWork news 栏目，千问办公接入瓴羊 AgentOne「AI 运营」的多电商平台数据连接能力，电商版内一句话分析多渠道经营数据；两步操作（切到「行业版-电商经营」→ 扩展/连接器/电商经营/瓴羊电商数据连接器）；千问办公电商版定位（跨平台经营看板、趋势洞察与卖点分析、爆款素材批量生成、跨平台 ROI 智能优化）。"
+ },
+ {
   "title": "1024送10000千问办公积分！",
   "desc": "// 1024，请程序员给自己提一个 P0 需求\n\n// 在评论区补全：\n// 「如果给自己提一个 P0 级需求，我希望______。」\n\nif (已关注千问办公 &amp;&amp; 已点赞 &amp;&amp; 已收藏 &amp;&amp; 已在评论区留下P0愿望)\n{\n　　进入抽奖名单();\n\n　　// 从名单中随机抽取 10 人\n　　if (中奖) {\n　　　　获得Token卡(10000); // 单位：千问办公积分\n　　}\n}\n\n/",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wzRibSQUvOMEX9X5TkJU2KSV39UuTxfOl4JPrj2a2iculUqIzjPgSu4JL4zOWbtEic25ceR9feH2nVgYA5ODJqwdUiaN50ria0H6WcI/0?wx_fmt=jpeg",
@@ -558,6 +574,22 @@
   "n_block": 9,
   "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484958&idx=1",
   "source_note": "2026-09-21 经搜狗「公众号文章搜索」(weixin.sogou.com type=2, 服务端出口) 发现；本机该通道 antispider，改用 WebFetch 读搜索页 + www.sogou.com/web 取 mp.weixin.qq.com 签名直链，本地 urllib 抓取并以 var biz 校验 == MzcwMzM3NjM1NQ==。原始签名链接 见 _work/links_0921.json / _work/web_links_0921.json。"
+ },
+ {
+  "title": "千问办公接入TapNow创意工作室专家套件",
+  "desc": "把顶尖视觉创作工作室搬进对话框",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wzQt7n20X0r1tuSPlSyjfc5lGnvDEvxHZibqSSTT1awcDxvNCjGz6PmO02RAnwuy50suFMPFlQG4ickS4nXgQMZFkZXzm7CXIcWI/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-09-20",
+  "published_ts": 1789887012,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484954&idx=1",
+  "cover_local": "wx_assets/c4da6a11555c.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>今天， 千问办公 正式接入\"TapNow创意工作室\"专家套件。 该套件涵盖电商组图、精品短片、素材库、素材组织指南等9大技能，可以帮助电商商家、自媒体工作者快速搭建从创意构思到视觉设计的工作流程。</p>\n<p>从今天起，你的办公 Agent 多了一支顶尖视觉团队 。</p>\n<h3 class=\"wx-sec\"><span class=\"wx-sec__num\">01</span>TapNow是什么</h3>\n<p>TapNow 是国内Tamar AI 团队打造的 AI 原生视觉创作平台，它可以把专业影视制作工业化流程搬进浏览器。</p>\n<p>TapNow 把 20+ 主流 AI 视觉模型集成到同一张画布里，包含文生图、图生视频、多模态输入、镜头参数调度、局部重绘、原生 1080P / 4K 输出等核心能力，覆盖从概念稿到成片的完整链路。</p>\n<p>现在，这套原本被短剧团队、电商品牌方、独立创作者用来做专业视频的能力，接进了 千问办公 。</p>\n<h3 class=\"wx-sec\"><span class=\"wx-sec__num\">02</span>在千问办公上用TapNow可以解决哪些问题</h3>\n<p>千问办公 的生图、生视频能力可以满足用户大多数日常需求，但面对更复杂、更专业、批量化的创作需求，则可以在 千问办公 上使用 TapNow。</p>\n<p>用户订阅TapNow会员后，在 千问办公 上输入自然语言需求，就可以实现以下功能：一张原图进去，白底、场景、多角度、多平台画幅成套出来；</p>\n<h4 class=\"wx-sub\">输入运动描述，就能生成精品短片；</h4>\n<p>一份方案大纲进去，整份 PPT/官网/方案书风格统一的配图一次到位；</p>\n<p>一张参考图，能锚定后面所有产出的美术风格；</p>\n<p>所有产出自动沉淀成画布项目，随时能回去改、能给同事接着做；</p>\n<p>尺寸不对？免费直接裁：发公众号、发小红书、发抖音、上主图，一键换版，不重生成、不掉画质。</p>\n<h3 class=\"wx-sec\"><span class=\"wx-sec__num\">03</span>三个场景用上TapNow市场营销团队，一句话出图出片，出视频</h3>\n<p>创作者只需输入\"帮我出一张封面\"、\"让这张封面动起来变成 5 秒片头\"， 千问办公 即可单图直出、图生视频，每次产出自动沉淀成画布项目。创作者还可以随时调用继续修改，整个过程无需在多款工具之间频繁切换。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/aa33a752f0f2.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">内容创作团队，一张原图出一整套发布素材</h4>\n<p>用户将一张产品原图上传至对话框，输入需求， 千问办公 可直接交付一套白底图、场景图、多角度图。用户如果想再加一版公众号、小红书的封面， 千问办公 还可直接根据各大主流内容平台的尺寸标准进行裁切。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/59fc21e8603f.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">办公场景下，写方案顺手把整套配图配了</h4>\n<p>过去写完方案需要花大量时间找图配图，风格还常常对不上。现在用户把大纲发给 千问办公 ，就能一次生成多张章节插图；用户输入一张参考图锚定图片风格后，整份材料的风格特点可直接拉齐。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/19d5ec148530.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>上线一个多月以来， 千问办公 在不断丰富工具生态，未来，我们还将继续连接更多强大的办公助手。</p>\n<p>也欢迎大家留言，写下您希望接入的工具。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/245a6f12383c.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/1c76119cc3",
+  "n_img": 4,
+  "n_block": 27,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247484954&idx=1",
+  "source_note": "2026-11-02 缺口补录（第 53 轮）。此篇为长期挂账缺口「TapNow 创意工作室专家套件」：搜狗索引内长期 0 官方行，只有「纵横云技术」09-21 的授权转载（copyright_info.reprint_url 指向官方 mid=2247484954）。★ 本轮改用内置 WebSearch 精确标题查询，结果第 1 条直接给出经典分享链接 `?__biz=..&mid=2247484954&idx=1&sn=3ee4bd91..&chksm=f5a24556..`（含 chksm），本机 curl -sL 3,527,524B，`var biz` 命中目标号 —— §43「带 chksm 的经典链接可抓」第 2 次验证。appmsg_type=10002、#js_content 真实存在（32 个 <p>，正文以文字为主）。内容：QwenWork news 栏目，千问办公正式接入「TapNow 创意工作室」专家套件（9 大技能）；TapNow 是 Tamar AI 的 AI 原生视觉平台（20+ 视觉模型、文生图/图生视频/局部重绘/1080P·4K）；三个使用场景（市场营销团队出图出片、内容创作团队整套发布素材、办公场景配方案插图）。"
  },
  {
   "title": "这位老师用千问办公做了一块AI智慧黑板",
