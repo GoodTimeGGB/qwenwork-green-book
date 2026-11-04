@@ -22,6 +22,8 @@ https://mp.weixin.qq.com/s/heK8AbgGMcvCqwvdOK48iA
 https://mp.weixin.qq.com/s/-MHTnHQ6NSUkA7Xv1setqQ
 https://mp.weixin.qq.com/s/fJ5uWEwZsCYoUbaxP4hYpQ
 https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
+https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485638&idx=1&sn=5b2888061f1b5d3df47e8e8456dc2a4a&chksm=f5b2edbe600ebb6e8e6c5bd7b8095e63e18b0246fc0b5fcbe9ce8b70fdca7db034e0108a10d8
+https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485668&idx=1&sn=652addd6a2ae10fd3fe1adbac41b01c7&chksm=f5721aa5970c23f2144a53a246805b0ab1fbc21fd4a96e67376f8f645070b0b0bfb88ee501b7
 # 注意：另有 4 篇只有「src=11 签名链接」、没有规范链接，故**不列入**本清单
 # （签名过期后重跑会用空结果覆盖同名 key，篇数会静默下降）：
 #  1) 「上线一个月，千问办公用户数突破3000万」（2026-09-04）
@@ -2951,4 +2953,22 @@ https://mp.weixin.qq.com/s/jcIO1rChxSKtNyDl9LNEug
 # 【成书】120 章 / 13 部分 / 819 图（697 内联）/ 24,721,856B（23.58MiB），
 #   三副本 MD5 f3202b2a。首次构建即在上限内（25MiB 余量约 **1.49MB ≈ 2 轮**），本轮未二压。
 #   ⚠️ 下轮若增量 ≥0.4MB 就必须先跑 shrink 再部署。
+# ===========================================================================
+
+# ===========================================================================
+# 【2026-11-04 第 55 轮】新增 2 篇：无锡创新中心（11-02 20:16）+ 复旦新闻学院（11-03 12:01）
+#   · 发现：搜狗索引扫描（本机 urllib，主扫描 21 页即被 antispider 打断，3 次 BLOCK）
+#     媒体侧先撞到「纵横云技术 11-03 14:30 数智力量|官宣!无锡成立千问办公创新中心」
+#     → 内置 WebSearch 精确标题反查官方 biz=MzcwMzM3NjM1NQ== 带 chksm 链接（§43 通道第 4、5 次验证）
+#     → 本机 curl 3,473,609B / 3,549,527B，var biz 全部命中。
+#   · 复旦篇由 WebFetch 读 weixin 垂直搜索 page=1 的官方行「21 小时前」首现（page=2 反而没有）。
+#   · 无锡篇 appmsg_type=10002 但 #js_content 真实存在（§43.4 再验）；两篇正文 mmbiz 图各 2 张，入库各 2 张。
+#   · 两条新 URL 已补进上方清单；因已用带 chksm 直链入库，未再整轮重跑 crawl（避免 §41.1 资产回涨）。
+#   · §41.1 老坑：crawl_wx.py 22/22 成功、JSON **深度全等**，但 113 个文件（含 ~100 webp）回涨
+#     ⇒ 先 git checkout -- pipeline/wx_assets pipeline/wx_raw 还原二压版，再 ingest。
+#   · 五道自检：72→74 / 丢失 0（按 mid）/ 新增 2（mid 精确）/ 空壳 0 /
+#     标题重复 1 组（「欢迎7位」两期，预期）/ 既有字段变化 0。
+#   · 成书 121 章 / 12 大部分 / 823 图（704 内联）/ 24,975,918B（23.82MiB），三副本 MD5 7494f205。
+#     余量约 1.18MB ≈ 2 轮 ⇒ **下一轮开始前应先跑 shrink，否则逼近 EdgeOne 25MiB 上限**。
+#   · 探针：learn.qwenwork.cn/whatsnew 最新仍为「10月14日 第 5 期」⇒ Vol.06 未发布。
 # ===========================================================================
