@@ -1,5 +1,22 @@
 [
  {
+  "title": "如何用千问办公把一条案子从头跟到尾？",
+  "desc": "免费领千问办公律师行业白皮书",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wzBdtJLHp3CX51RGe38dguzE406T21gkicIOMpkF5On7xC1qh7DBxEWT3iaBNre6F8HvBbCoGe8DVPbsQZMuZhFUacfJYdN07guw/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-11-05",
+  "published_ts": 1793871592,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485704&idx=1",
+  "cover_local": "wx_assets/22e422b31690.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork how-to</p>\n<p>千问办公 内置法律 AI 能力体系，通过上百个官方 Skill 与三大专家套件，覆盖诉讼、合同、合规、尽调、检索、协作六大场景，为律师与企业法务提供 从接案到结案的全流程支持 。该能力适用于民商事诉讼办案、企业合同管理、法律研究、企业尽调等场景，可解决法律工作高度非标、经验难沉淀、跨系统信息孤岛的问题。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/49444b1c3b13.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>目前，用户可在 千问办公 「专家技能」页安装相应套件直接使用。</p>\n<p>无论是诉讼办案、合同审查，还是法律研究，法律工作的每一环都容不得出错。可是真正让 AI 做起来，材料攒了一大堆，结论却越改越乱：法条引用怕过期、文书格式反复调、经验散落在个人脑子里换个人就断档，熬到深夜， 交出来的还是不敢直接用 。</p>\n<p>这一次，我们换一种思路：不急着让 AI 写文书，先按四步走：收案建档、事实梳理与要件攻防、文书生成与法律核验、案件管理与知识沉淀。 每一步只做一件事 ，最后交出来的，才是一份能真正进入办案流程的成果。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2b880d3deb9e.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">01</h4>\n<h4 class=\"wx-sub\">收案建档</h4>\n<p>第一步是把案件材料交出去，同时给每个案子建一份独立档案。调用 “中国民商事诉讼工具箱”专家套件 ，每办一条案子都会单独建档， 案件与案件之间的上下文互不串味 ；过往在钉钉里积累的案件台账，可以转化为 AI 表格，直接成为 千问办公 执行任务的上下文。</p>\n<p>接案环节还能结合 AI 听记 ：一场谈案下来，自动生成谈案笔录、客户沟通记录与案情摘要，再据此产出法律分析报告，辅助制定服务方案与报价。材料从第一步就进入 同一条案件主线 ，后面每一步都在同一份上下文里接着做。</p>\n<h4 class=\"wx-sub\">02</h4>\n<h4 class=\"wx-sub\">事实梳理与要件攻防</h4>\n<p>档案建好，先别急着写文书， 把案子的法律结构理清楚 。工具箱以 请求权基础分析方法 为内核，结合法庭报告技术对整个案件做推演：原告基于什么诉请起诉 → 请求权基础是什么 → 可能面临哪些抗辩 → 抗辩又会被哪些反抗辩所挑战</p>\n<p>沿这条链走下来，事实、要件、证据被系统化梳理，争议焦点也随之浮出。这一步的产出不会停在一份分析里，而是直接交给下一步—— A Skill 的结论成为 B Skill 的输入 ，证据目录、答辩思路都基于同一套要件审查结果组织，层层递进工作，不必在每次调用 Skill 撰写新的文书时从头再讲一遍案情。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/cbb17acf35c0.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">03</h4>\n<h4 class=\"wx-sub\">文书生成与法律核验</h4>\n<p>要件理清，成稿就顺了。起诉状、答辩状、质证意见、代理词，Skill 会自动适配对应审级的写作逻辑。真正关键的是 交付前的一道核验闸门 ：自动抽取文书里的法律引用 → 通过法律检索 MCP 逐条比对现行有效原文 → 按验证结果修改并标注 → 按选定格式交付</p>\n<p>法条引用基于现行有效原文逐条核对， 避免“看着对、其实已失效”的硬伤 。文书定稿后自动核验主体工商信息，再直接送达用印工作台；内置排版脚本输出成稿，格式不必再一页一页手动调。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/938421fdc821.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/471e07f446c7.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">04</h4>\n<h4 class=\"wx-sub\">案件管理与知识沉淀</h4>\n<p>一条案子往往要跟上一两年，最后一步是 把它管起来、把经验留下来 。律师办案多人工作台基于云端数据库管理，支持主管理员、管理员、成员三级权限，只有加入特定案件项目的成员，才能看到相应的进程资料与案卷；保全期限届满这类长达一两年的事项，系统会提前推送提醒，在任务窗口就能直接生成续保申请书。</p>\n<p>沉淀同样重要：知识库分模块管理，既能上传以往整理好的知识作为预设库，也能按办案维度沉淀每条案子的心得与类案规则。个人经验由此转化为 团队可调用、可复用、可迭代的资产 ，不再随人员流动而“经验倒退”。</p>\n<h4 class=\"wx-sub\">两个小技巧</h4>\n<p>第一个技巧， 是把找案源和维系客户也交给定时任务 。设定每天或每周自动检索特定招投标网站的法律服务招标信息，梳理要点后直接推送；也可以定期检索客户所在行业的法律资讯，生成网页版周报、月报，联动钉钉推送给客户，日常互动就不断线。</p>\n<p>第二个技巧， 是把自己的办案经验手搓成 Skill 。法律工作高度非标，每家律所、每家公司都有自己的流程与模板——在对话里说清要解决的问题、适用场景和展开步骤，就能生成一个专属 Skill。北京德恒（杭州）律师事务所两位 90 后律师，用半个月时间零代码手搓出遗嘱起草 Skill，约 5 分钟生成遗嘱底稿，覆盖虚拟资产、宠物安置、再婚家庭三类新场景。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c7e19bc4fa05.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>用 千问办公 办一条案子，关键不在“AI 会不会写文书”，而在顺序有没有摆对：先建档形成上下文，再梳理要件，然后生成并逐条核验文书，最后管好案件、沉淀经验。把该核的法条核到位，把该脱敏的数据脱敏，AI 自动化标准化部分， 律师把时间留给专业判断 。</p>\n<p>扫码免费领取千问办公律师行业白皮书</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/9053bf454ba3.webp\" loading=\"lazy\" alt=\"\"></figure>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/dc3e6b17b2c5.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/f7ccfbc90a",
+  "n_img": 8,
+  "n_block": 34,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485704&idx=1",
+  "source_note": "2026-11-06 入库（第 57 轮）。法律场景专题：千问办公法律 AI 能力体系。发现路径：本机搜狗微信垂直搜索 urllib 扫描（主扫描 21 页 174 行，较早 antispider），官方行中唯一不在库的即本篇（SERP 时间 2026-11-05 17:41）。取链：WebFetch 读搜狗 /web（site:mp.weixin.qq.com + 正文独有词「案子 从头跟到尾」）拿到 src=11 直链 → 本机 curl -sL 3,544,332B，var biz 命中。",
+  "mid": "2247485704"
+ },
+ {
   "title": "上新啦！千问办公产品新鲜事Vol.06",
   "desc": "",
   "cover": "http://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wz34iapu5yUJgl7DibN1R2VShKD4x3FqTia5Q7BWL4IrnQEibVyINLTicoxHFkrJZn0av5gFlQxwbibgdDqVayoLTkO5EDKiagthY1NAY/0?wx_fmt=jpeg",
