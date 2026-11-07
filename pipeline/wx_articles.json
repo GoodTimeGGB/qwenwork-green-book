@@ -1,5 +1,22 @@
 [
  {
+  "title": "申通快递和千问办公达成战略合作，推动物流服务智能化升级",
+  "desc": "共同打造智慧物流",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wyS7PzrlqMoYHExqhicA8EHuS015J0Hp5myhMKd1PibDabUWjXZGKlzy9N6kgEqIcf38VnIyzHksicfYfr2tHQHaNuxmibPAooJicRg/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-11-06",
+  "published_ts": 1793948540,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485718&idx=1",
+  "cover_local": "wx_assets/8b001de3118e.webp",
+  "content": "<p class=\"wx-eyebrow\">QwenWork news</p>\n<p>近日，申通快递与 千问办公 正式达成战略合作。 双方将围绕快递核心场景打造 AI 办公体系 ，以 Agent 能力支撑申通快递全国网点的增长战略落地， 推动 AI 从总部管理向末端网点规模化输出，加速物流服务智能化升级 。 申通快递总裁韩永彦与 千问办公 CEO 陈宇森等共同见证签约。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/975d03b62e1b.webp\" loading=\"lazy\" alt=\"\"></figure>\n<h4 class=\"wx-sub\">申通快递与千问办公战略合作签约现场</h4>\n<p>申通快递作为中国头部快递企业，拥有覆盖全国的转运、网点及末端派送网络，聚焦快递主业，为超过 40 个行业提供定制化解决方案，搭建一体化仓配供应链服务体系，网络覆盖广、区域布局纵深、网点多级协同运营，沉淀了深厚的快递场景经验与运营积淀。</p>\n<p>面对链路长、协同要求高的物流场景，申通快递对高效率、可落地、安全可控的企业级 AI 生产力工具存在深层次需求。 千问办公 本次和申通快递合作，将把 Agent 套件能力 与申通快递的行业经验深度融合， 共同打造快递行业 Agent 规模化落地标杆 ，沉淀出可供整个物流行业持续复用的数字资产。</p>\n<p>此前， 千问办公 已在申通快递安全管理、人力资源、行政运营等场景率先落地。以安全管理为例，过去员工的安全咨询与预警动态均依赖人工处理；如今依托 千问办公 ， 常见安全问题能由 Agent 自动响应，预警信息每日定时推送 。此外，安全团队还借助 千问办公 搭建管理后台，将事件监控、实时台账与趋势分析汇成统一视图，推动安全管理从“被动响应”转向“主动管理”。这一变化，也与申通快递推动网点运营从“经验驱动”向“数据驱动”转型的方向一致。</p>\n<p>未来，申通快递将在全国网点推进 千问办公 落地， 重点提升网点管理与运营效率 ，并在电商场景共同打造智慧物流，帮助商家增强运营和服务能力，提升消费者购物体验。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/d84524cc8921.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/e3aa85b60a",
+  "n_img": 2,
+  "n_block": 9,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485718&idx=1",
+  "source_note": "2026-11-07 入库（第 58 轮）。QwenWorknews 战略合作类：申通快递 × 千问办公。发现路径：本机搜狗微信垂直搜索 urllib 扫描（19 页 165 行后 antispider），官方行 11 条中唯一不在库的即本篇（SERP 2026-11-06 15:03）；WebFetch 读垂直搜索 page=2 亦见「千问办公QwenWork 18小时前」同一行。取链：WebFetch 读搜狗 /web（site:mp.weixin.qq.com + 正文独有词「申通快递 韩永彦 陈宇森」）拿到 src=11 直链 → 本机 curl -sL 3,477,754B，var biz 命中（先命中的「致快递」转载版 biz=MzAxODUxMTExMg== 已按 biz 校验剔除）。",
+  "mid": "2247485718"
+ },
+ {
   "title": "如何用千问办公把一条案子从头跟到尾？",
   "desc": "免费领千问办公律师行业白皮书",
   "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wzBdtJLHp3CX51RGe38dguzE406T21gkicIOMpkF5On7xC1qh7DBxEWT3iaBNre6F8HvBbCoGe8DVPbsQZMuZhFUacfJYdN07guw/0?wx_fmt=jpeg",
