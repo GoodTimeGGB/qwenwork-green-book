@@ -1,5 +1,21 @@
 [
  {
+  "title": "今天，我们一口气上新10款模型！",
+  "desc": "千问办公一口气上新10款模型",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_png/vic3vug7qel4XibflPAllQVguElvWgl8a1GU6Nd7nVia8j9pQCbvAjcBG6JOiaiaNibx6oOzONPS0YHIsHmFN3mqFVs0ibPosLiakBzibfqfpic4PH6u8/640?wx_fmt=png&amp;amp;from=appmsg",
+  "author": "千问办公",
+  "published": "2026-11-16",
+  "published_ts": 1794803070,
+  "url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485910&idx=1",
+  "cover_local": "wx_assets/2127e51fa1b2.webp",
+  "content": "<p>今天，千问办公一口气上新10款模型。</p>\n<p>上新阵容包括刚刚发布的Qwen4-Max，以及Kimi、GLM、DeepSeek、MiniMax、Step等多款三方大模型。</p>\n<p>目前，千问办公已开放模型选择。个人版和企业标准版用户，都可以根据自己的使用场景和任务需求，自由挑选合适的模型。</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/2127e51fa1b2.webp\" loading=\"lazy\" alt=\"\"></figure>\n<p>模型这么多，怎么选？</p>\n<p>此前，千问办公提供标准、高级和Qwen3.8-Max三档模型，已经能满足绝大多数日常办公任务。</p>\n<p>但随着大家交给Agent的任务越来越深入，对模型的需求也越来越个性化。毕竟，不同复杂度的任务，在执行效果、响应速度和Token成本上，侧重点可能很不一样。</p>\n<p>所以这次，我们在原有三档模型的基础上增加了更多选择：不同任务，挑选更合适的模型，用更低的Token成本高效完成工作。</p>\n<h4 class=\"wx-sub\">复杂推理</h4>\n<p>例如，在需要多步复杂推理的任务中，用户可以选择Qwen4-Max。</p>\n<p>据介绍，该模型是阿里全新一代基座大模型，在模型内实现了持续交付机制，可先生成一个可用的首版，并持续根据用户意见逐版扩展内容直至完成；</p>\n<p>同时模型还具备围绕复杂目标与约束进行运筹建模、求解与验证的能力，通过自主规划和持续迭代，编排智能体解决更复杂的任务，可轻松完成网站设计、云资源系统调度等复杂任务。</p>\n<h4 class=\"wx-sub\">分析判断</h4>\n<p>规则梳理、方案检查、模拟演示、3D展示……这些需要分析判断的任务，可以选择GLM-5.3、DeepSeek V4 Pro等模型。</p>\n<h4 class=\"wx-sub\">日常高频</h4>\n<p>如果是文案撰写、信息提取、内容整理等需要快速响应的日常任务，还可以选择Qwen3.8-Flash、GLM-5.3-Flash和DeepSeek V4.1 Flash等价格更低的模型。</p>\n<p>企业用户，模型也能按需分配模型选择多了，管理也得跟上。</p>\n<p>千问办公还为企业用户提供模型管理权限。企业管理员可以按部门、用户组或成员配置模型权限，为不同岗位、不同复杂度的工作匹配合适的模型，也方便企业统一管理AI资产。</p>\n<p>10款模型已经上线，下次发起任务前，不妨去模型列表逛逛！</p>\n<p>/ END /</p>",
+  "slug": "wx/8d8abc8329",
+  "n_img": 1,
+  "n_block": 20,
+  "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485910&idx=1",
+  "source_note": "2026-11-17 轮：本机 weixin 垂直搜索（631 行后 antispider）扫出官方行「今天,我们一口气上新10款模型!」（搜狗 ts=2026-11-16 12:25）不在库。官方页本轮全部不可取：/link 本机 urllib 5,903B antispider、Chromium 落 mp/wappoc_appmsgcaptcha；src=11 直链本机 curl 18,353B「环境异常」、浏览器（含 stealth）同样落 captcha。改走授权转载页（__biz=MzA4NjI4MzM4MQ==&mid=2660263631&chksm=85438c97…，本机 3,551,367B），其 copyright_info：copyright_stat=2 / platform=千问办公QwenWork / source_mid=2247485910 / source_encode_biz=MzcwMzM3NjM1NQ==。正文与 WebFetch 渲染的官方正文逐段一致，配图取该页正文图。"
+ },
+ {
   "title": "欢迎6位新朋友接入千问办公",
   "desc": "千仔朋友圈持续扩大中",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wze6Om6WgXwCOWMBKpJWiaNae0yibqHuSjVYiaZtiaicTff2SuHcL4qQVVS0yRYvx4wHAdhvaVQ67k1rCDfSEF84PULdEAfOHNLLPok/0?wx_fmt=jpeg",

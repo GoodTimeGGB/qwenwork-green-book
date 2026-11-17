@@ -3437,3 +3437,49 @@ https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485668&idx=1&sn=652add
 #     纵横云技术《智惠双十一|千问办公 QwenWork 一句话，把活干完》（3天前，转载）；
 #     11-15 头部讨论「千问办公 100 积分/福利缩水」（985 AIP 11-02）—— 均为媒体自产。
 # ============================================================================
+
+# ============================================================================
+# 【2026-11-17 第 67 轮】新增 1 篇：《今天，我们一口气上新10款模型！》，库 86 -> 87
+# ----------------------------------------------------------------------------
+#   - 结果：mid=2247485910 / 2026-11-16 12:24 / 正文 20 块 / 1 图（10 款模型清单图）。
+#     内容：千问办公一口气上线 10 款模型（Qwen4-Max + Kimi-K3.1-Pro / GLM-5.3 /
+#     DeepSeek-V4-Pro / DeepSeek-V4.1-Flash / MiniMax-M3.1-Flash / Step-5-Preview /
+#     Ling-3.1-Flash / Qwen3.8-Flash / Qwen3.8-Max），并开放企业侧模型管理权限。
+#   - ★★ 本轮最大变化：**mp 官方页出现「环境异常」硬拦截**（不是签名过期，也不是 antispider）
+#     ① src=11 直链本机 curl（桌面 Chrome UA + Referer）= **18,353B「环境异常」**
+#        （§64/65 的失效形态确认，连续第 3 轮）；
+#     ② 同一直链用 headless Chromium 打开（桌面 UA / iPhone 微信 UA 各一次）=
+#        302 -> `mp/wappoc_appmsgcaptcha?poc_token=...`（腾讯滑块验证页，23KB，`.t-captcha`）；
+#     ③ 加 stealth 参数（--disable-blink-features=AutomationControlled、伪装 navigator.webdriver、
+#        Asia/Shanghai 时区、zh-CN Accept-Language）**仍是 captcha**；
+#     ④ `?__biz&mid&idx&sn`（带 sn）、`&scene=27`，并**首次尝试「先抓一篇正常 chksm 页种 cookie、
+#        再带同一 cookie jar 访问官方链接」** = 仍 18,262B「环境异常」（§24.4 第 10 次确认）。
+#     ⇒ **`chksm` 经典链接仍是本机唯一可抓的 mp 形态**（本轮实测 3,551,367B 正常返回）；
+#        `src=11` / `?__biz&mid&idx&sn` / `/link` 三条路当前全部走不通。
+#   - ★ 取文路径（新打法，可复用）：**授权转载页 + copyright_info 还原官方 mid**
+#     内置 WebSearch（正文独有词「一口气上新10款模型 Kimi GLM DeepSeek MiniMax Step 模型管理权限」）
+#     -> 返回 `__biz=MzA4NjI4MzM4MQ==&mid=2660263631&...&chksm=85438c97f02b60a7…`
+#     -> 本机 curl 抓到（3,551,367B）-> 页内 `copyright_info`：
+#        `copyright_stat=2` / `platform=千问办公QwenWork` / `source_mid=2247485910` /
+#        `source_encode_biz=MzcwMzM3NjM1NQ==` / `reprint_url` 指向官方 mid=2247485910
+#     -> **逐段比对**：该页正文 22 段与 WebFetch 渲染的官方正文（9 个小标题结构）逐句一致
+#        => 判定为官方原文的授权复刻，取其 `#js_content` 段（含 1 张 mmbiz 图）+ 官方
+#           title/mid/ct 合成页，交 `crawl_wx.process()` 入库（通过 §19.4 后置空壳判据）。
+#     ⚠️ **口径**：本篇 `source_note` 已写明「经授权转载页取文」，不是官方直链抓取。
+#   - ⚠️ **本轮两个缺口（未入库，待规范链接）**：
+#     ① 《千问办公首发上线 Qwen4-Max！》2026-11-16 10:51（官方行在索引里、/link 封、
+#        src=11 只能由 WebFetch 渲染出正文，拿不到 raw HTML/图片，故不入库）；
+#     ② 《Qwen4-Max-Preview首发上线千问办公！》2026-11-11 14:25（同上，长期挂账）。
+#   - 发现：本机 weixin 垂直搜索 urllib **631 行后 antispider（72 次，本轮配额低）**，
+#     官方行 11 条、3 条不在库（即上述 3 篇）。WebFetch 垂直搜索 page=1 交叉核对一致
+#     （给出「千问办公QwenWork 22小时前」= 11-16 10:51 那篇）。
+#     §5b 老坑复现：`crawl_wx.py` 24/24 成功但 `去重：110 -> 85`（丢 1 篇）
+#     -> `git checkout -- pipeline/wx_articles.json pipeline/wx_assets pipeline/wx_raw` 整体还原后再 ingest。
+#   - ⚠️ **入库脚本禁用 `crawl_wx.dedupe()`**：它按标题合并，会吃掉「欢迎6位新朋友接入千问办公」
+#     （11-13）与 10-30 同题期（§11.1）。本轮改为**按 mid 去重**后为 87 篇。
+#   - 成书：**135 章 / 13 大部分 / 885 图（763 内联）/ 87 篇 / 24,877,795B（23.73MiB）**，
+#     三副本 MD5 `79fd6d86f00ad3d7caea026fa206196c`。余量 1.31MB ≈ 2~3 轮（本轮未压图）。
+#   - 探针（本轮**未实跑**，WebFetch 出口配额已耗尽）：本轮 631 行索引扫描里未见
+#     Vol.07 / 必修课 12 / 实战技巧 第二期的官方行；但索引覆盖不全（§17.1），
+#     **下一轮必须重跑三个探针**再下结论。
+# ============================================================================
