@@ -2,12 +2,13 @@
 
 把「千问办公」两个官方知识库的全部内容，重排成一本可以直接读、可以打印成书的单文件网页书。
 
-- **落地页 / 跳转入口**：[wangjn.site/tools/qianwen.html](https://wangjn.site/tools/qianwen.html)
+- **在线阅读**：<https://qwenwork-green-book.wangjn.top/>
+- **落地页 / 跳转入口**：[wangjn.top/tools/qianwen.html](https://wangjn.top/tools/qianwen.html)
 - **本地打开**：双击 `index.html`，无需服务器、无外部依赖
 
 ## 这本书是什么
 
-内容 100% 来自官方公开文档，按「认识产品 → 上手使用 → 安装获取 → 权益订阅 → 网页端 → 桌面端 → 通用扩展 → 工作台 → 企业管理 → 官方公告 → 帮助支持」的顺序重新编排，共 **11 大部分 + 1 附录、48 章（47 篇官方文档）**，保留 **122 张官方界面截图、96 张表格、75 个代码块**。
+内容 100% 来自官方公开文档，按「认识产品 → 上手使用 → 安装获取 → 权益订阅 → 网页端 → 桌面端 → 通用扩展 → 工作台 → 企业管理 → 官方公告 → 帮助支持」的顺序重新编排，共 **11 大部分 + 1 附录、48 章（47 篇官方文档）**，保留 **122 张官方界面截图、96 张表格、75 个代码块**。此外把 **89 篇公众号文章** 编成「官方实践案例」部分并入书内，成书规模为 **137 章 / 13 个大部分 / 896 张图（774 张 base64 内联）**，单文件约 **23.9 MiB**。
 
 | 部分 | 主题 | 覆盖内容 |
 | --- | --- | --- |
@@ -81,7 +82,21 @@ python shot.py         # 可选：截图抽查渲染效果
 
 ## 版式来源
 
-书页版式（纸墨风、衬线书体、三线表、扉页分部）参考自 [workbuddy-green-book.wangjn.site](https://workbuddy-green-book.wangjn.site/)，感谢原作者的视觉设计。
+书页版式（纸墨风、衬线书体、三线表、扉页分部）参考自 [workbuddy-green-book.wangjn.top](https://workbuddy-green-book.wangjn.top/)，感谢原作者的视觉设计。
+
+## 发布
+
+- **在线地址**：<https://qwenwork-green-book.wangjn.top/>（EdgeOne Makers 项目 `qwenwork-green-book`，Project ID `makers-gl58tjb25pqy`）
+- **主发布通道**：推送到 CNB `master` → CNB 流水线自动构建并部署到 EdgeOne Makers
+  ```bash
+  git push https://oauth2:<TOKEN>@cnb.cool/goodtimenb/qwenwork-green-book.git master
+  ```
+- **镜像**：GitHub `GoodTimeGGB/qwenwork-green-book`
+- **手动兜底**（流水线异常时）：
+  ```bash
+  edgeone makers deploy site -n qwenwork-green-book -e production
+  ```
+  注意 `site/` 目录已被 `.gitignore` 忽略，只是本地部署产物；仓库内的权威源是根目录 `index.html`。
 
 ## License
 
