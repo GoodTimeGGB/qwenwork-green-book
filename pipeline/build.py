@@ -538,13 +538,20 @@ def inline_local_images(doc: str) -> str:
     mime_map = {".webp": "image/webp", ".png": "image/png", ".gif": "image/gif",
                 ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}
 
+    cache = {}                                            # md5 -> 已编码的 data URI
+
     def repl(m):
         p = ROOT / m.group(1)
         if not p.exists():
             return m.group(0)
-        mime = mime_map.get(p.suffix.lower(), "image/jpeg")
-        b64 = base64.b64encode(p.read_bytes()).decode("ascii")
-        return 'src="data:%s;base64,%s"' % (mime, b64)
+        raw = p.read_bytes()
+        h = hashlib.md5(raw).hexdigest()
+        uri = cache.get(h)
+        if uri is None:                                   # 同图多文件名只编码一次
+            mime = mime_map.get(p.suffix.lower(), "image/jpeg")
+            uri = 'src="data:%s;base64,%s"' % (mime, base64.b64encode(raw).decode("ascii"))
+            cache[h] = uri
+        return uri
 
     return re.sub(r'src="(wx_assets/[^"]+)"', repl, doc)
 
