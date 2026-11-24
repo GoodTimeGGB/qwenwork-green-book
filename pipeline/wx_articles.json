@@ -62,6 +62,20 @@
   "source_note": "2026-11-17 轮：本机 weixin 垂直搜索（631 行后 antispider）扫出官方行「今天,我们一口气上新10款模型!」（搜狗 ts=2026-11-16 12:25）不在库。官方页本轮全部不可取：/link 本机 urllib 5,903B antispider、Chromium 落 mp/wappoc_appmsgcaptcha；src=11 直链本机 curl 18,353B「环境异常」、浏览器（含 stealth）同样落 captcha。改走授权转载页（__biz=MzA4NjI4MzM4MQ==&mid=2660263631&chksm=85438c97…，本机 3,551,367B），其 copyright_info：copyright_stat=2 / platform=千问办公QwenWork / source_mid=2247485910 / source_encode_biz=MzcwMzM3NjM1NQ==。正文与 WebFetch 渲染的官方正文逐段一致，配图取该页正文图。"
  },
  {
+  "title": "千问办公首发上线 Qwen4-Max！",
+  "desc": "全新一代基座大模型 Qwen4-Max 现已接入千问办公！2.4T 总参数，支持原生视觉、百万上下文，智能体（Agentic）和编程能力全面进阶，复杂任务也能更高效、更稳定地完成。",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9ww1Xxkl2L3EpvTAdp15k4xcrmebLBniaxB2GhmHTtvj7bDq3XIvMZvZBklCUJIManjxIcRSjQaiaiaSyuWC0VPGqdJtvhhEyJT5cI/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-11-16",
+  "published_ts": 1794797481,
+  "url": "https://mp.weixin.qq.com/s/W6mzhMgCEmHT33yxY7adxA",
+  "cover_local": "wx_assets/16929248feae.webp",
+  "content": "<p>全新一代基座大模型 Qwen4-Max 现已接入千问办公！2.4T 总参数，支持原生视觉、百万上下文，智能体（Agentic）和编程能力全面进阶，复杂任务也能更高效、更稳定地完成。</p>\n<h4 class=\"wx-sub\">⚡ 全新架构，思考更高效</h4>\n<p>采用基于 Qwen 稀疏注意力（QSA）的全新 MoE 架构，每次处理任务只需激活部分参数，以更少的计算开销实现更高效的思考。</p>\n<h4 class=\"wx-sub\">🛠️ 实时交付，复杂任务边做边完善</h4>\n<p>通过实时交付（Live Delivery）机制，智能体可以先生成可用版本，再根据反馈持续迭代。比如制作物理科普网站，从初版逐步扩展出 3D 动画、交互实验和原理详解。</p>\n<h4 class=\"wx-sub\">🚀 Agentic 能力进阶，专业任务更能干</h4>\n<p>不只是回答问题，还能调用专业工具执行复杂任务。从使用 Blender 开发 3D 游戏，到调用 MCP 工具完成金融投研、生成 Excel 底稿和 PPT 报告，让 AI 真正参与到工作流程中。</p>\n<p>Qwen4-Max已上线千问办公，快来体验新模型！</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/5351886b48e9.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/d36b850679",
+  "n_img": 1,
+  "n_block": 9
+ },
+ {
   "title": "欢迎6位新朋友接入千问办公",
   "desc": "千仔朋友圈持续扩大中",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wze6Om6WgXwCOWMBKpJWiaNae0yibqHuSjVYiaZtiaicTff2SuHcL4qQVVS0yRYvx4wHAdhvaVQ67k1rCDfSEF84PULdEAfOHNLLPok/0?wx_fmt=jpeg",
@@ -124,6 +138,20 @@
   "n_block": 11,
   "canonical_hint": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ%3D%3D&mid=2247485817&idx=1&sn=2f71de1fb43489e2ed630cf1b0334e73",
   "source_note": "2026-11-11 15:50 官方推文，经 WebSearch 精确标题命中带 chksm 的经典链接后抓取；appmsg_type=10002 但 #js_content 存在（普通图文形态）"
+ },
+ {
+  "title": "Qwen4-Max-Preview首发上线千问办公！",
+  "desc": "更低的使用成本，抢先体验更强的任务执行能力。",
+  "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RTs2B6JK9wwGQmsNbc4evNOxc9Wchic7r3Dd66qSDa4ibwfiatYc6BDvbyufibNMmHZHJRqRS9TOPv4m3s9V2ewn39lUzW1OBm7nr2hygR9JQJU/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-11-11",
+  "published_ts": 1794378331,
+  "url": "https://mp.weixin.qq.com/s/Eg-2TmVjAvRacWM5KRSJZQ",
+  "cover_local": "wx_assets/1a12c5fa3cfc.webp",
+  "content": "<p>更低的使用成本，抢先体验更强的任务执行能力。</p>\n<h4 class=\"wx-sub\">🟢看懂复杂材料，还能据此执行</h4>\n<p>综合理解文本、图片、音频和视频，梳理跨材料的联系，识别图表细节、设计要求与操作流程，将理解转化为后续分析和制作的依据。</p>\n<h4 class=\"wx-sub\">🟢操作专业软件，把创意做成作品</h4>\n<p>配合 Agent 工具，在 Figma、CAD、Blender 等软件中推进设计、3D 建模、场景搭建与游戏原型制作，从方案走向可展示、可继续调整的成果。</p>\n<h4 class=\"wx-sub\">🟢复杂任务，能规划、能执行、能检查调整</h4>\n<p>面对多份材料、多个工具和多个环节，围绕最终目标规划步骤，在执行中检查与调整，连贯推进到成果交付，减少你逐步指挥、手动串联。</p>\n<p>打开千问办公，下一代能力抢先体验！</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/c4d810194ba4.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/22f80f7061",
+  "n_img": 1,
+  "n_block": 9
  },
  {
   "title": "南京大学携手千问办公，落地阿里巴巴高校AI公益支持计划",

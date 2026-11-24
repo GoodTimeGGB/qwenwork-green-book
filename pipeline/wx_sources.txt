@@ -3674,3 +3674,19 @@ https://mp.weixin.qq.com/s/haBCRETT57jMryHQdJD_VQ
 #   · ⚠️ 下一轮若整表重跑 crawl_wx.py，本篇会走静态抓 → 命中新的「占位页防护」直接 FAIL、
 #     保留库内旧条目（不会污染），要更新它仍需 WX_HTML_OVERRIDE 或用户给新直链。
 # ============================================================================
+https://mp.weixin.qq.com/s/W6mzhMgCEmHT33yxY7adxA
+https://mp.weixin.qq.com/s/Eg-2TmVjAvRacWM5KRSJZQ
+# ----------------------------------------------------------------------------
+# 2026-11-24 补录（第 72 轮）：用户给直链，两篇 Qwen4-Max 一次补齐，库 90 -> 92 篇
+#   · 《千问办公首发上线 Qwen4-Max！》2026-11-16 10:51，mid 见链接；图片消息（appmsg_type=9）
+#     主图 1242x1660 jpg 217.1KB -> 67.1KB WebP；配文 8 段（⚡ 全新架构 / 🛠️ 实时交付 / 🚀 Agentic）。
+#   · 《Qwen4-Max-Preview首发上线千问办公！》2026-11-11 14:25，同上，主图 900x1200 png
+#     640.9KB -> 48.0KB WebP；配文 8 段（🟢 三个能力小节）。
+#   · 两篇都走第 71b 轮的姿势：Chromium 渲染 -> biz 校验 -> picture_page_info_list 取主图 ->
+#     拼 #js_content 最小页 -> WX_HTML_OVERRIDE 跑 crawl_wx.py。区别是**多段正文**
+#     （_work/synth_1124b.py）：从 #js_image_desc 按行切段，去话题标签行与地名/日期噪声，
+#     每行一个 <p>；clean_content 的 merge_fragments 会把 ⚡/🟢 短行自动识别成 h4.wx-sub 小标题。
+#   · 结果：92 篇 / 140 章 / 13 大部分 / 921 图（799 内联）/ 26,378,514 B，
+#     三副本 MD5 `6f9a0fdfe4044cd531465e6302764f2c`；章节 id 无重复（slug 唯一化后仍成立）。
+#   · ⚠️ 全表重跑 crawl 时这两条也会命中占位页防护 -> FAIL 并保留旧条目，属预期。
+# ============================================================================
