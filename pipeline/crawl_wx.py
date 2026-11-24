@@ -423,6 +423,14 @@ def process(url: str, idx: int, cache: dict) -> dict:
     # 首段之前插入导语卡
     body = blocks_to_html(blocks)
 
+    # 占位页防护：新版页面正文靠 JS 渲染，静态抓只拿到「微信扫一扫可打开此内容」。
+    # 这种页会被上面的图片消息兜底误当成正文，必须先落地渲染（WX_HTML_OVERRIDE）再入库。
+    plain = re.sub(r"<[^>]+>", "", body)
+    if "微信扫一扫可打开此内容" in plain and len(plain.strip()) < 200:
+        raise RuntimeError(
+            "只拿到占位页（新版文章页需 JS 渲染）：先用 headless Chromium 落地，"
+            "再以 WX_HTML_OVERRIDE 指过来重跑")
+
     cover_local = ""
     if meta["cover"]:
         key = meta["cover"].split("?")[0]

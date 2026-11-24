@@ -3646,3 +3646,31 @@ https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485668&idx=1&sn=652add
 #     隔一天大概率会进），而不是先去碰搜狗 `/link`。
 # ============================================================================
 https://mp.weixin.qq.com/s/haBCRETT57jMryHQdJD_VQ
+# ----------------------------------------------------------------------------
+# 2026-11-24 补录（第 71b 轮）：用户给了直链，GLM-5.4 那篇已入库，库 89 → 90 篇
+#   · 链接：https://mp.weixin.qq.com/s/haBCRETT57jMryHQdJD_VQ
+#     《首发！千问办公上线GLM-5.4》2026-11-24 00:03，千问办公，mid=2247485982。
+#   · ★这篇是「图片消息」（appmsg_type=9 / item_show_type=8），且是**新版 JS 渲染页**：
+#       ① 静态抓（urllib + iPhone/桌面 UA 都一样）只回「微信扫一扫可打开此内容」占位页，
+#          正文 143 字、#js_content 里 0 张图 —— 上一轮"抓不到"的真正原因是这个，不是被封。
+#       ② 正确姿势：headless Chromium 打开 → window.biz 校验 → page.content() 落地，
+#          图不在 DOM 里（渲染也不回填），要从脚本数据 `picture_page_info_list[].cdn_url` 取主图。
+#       ③ 生成一份带 #js_content 的最小页（title/desc/cover/create_time + 主图 data-src），
+#          用 `WX_HTML_OVERRIDE=<本地html> python pipeline/crawl_wx.py <真链>` 走标准流水线，
+#          图片仍会被压成 WebP（88.4KB → 36.5KB，680×906）。
+#   · 本轮顺带修了三个坑（都已在 pipeline/ 里）：
+#       a) crawl_wx.extract_meta：create_time 新版有 '2026-11-24 00:03' 和 '1795449806' * 1 两条，
+#          var() 先撞日期串会掉回 now()；改为优先取 9~11 位数字。
+#       b) crawl_wx.article_id：兼容老式 `__biz=...&mid=<数字>&idx=1`，返回 "mid"+数字。
+#          否则这类篇目没 ID，同题兜底会按标题跨月吞并（§5b 的根因）。
+#       c) crawl_wx.dedupe：同题兜底只对「无 ID 的中转链接」生效，有 ID 的一律独立保留。
+#   · 还挖出一个既有严重缺陷并修掉：库里有 5 篇共用 slug `wx/bf9dbd531b`
+#     （11-10 南京大学 / 11-11 烤匠 / 11-11 沙箱 / 11-12 @Agent / 11-13 欢迎6位），
+#     build.py 的 by_slug 是 dict，后写覆盖先写 → 书中第 48~51 章正文全部渲染成第 52 章
+#     （南京大学）的内容，四篇正文实际丢失。已在 build.py 载入后强制 slug 唯一（首个保留原
+#     slug，其余按 url 重新哈希）。重建后 137 个章节 id 无重复，四篇正文各归各位。
+#   · 入库后口令：90 篇 / 138 章 / 13 大部分 / 917 图（795 内联）/ 26,057,631 B，
+#     三副本 MD5 `805c8dde1f0c8b2d068ae2309429299c`。
+#   · ⚠️ 下一轮若整表重跑 crawl_wx.py，本篇会走静态抓 → 命中新的「占位页防护」直接 FAIL、
+#     保留库内旧条目（不会污染），要更新它仍需 WX_HTML_OVERRIDE 或用户给新直链。
+# ============================================================================
