@@ -3645,3 +3645,4 @@ https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247485668&idx=1&sn=652add
 #     建议：下一轮开场先用 **WebSearch 精确标题**钓 chksm 链接（§43.2，对 11-24 这篇今天还没收录，
 #     隔一天大概率会进），而不是先去碰搜狗 `/link`。
 # ============================================================================
+https://mp.weixin.qq.com/s/haBCRETT57jMryHQdJD_VQ

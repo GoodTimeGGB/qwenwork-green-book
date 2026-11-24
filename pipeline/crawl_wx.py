@@ -95,6 +95,11 @@ def extract_meta(html: str, url: str) -> dict:
         return m.group(1).strip() if m else ""
 
     ct = (var("create_time") or var("ct")).replace("*", "").split(".")[0].strip()
+    if not ct.isdigit():
+        # 新版页面同时给出 create_time: '2026-11-24 00:03' 与 create_time: '1795449806' * 1，
+        # var() 会先撞到日期串；这里兜底取数字时间戳，避免掉回 now()
+        nums = re.findall(r"create_time['\"]?\s*[:=]\s*['\"]?(\d{9,11})", html)
+        ct = nums[0] if nums else ct
     ts = int(ct) if ct.isdigit() else int(time.time())
     title = var("msg_title") or meta_prop("og:title")
     desc = var("msg_desc") or meta_prop("og:description")
@@ -386,7 +391,14 @@ def html_escape(s: str, quote: bool = False):
 # ------------------------------------------------------------------ 主流程
 def process(url: str, idx: int, cache: dict) -> dict:
     log = []
-    html = fetch(url)
+    # 新版文章页（immersiveMode）正文由 JS 渲染，静态 HTML 里根本没有 #js_content。
+    # 这类篇目先用 headless Chromium 落地渲染，再用 WX_HTML_OVERRIDE 指过来。
+    override = os.environ.get("WX_HTML_OVERRIDE", "").strip()
+    if override and Path(override).exists():
+        html = Path(override).read_text(encoding="utf-8", errors="ignore")
+        log.append("  本地渲染页：%s（%d KB）" % (Path(override).name, len(html) // 1024))
+    else:
+        html = fetch(url)
     (RAW_DIR / ("%02d.html" % idx)).write_text(html, encoding="utf-8")
 
     meta = extract_meta(html, url)
@@ -437,9 +449,19 @@ def process(url: str, idx: int, cache: dict) -> dict:
 
 
 def article_id(url: str) -> str:
-    """从 https://mp.weixin.qq.com/s/<22位ID> 里取出文章 ID"""
-    m = re.search(r"/s/([A-Za-z0-9_\-]{16,})", url or "")
-    return m.group(1) if m else ""
+    """取文章 ID：新的 /s/<22位ID>，或老式 __biz=...&mid=<数字>&idx=1 里的 mid。
+
+    老式链接也必须给 ID——否则同题兜底会把它按标题并进别的月份的条目（§5b）。
+    搜狗 src=11 签名链接两者都没有，返回空串，交给标题兜底处理。
+    """
+    u = url or ""
+    m = re.search(r"/s/([A-Za-z0-9_\-]{16,})", u)
+    if m:
+        return m.group(1)
+    m = re.search(r"[?&]mid=(\d+)", u)
+    if m:
+        return "mid" + m.group(1)
+    return ""
 
 
 def dedupe(articles: list) -> list:
@@ -462,12 +484,31 @@ def dedupe(articles: list) -> list:
         return list(out.values())
 
     stage1 = pick(articles)                              # 按文章 ID
-    stage2 = {}
-    for a in stage1:                                     # 再按标题兜底
+    # 再按标题兜底：只针对「拿不到规范 mid」的中转链接。
+    # 有 mid 的一律按 mid 独立保留——否则「欢迎6位新朋友」这类同名栏目会被跨月吞并（§5b）
+    canon_by_title = {}
+    keep = []
+    for a in stage1:
+        if not article_id(a.get("url", "")):
+            continue
         t = (a.get("title") or "").strip()
-        if t not in stage2 or score(a) > score(stage2[t]):
-            stage2[t] = a
-    return list(stage2.values())
+        if t not in canon_by_title or score(a) > score(canon_by_title[t]):
+            canon_by_title[t] = a
+        keep.append(a)
+    loose = {}
+    for a in stage1:
+        if article_id(a.get("url", "")):
+            continue
+        t = (a.get("title") or "").strip()
+        target = canon_by_title.get(t)
+        if target is not None:                            # 并进同题规范文
+            if score(a) > score(target) and target in keep:
+                keep[keep.index(target)] = a
+                canon_by_title[t] = a
+            continue
+        if t not in loose or score(a) > score(loose[t]):
+            loose[t] = a
+    return keep + list(loose.values())
 
 
 def main():

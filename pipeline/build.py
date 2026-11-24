@@ -2,6 +2,7 @@
 """把 clean.json 组装成单文件 HTML《千问办公绿皮书》"""
 import base64
 import html as html_mod
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -14,6 +15,28 @@ CSS = (ROOT / "gb_style.css").read_text(encoding="utf-8")
 # 官方公众号补充文章（由 crawl_wx.py 产出）
 WX_FILE = ROOT / "wx_articles.json"
 WX_ARTICLES = json.loads(WX_FILE.read_text(encoding="utf-8")) if WX_FILE.exists() else []
+
+
+def _unique_slugs(arts: list) -> list:
+    """保证 slug 唯一：撞车时保留首个，其余按 url 重新哈希（确定性，多次构建一致）。"""
+    seen = set()
+    for a in arts:
+        base = a.get("slug") or ("wx/" + hashlib.md5((a.get("url") or "").encode()).hexdigest()[:10])
+        slug = base
+        if slug in seen:
+            h = hashlib.md5((a.get("url") or "").encode()).hexdigest()[:10]
+            slug = "wx/" + h
+            n = 2
+            while slug in seen:
+                slug = "wx/%s-%d" % (h, n)
+                n += 1
+            print("  slug 撞车：%s -> %s（%s）" % (base, slug, (a.get("title") or "")[:20]))
+        seen.add(slug)
+        a["slug"] = slug
+    return arts
+
+
+WX_ARTICLES = _unique_slugs(WX_ARTICLES)
 
 # 参考站 CSS 里写死的英文串，替换成千问办公（保留 follow-cta 关注卡片样式）
 CSS = CSS.replace("WORKBUDDY GREEN BOOK", "QWENWORK GREEN BOOK")

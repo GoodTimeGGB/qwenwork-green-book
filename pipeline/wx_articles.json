@@ -1,5 +1,19 @@
 [
  {
+  "title": "首发！千问办公上线GLM-5.4",
+  "desc": "千问办公已接入智谱新一代基座模型GLM-5.4，该模型采用Loop Transformer架构，参数规模为750B。该模型实现了代码和视觉能力的双重提升，可以用代码生成和处理视频、构建一款完整的游戏、完成3D建模和机械设计等。欢迎体验！",
+  "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wxnEPbBWHBm8en6celIfnicHaJOTpibt6TVVZ0Biav2L3lGTttVcibmN1ibd8Xj9ZfVbltzSOFcXbQuc0bibM8LmbMBBHLBeGFL6axCk/0?wx_fmt=jpeg",
+  "author": "千问办公",
+  "published": "2026-11-24",
+  "published_ts": 1795449806,
+  "url": "https://mp.weixin.qq.com/s/haBCRETT57jMryHQdJD_VQ",
+  "cover_local": "wx_assets/162410460010.webp",
+  "content": "<p>千问办公已接入智谱新一代基座模型GLM-5.4，该模型采用Loop Transformer架构，参数规模为750B。该模型实现了代码和视觉能力的双重提升，可以用代码生成和处理视频、构建一款完整的游戏、完成3D建模和机械设计等。欢迎体验！</p>\n<figure class=\"gb-fig\"><img class=\"wx-img\" src=\"wx_assets/f03c3169875e.webp\" loading=\"lazy\" alt=\"\"></figure>",
+  "slug": "wx/903aa80645",
+  "n_img": 1,
+  "n_block": 2
+ },
+ {
   "title": "先懂品牌，再干活！千问办公电商版推出“品牌知识库”",
   "desc": "还是千仔懂你",
   "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RTs2B6JK9wx6IcNvZSHEibtFw3382Psjzics9yGF3ZR8OtiaCZxBOJbwyubiaO4U57BJXOicvqTcE3RTqibEX9EgP9huGiaQxqGPygprzaLEP27XzI/0?wx_fmt=jpeg",
